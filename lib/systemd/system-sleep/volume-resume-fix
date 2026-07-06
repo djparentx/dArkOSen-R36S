@@ -1,0 +1,17 @@
+#!/bin/bash
+case "$1" in
+  pre)
+    pidof emulationstation | xargs -r kill -STOP
+    pidof aplay | xargs -r kill -STOP
+    pidof pulseaudio | xargs -r kill -STOP
+    echo -n "PAUSE_TOGGLE" | nc -w1 -u 127.0.0.1 55355 2>/dev/null
+    ;;
+  post)
+    sleep 0.75
+    pidof emulationstation | xargs -r kill -CONT
+    pidof aplay | xargs -r kill -CONT
+    pidof pulseaudio | xargs -r kill -CONT
+    echo -n "PAUSE_TOGGLE" | nc -w1 -u 127.0.0.1 55355 2>/dev/null
+    ;;
+esac
+exit 0
