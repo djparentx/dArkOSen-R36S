@@ -1,0 +1,16 @@
+back_key = 704
+start_key = 705
+a_key = 304
+b_key = 305
+x_key = 307
+y_key = 308
+up_key = 544
+down_key = 545
+left_key = 546
+right_key = 547
+l1_key = 310
+l2_key = 311
+r1_key = 312
+r2_key = 313
+inputstr = /dev/input/by-path/platform-odroidgo3-joypad-event-joystick
+handler = generic
