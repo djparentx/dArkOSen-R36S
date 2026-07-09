@@ -183,11 +183,10 @@ END { if (patched) print "yes" > flagfile }
 
 	dtc -I dts -O dtb -o "$dtb" "$dts"
 	echo "OK: patched and recompiled"
+	rm -f "$dts"
 	PATCHED=$(( PATCHED + 1 ))
 
 done < <(find "$SRC_DIR" -maxdepth 1 -type f -name '*linux.dtb' -print0)
-
-rm -f "$dts"
 
 echo
 echo "Done. Found: $TOTAL  Patched: $PATCHED  Failed: $FAILED"
