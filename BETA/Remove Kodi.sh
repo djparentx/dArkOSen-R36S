@@ -94,4 +94,7 @@ fi
 
 chown ark:ark /etc/emulationstation/es_systems.cfg
 
+touch /tmp/es-restart
+killall emulationstation
+		
 Exit_Menu
