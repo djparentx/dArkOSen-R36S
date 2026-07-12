@@ -12,7 +12,7 @@ Creates `recovery-runner.sh`
 
 - place in tools and run to patch your original dtb for use with dArkOSen
 - creates *.dtb.bak in case of failure
-- adds the following to CPU values:
+- adds the following to CPU OPP values:
 
 		opp-1368000000 {
 			opp-hz = <0x00 0x518a0600>;
@@ -74,7 +74,7 @@ Creates `recovery-runner.sh`
 			clock-latency-ns = <0x9c40>;
 		};
 
-- and the following to GPU vlaues:
+- and the following to GPU OPP vlaues:
 
 		opp-600000000 {
 			opp-microvolt = <0x115b5c>;
