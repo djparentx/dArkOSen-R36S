@@ -3,4 +3,5 @@
 - copy all .img files to /tools
 - run flash\_uboot.sh
 - safe for 640x480 devices
+- requires rg351mp-uboot.dtb to boot
 
