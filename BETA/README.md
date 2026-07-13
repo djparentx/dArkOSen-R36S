@@ -1,4 +1,8 @@
-# Recovery Service Installer
+# BETA Folder
+Tools and features being readied for the next update. Feel free to explore but use at your own risk.
+BETA features are not supported until official release.
+
+## Recovery Service Installer
 
 Creates `/etc/systemd/system/recovery-check.service`
 - launches `recovery-runner.sh` at boot before emulation station loads
@@ -8,7 +12,7 @@ Creates `recovery-runner.sh`
 
 `/boot/recovery.sh` can be literally any executable script allowing for system repairs or changes at boot time.
 
-# dArkOSen dtb patcher
+## dArkOSen dtb patcher
 
 - place in tools and run to patch your original dtb for use with dArkOSen
 - creates *.dtb.bak in case of failure
