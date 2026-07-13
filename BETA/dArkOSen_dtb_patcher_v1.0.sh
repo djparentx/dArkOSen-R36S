@@ -6,6 +6,10 @@
 # Non-recursive: subfolders are not touched
 # Leaves .dts files in place for inspection
 # -------------------------------------------------------
+if [ "$(id -u)" -ne 0 ]; then
+    exec sudo -- "$0" "$@"
+fi
+
 SRC_DIR="/boot"
 
 CPU='
@@ -162,6 +166,7 @@ END { if (patched) print "yes" > flagfile }
 
 	if [[ "$patched" != "yes" ]]; then
 		echo "SKIP: nothing patched (already patched or anchors not found)"
+		sleep 3
 		rm -f "$dtb.bak"
 		continue
 	fi
@@ -176,6 +181,7 @@ END { if (patched) print "yes" > flagfile }
 
 	if [[ $errors -ne 0 ]]; then
 		echo "Verification failed with $errors error(s), NOT recompiling. Restoring backup."
+		sleep 3
 		cp -f "$dtb.bak" "$dtb"
 		FAILED=$(( FAILED + 1 ))
 		continue
@@ -183,6 +189,7 @@ END { if (patched) print "yes" > flagfile }
 
 	dtc -I dts -O dtb -o "$dtb" "$dts"
 	echo "OK: patched and recompiled"
+	sleep 3
 	rm -f "$dts"
 	PATCHED=$(( PATCHED + 1 ))
 
@@ -190,3 +197,4 @@ done < <(find "$SRC_DIR" -maxdepth 1 -type f -name '*linux.dtb' -print0)
 
 echo
 echo "Done. Found: $TOTAL  Patched: $PATCHED  Failed: $FAILED"
+sleep 3
