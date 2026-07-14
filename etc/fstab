@@ -1,0 +1,5 @@
+LABEL=ROOTFS / btrfs defaults,noatime,compress=zlib:1,ssd_spread 0 0
+
+LABEL=BOOT /boot vfat defaults 0 2
+/dev/mmcblk0p3 /roms exfat defaults,auto,umask=000,uid=1000,gid=1000,noatime 0 0
+/roms/tools /opt/system/Tools none nofail,x-systemd.device-timeout=7,bind 0 0
