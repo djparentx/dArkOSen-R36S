@@ -2,6 +2,12 @@
 Tools and features being readied for the next update. Feel free to explore but use at your own risk.
 BETA features are not supported until official release.
 
+## R36S DTB Battery Patch
+- intended for genuine devices only (not clones)
+- corrects wrong battery capacity, 3140mah not 3380mah
+- sets a safer min cutoff value, 3300mv
+- will need a few power cycles to reset OCV tables
+
 ## Recovery Service Installer
 
 Creates `/etc/systemd/system/recovery-check.service`
