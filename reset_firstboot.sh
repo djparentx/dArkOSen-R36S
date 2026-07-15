@@ -1,5 +1,8 @@
 #!/bin/bash
-
+# Resets the image to first boot conditions. When run
+# the firstboot.service is enabled and all necessary
+# files are created. The following boot will wipe
+# partition 3 (roms)
 if [ "$(id -u)" -ne 0 ]; then
     exec sudo -- "$0" "$@"
 fi
@@ -35,7 +38,7 @@ sudo chmod 666 /dev/tty1
 export TERM=linux
 height="15"
 width="55"
-if [ -f "/boot/rk3326-r36s-linux.dtb" ] || [ -f "/boot/rk3326-rg351v-linux.dtb" ] || [ -f "/boot/rk3326-rg351mp-linux.dtb" ] || [ -f "/boot/rk3326-g350-linux.dtb" ] || [ -f "/boot/rk3326-gameforce-linux.dtb" ] || [ -f "/boot/rk3326-odroidgo3-linux.dtb" ]; then
+if [ -f "/boot/rk3326-r36s-linux.dtb" ] || [ -f "/boot/rk3326-r36h-linux.dtb" ] || [ -f "/boot/rk3326-rg351v-linux.dtb" ] || [ -f "/boot/rk3326-rg351mp-linux.dtb" ] || [ -f "/boot/rk3326-g350-linux.dtb" ] || [ -f "/boot/rk3326-gameforce-linux.dtb" ] || [ -f "/boot/rk3326-odroidgo3-linux.dtb" ]; then
   sudo setfont /usr/share/consolefonts/Lat7-Terminus20x10.psf.gz
   height="20"
   width="60"
@@ -150,12 +153,12 @@ fi
 	sudo cp -f /boot/fstab.exfat /etc/fstab &> /dev/null
 	sync
 	sudo rm -f /boot/doneit* &> /dev/null
-	if [ ! -f "/boot/rk3326-r36s-linux.dtb" ] && [ ! -f "/boot/rk3326-rg351mp-linux.dtb" ] && [ ! -f "/boot/rk3326-g350-linux.dtb" ]; then
+	if [ ! -f "/boot/rk3326-r36s-linux.dtb" ] && [ ! -f "/boot/rk3326-r36h-linux.dtb" ] && [ ! -f "/boot/rk3326-rg351mp-linux.dtb" ] && [ ! -f "/boot/rk3326-g350-linux.dtb" ]; then
 	  sudo rm -f /roms.tar &> /dev/null
 	fi
 	sudo rm -f /boot/fstab.exfat &> /dev/null
 	echo 100
-) | dialog --title "Firstboot setup of dArkOS" --gauge "Expanding rootfs and exfat partitions.  Please wait..." $height $width 0 2>&1 > /dev/tty1
+) | dialog --title "Firstboot setup of dArkOSen" --gauge "Expanding rootfs and exfat partitions.  Please wait..." $height $width 0 2>&1 > /dev/tty1
 
 exitcode=$(cat /tmp/code.txt)
 if [ "$exitcode" == "0" ]; then
