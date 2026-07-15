@@ -9,7 +9,7 @@
   - Local path: `~/toolchains/linaro-6.3.1`
   - CROSS_COMPILE prefix: `~/toolchains/linaro-6.3.1/bin/aarch64-linux-gnu-`
 
-## Change 1: CPU Overclock
+## Change 1: CPU Overclock (credit to lcdyk)
 
 **File modified:** `drivers/cpufreq/cpufreq-dt.c`
 **File modified:** `drivers/soc/rockchip/rockchip_opp_select.c`
@@ -95,6 +95,7 @@ static void darkosen_oc_apply_cmdline(struct cpufreq_policy *policy)
 cstatic int opp_bin_sel;
 static unsigned long darkosen_max_cpufreq_khz = 1296000;
 
+```c
 static int __init darkosen_opp_bin_sel_setup(char *str)
 {
 	unsigned long cpufreq;
@@ -157,24 +158,37 @@ static int __init darkosen_opp_bin_sel_setup(char *str)
 
 	return 0;
 }
+
 __setup("max_cpufreq=", darkosen_opp_bin_sel_setup);
+```
+
 2. Inside rockchip_of_get_bin_sel(), right after the existing if (!ret) dev_info(...) block, before the closing } at line 511:
-c
+
+```c
 	if (!strncmp(dev_name(dev), "cpu0", 4) && opp_bin_sel) {
 		*scale_sel = opp_bin_sel;
 		dev_info(dev, "darkosen-oc: bin-scale override=%d, dev %s\n",
 			*scale_sel, dev_name(dev));
 	}
+```
+	
 3. Inside rockchip_adjust_power_scale(), right after of_property_read_u32(np, "rockchip,avs-scale", &avs_scale); (line 727):
-c	if (!strncmp(dev_name(dev), "cpu0", 4) && opp_bin_sel) {
+   
+```c
+	if (!strncmp(dev_name(dev), "cpu0", 4) && opp_bin_sel) {
 		dev_info(dev, "darkosen-oc: avs_scale override, was %d, maxfreq %ld\n",
 			avs_scale, darkosen_max_cpufreq_khz);
 		avs_scale = opp_bin_sel;
-	}
-4. Two floor-up insertions — before each dev_info(dev, "avs scale_rate=%lu\n", scale_rate); (line 777) and dev_info(dev, "scale_rate=%lu\n", scale_rate); (line 791), add immediately before each:
-c			if (darkosen_max_cpufreq_khz > 0 && (darkosen_max_cpufreq_khz * 1000) > scale_rate)
-				scale_rate = darkosen_max_cpufreq_khz * 1000;
 
+	}`
+```
+
+4. Two floor-up insertions — before each dev_info(dev, "avs scale_rate=%lu\n", scale_rate); (line 777) and dev_info(dev, "scale_rate=%lu\n", scale_rate); (line 791), add immediately before each:
+   
+```c
+			if (darkosen_max_cpufreq_khz > 0 && (darkosen_max_cpufreq_khz * 1000) > scale_rate)
+				scale_rate = darkosen_max_cpufreq_khz * 1000;`
+```
 
 ## Change 2: USB gadget mode — mass storage function added
 
