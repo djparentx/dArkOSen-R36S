@@ -9,7 +9,7 @@
   - Local path: `~/toolchains/linaro-6.3.1`
   - CROSS_COMPILE prefix: `~/toolchains/linaro-6.3.1/bin/aarch64-linux-gnu-`
 
-## Change 1: CPU Overclock (cmdline-controlled, teacupx "normal" behavior)
+## Change 1: CPU Overclock
 
 **File modified:** `drivers/cpufreq/cpufreq-dt.c`
 **File modified:** `drivers/soc/rockchip/rockchip_opp_select.c`
