@@ -224,3 +224,4 @@ Output: `arch/arm64/boot/Image`
 7. Full build with `-j$(nproc)`
 8. Separately: apply existing bash DTB OPP-table patch script per-device (not part of kernel source)
 
+The modules in /lib must be added to the rootfs to enable
