@@ -168,7 +168,7 @@ END { if (patched) print "yes" > flagfile }
 
 	if [[ "$patched" != "yes" ]]; then
 		echo "SKIP: nothing patched (already patched or anchors not found)"
-		sleep 3
+		sleep 2
 		rm -f "$dtb.bak"
 		continue
 	fi
@@ -183,7 +183,7 @@ END { if (patched) print "yes" > flagfile }
 
 	if [[ $errors -ne 0 ]]; then
 		echo "Verification failed with $errors error(s), NOT recompiling. Restoring backup."
-		sleep 3
+		sleep 2
 		cp -f "$dtb.bak" "$dtb"
 		FAILED=$(( FAILED + 1 ))
 		continue
@@ -191,7 +191,7 @@ END { if (patched) print "yes" > flagfile }
 
 	dtc -I dts -O dtb -o "$dtb" "$dts"
 	echo "OK: patched and recompiled"
-	sleep 3
+	sleep 2
 	# rm -f "$dts"
 	rm -f "$dtb.bak"
 	PATCHED=$(( PATCHED + 1 ))
@@ -200,7 +200,7 @@ done < <(find "$SRC_DIR" -maxdepth 1 -type f -name '*linux.dtb' -print0)
 
 echo
 echo "Done. Found: $TOTAL  Patched: $PATCHED  Failed: $FAILED"
-sleep 3
+sleep 2
 
 TARGET="/boot/rk3326-r36s-linux.dtb"
 WORKDIR="/tmp/r36s_battery_patch"
@@ -218,6 +218,7 @@ command -v dtc >/dev/null 2>&1 || { echo "ERROR: dtc not found (sudo apt install
 
 if [ ! -f "$TARGET" ]; then
     echo "ERROR: $TARGET not found."
+	sleep 2
     exit 1
 fi
 
@@ -228,6 +229,7 @@ dtc -I dtb -O dts -o "$DTS" "$TARGET" 2>/dev/null
 
 if ! grep -q 'compatible = "rk817,battery"' "$DTS"; then
     echo "No rk817 battery node found in $TARGET. No changes made."
+	sleep 2
     rm -rf "$WORKDIR"
     exit 0
 fi
@@ -241,6 +243,7 @@ fi
 
 if [ "$CURRENT_CAPACITY" = "$NEW_CAPACITY" ]; then
     echo "Already patched (design_capacity = $NEW_CAPACITY). No action taken."
+	sleep 2
     rm -rf "$WORKDIR"
     exit 0
 fi
@@ -262,6 +265,7 @@ mv "${DTS}.patched" "$DTS"
 
 if ! dtc -I dts -O dtb -o "$NEWDTB" "$DTS" 2>/tmp/r36s_dtc_err.log; then
     echo "ERROR: dtc compile failed, restoring backup. See /tmp/r36s_dtc_err.log"
+	sleep 2
     cp -p "$BACKUP" "$TARGET"
     rm -rf "$WORKDIR" "$BACKUP"
     exit 1
@@ -276,6 +280,7 @@ fi
 
 if [ "$VERIFY_CAPACITY" != "$NEW_CAPACITY" ]; then
     echo "ERROR: verification failed (got $VERIFY_CAPACITY, expected $NEW_CAPACITY). Restoring backup."
+	sleep 2
     cp -p "$BACKUP" "$TARGET"
     rm -rf "$WORKDIR" "$BACKUP"
     exit 1
@@ -286,3 +291,4 @@ rm -f "$BACKUP"
 rm -rf "$WORKDIR"
 
 echo "Patched: $TARGET (design_capacity=$NEW_CAPACITY design_qmax=$NEW_QMAX bat_res=$NEW_BATRES power_off_thresd=$NEW_POWEROFF)"
+sleep 2
