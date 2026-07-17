@@ -191,11 +191,17 @@ __setup("max_cpufreq=", darkosen_opp_bin_sel_setup);
 
 ## Change 2: USB gadget mode — mass storage function added
 
-**Confirmed safe:** WiFi (RTL8723BU, usb 0bda:b720) enumerates on `usb_host0_ehci`/`usb_host0_ohci` (`ff340000`/`ff350000`), a separate controller and PHY (`u2phy_host`) from the OTG/gadget port `usb20_otg` (`ff300000`, dwc2, `u2phy_otg`). Gadget mode operates exclusively on the OTG port and cannot interfere with WiFi.
-
-**Added:**
+**Changes to .config:** 
+```c
+CONFIG_USB_F_MASS_STORAGE=y
+CONFIG_USB_CONFIGFS=y
+CONFIG_USB_CONFIGFS_SERIAL=y
+CONFIG_USB_CONFIGFS_ECM=y
+CONFIG_USB_CONFIGFS_ECM_SUBSET=y
+CONFIG_USB_CONFIGFS_MASS_STORAGE=y
+CONFIG_USB_CONFIGFS_RNDIS=y
+CONFIG_USB_CONFIGFS_EEM=y
+CONFIG_USB_CONFIGFS_F_HID=y
+CONFIG_CONFIGFS_FS=y
+# CONFIG_USB_MASS_STORAGE is not set
 ```
-scripts/config --enable CONFIG_USB_CONFIGFS_MASS_STORAGE
-make ARCH=arm64 CROSS_COMPILE=~/toolchains/linaro-6.3.1/bin/aarch64-linux-gnu- olddefconfig
-```
-Result: `CONFIG_USB_CONFIGFS_MASS_STORAGE=y`, `CONFIG_USB_F_MASS_STORAGE=m`.
