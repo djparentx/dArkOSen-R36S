@@ -2,7 +2,6 @@
 
 ## Source
 - Base: `christianhaitian/linux`, branch `rg351`
-- Local clone: `~/build/rg351Kernel` (WSL, native ext4 — do NOT use `/mnt/d`, causes case-collision build failures)
 - Defconfig: `rg351p_tweaked_defconfig`
 - Toolchain: `gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu`
   - Source: `github.com/rockchip-toybrick/gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu`, branch `develop-11.0`
