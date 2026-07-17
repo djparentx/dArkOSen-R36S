@@ -195,34 +195,9 @@ __setup("max_cpufreq=", darkosen_opp_bin_sel_setup);
 
 **Confirmed safe:** WiFi (RTL8723BU, usb 0bda:b720) enumerates on `usb_host0_ehci`/`usb_host0_ohci` (`ff340000`/`ff350000`), a separate controller and PHY (`u2phy_host`) from the OTG/gadget port `usb20_otg` (`ff300000`, dwc2, `u2phy_otg`). Gadget mode operates exclusively on the OTG port and cannot interfere with WiFi.
 
-**Existing config confirmed already correct** (no change needed): `CONFIG_USB_DWC2_DUAL_ROLE=y`, `CONFIG_USB_GADGET=y`, `CONFIG_USB_CONFIGFS=m`, plus ECM/ECM_SUBSET/RNDIS/EEM function drivers.
-
-**Added this session:**
+**Added:**
 ```
 scripts/config --enable CONFIG_USB_CONFIGFS_MASS_STORAGE
 make ARCH=arm64 CROSS_COMPILE=~/toolchains/linaro-6.3.1/bin/aarch64-linux-gnu- olddefconfig
 ```
 Result: `CONFIG_USB_CONFIGFS_MASS_STORAGE=y`, `CONFIG_USB_F_MASS_STORAGE=m`.
-
-## Full Build
-
-```
-cd ~/build/rg351Kernel
-make ARCH=arm64 CROSS_COMPILE=~/toolchains/linaro-6.3.1/bin/aarch64-linux-gnu- rg351p_tweaked_defconfig
-make ARCH=arm64 CROSS_COMPILE=~/toolchains/linaro-6.3.1/bin/aarch64-linux-gnu- -j$(nproc)
-```
-
-Output: `arch/arm64/boot/Image`
-
-## Reproduction summary (paste this whole doc back to recreate in a few steps)
-
-1. Clone base kernel (native ext4 path, NOT `/mnt/d`), checkout `rg351` branch
-2. Clone toolchain from rockchip-toybrick mirror above
-3. `make rg351p_tweaked_defconfig`
-4. Apply the 3-point `cpufreq-dt.c` diff above
-5. `scripts/config --enable CONFIG_USB_CONFIGFS_MASS_STORAGE`
-6. `olddefconfig`
-7. Full build with `-j$(nproc)`
-8. Separately: apply existing bash DTB OPP-table patch script per-device (not part of kernel source)
-
-The modules in /lib must be added to the rootfs to enable
