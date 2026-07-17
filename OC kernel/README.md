@@ -92,10 +92,9 @@ static void darkosen_oc_apply_cmdline(struct cpufreq_policy *policy)
 **Diff (4 insertion points):** drivers/soc/rockchip/rockchip_opp_select.c
 
 1. After the pvtm_config struct definition (before #define PVTM_CH_MAX), around line 50-56:
+```c
 cstatic int opp_bin_sel;
 static unsigned long darkosen_max_cpufreq_khz = 1296000;
-
-```c
 static int __init darkosen_opp_bin_sel_setup(char *str)
 {
 	unsigned long cpufreq;
