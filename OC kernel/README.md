@@ -86,9 +86,6 @@ static void darkosen_oc_apply_cmdline(struct cpufreq_policy *policy)
 	darkosen_oc_apply_cmdline(policy);
 ```
 
-**Companion piece (separate from kernel, already implemented by user in bash, not part of this session's kernel diff):** per-device DTB OPP table patching — raises `rockchip,max-volt` and `DCDC_REG2 regulator-max-microvolt` to 1400000 µV, adds new opp nodes for 1368–1512 MHz steps. This is what actually makes the higher frequencies exist for `max_cpufreq=` to select; the kernel patch above only controls which of the DTB-provided frequencies get used.
-
-
 **Diff (4 insertion points):** drivers/soc/rockchip/rockchip_opp_select.c
 
 1. After the pvtm_config struct definition (before #define PVTM_CH_MAX), around line 50-56:
@@ -188,6 +185,9 @@ __setup("max_cpufreq=", darkosen_opp_bin_sel_setup);
 			if (darkosen_max_cpufreq_khz > 0 && (darkosen_max_cpufreq_khz * 1000) > scale_rate)
 				scale_rate = darkosen_max_cpufreq_khz * 1000;`
 ```
+
+**Companion piece (separate from kernel, already implemented by user in bash, not part of this session's kernel diff):** per-device DTB OPP table patching — raises `rockchip,max-volt` and `DCDC_REG2 regulator-max-microvolt` to 1400000 µV, adds new opp nodes for 1368–1512 MHz steps. This is what actually makes the higher frequencies exist for `max_cpufreq=` to select; the kernel patch above only controls which of the DTB-provided frequencies get used.
+
 
 ## Change 2: USB gadget mode — mass storage function added
 
