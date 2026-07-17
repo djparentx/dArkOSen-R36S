@@ -1,7 +1,7 @@
 # dArkOSen 1024x768 Screen Boot Logo Support
 
 - copy all .img files to /tools
-- run flash\_uboot\_full.sh
+- run flash\_uboot.sh
 - safe for 640x480 devices
 - requires rg351mp-uboot.dtb to boot
 
