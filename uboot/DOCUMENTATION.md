@@ -3,7 +3,6 @@
 ## Baseline
 - Repo: `christianhaitian/RG351MP-u-boot`
 - Branch: `odroidgoA-v2017.09`
-- Clean, unmodified clone.
 
 ## Symptom
 `logo.bmp` (1024x768, 24bpp) displayed correctly for roughly the top portion,
