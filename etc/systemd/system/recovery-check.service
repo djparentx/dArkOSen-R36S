@@ -1,0 +1,11 @@
+[Unit]
+Description=Recovery Script Runner
+Before=emulationstation.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/recovery-runner.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
