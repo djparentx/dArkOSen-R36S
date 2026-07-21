@@ -18,7 +18,7 @@ The dtb selector tool has been borrowed from dArkOSRE (why reinvent the wheel?) 
 2. use SELECT MODEL.bat to select your model
 3. insert card into console and boot
 4. the console will reboot twice as it expands partitions
-5. the console will reboot into dArkOS
+5. the console will reboot into dArkOSen
 
 *If you can't find your model in the MODEL SELECTOR then make copies of your original dtbs and rename them* `rg351mp-uboot.dtb` *and* `rk3326-r36s-linux.dtb` *then copy them to the boot partition. You will not have full access to the overclock without patching. Comment here or message me if you need your dtbs patched.*
 
