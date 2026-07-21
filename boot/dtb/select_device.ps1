@@ -215,7 +215,7 @@ if ($deleted.Count -gt 0) {
 # Copy new files
 Write-Host "`nCopying new files to root..." -ForegroundColor Yellow
 
-$copied = @(Copy-Item -Path "$sourceFolder\*" -Destination $rootDir -Force -PassThru -ErrorAction Stop)
+$copied = @(Copy-Item -Path "$sourceFolder\*" -Destination $rootDir -Recurse -Force -PassThru -ErrorAction Stop)
 
 if ($copied.Count -gt 0) {
     Write-Host "Copied:"
