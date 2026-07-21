@@ -1,19 +1,31 @@
 #!/bin/bash
-# Adds || [ -f "/boot/rk3326-r45h-linux.dtb" ] to both RG351MP elif checks in dreamcast.sh
+# Adds || [ -f "/boot/rk3326-r45h-linux.dtb" ] to the RG351MP elif check
+# in all retrorun launch scripts that use it.
 # Safe to re-run: only inserts the r45h check if not already present.
 set -e
 
-TARGET="/usr/local/bin/dreamcast.sh"
-BACKUP="/usr/local/bin/dreamcast.sh.bak-$(date +%Y%m%d%H%M%S)"
+FILES=(
+  "/usr/local/bin/dreamcast.sh"
+  "/usr/local/bin/atomiswave.sh"
+  "/usr/local/bin/naomi.sh"
+)
 
-sudo cp "$TARGET" "$BACKUP"
-echo "Backup saved: $BACKUP"
+for TARGET in "${FILES[@]}"; do
+  if [[ ! -f "$TARGET" ]]; then
+    echo "Skipping $TARGET (not found)"
+    continue
+  fi
 
-# On the RG351MP condition line, insert r45h check after r36s check,
-# only if r45h isn't already there
-sudo sed -i '/r33s-linux\.dtb.*r36s-linux\.dtb.*rg351mp-linux\.dtb.*g350-linux\.dtb/{
-/r45h-linux\.dtb/! s/\[ -f "\/boot\/rk3326-r36s-linux\.dtb" \] ||/[ -f "\/boot\/rk3326-r36s-linux.dtb" ] || [ -f "\/boot\/rk3326-r45h-linux.dtb" ] ||/
+  BACKUP="${TARGET}.bak-$(date +%Y%m%d%H%M%S)"
+  sudo cp "$TARGET" "$BACKUP"
+  echo "Backup saved: $BACKUP"
+
+  sudo sed -i '/r33s-linux\.dtb.*r36s-linux\.dtb.*rg351mp-linux\.dtb.*g350-linux\.dtb/{
+/r45h-linux\.dtb/! s/\[ -f "\/boot\/rk3326-r36s-linux\.dtb" \] ||/[ -f "\/boot\/rk3326-r36s-linux.dtb" ] || [ -f "\/boot\/rk3326-r45h-linux.dtb" ] || [ -f "\/boot\/rk3326-r36h-linux.dtb" ] ||/
 }' "$TARGET"
 
-echo "Verifying:"
-grep -n 'r45h-linux.dtb' "$TARGET"
+  echo "Verifying $TARGET:"
+  grep -n 'r45h-linux.dtb' "$TARGET" || echo "WARNING: no r45h reference found in $TARGET"
+  grep -n 'r36h-linux.dtb' "$TARGET" || echo "WARNING: no r36h reference found in $TARGET"
+  echo ""
+done
