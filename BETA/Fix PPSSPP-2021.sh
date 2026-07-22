@@ -1,6 +1,10 @@
 #!/bin/bash
 set -e
 
+if [ "$(id -u)" -ne 0 ]; then
+    exec sudo -- "$0" "$@"
+fi
+
 REPO="djparentx/dArkOSen-R36S"
 BRANCH="main"
 SRC_PATH="opt/ppsspp-2021"
