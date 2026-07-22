@@ -16,6 +16,7 @@ MP4="$LAUNCH_DIR/loading.mp4"
 GIF="$LAUNCH_DIR/loading.gif"
 MP4_NEW="$LAUNCH_DIR/loading.new.mp4"
 GIF_NEW="$LAUNCH_DIR/loading.new.gif"
+ok=0
 
 echo "========================================================="
 echo "         dArkOSen Loading Animation Converter"
@@ -27,7 +28,8 @@ echo "[1/5] Checking dependencies..."
 if ! command -v ffmpeg >/dev/null 2>&1; then
     echo "ffmpeg missing. Installing..."
     apt-get update
-    apt-get install -y ffmpeg
+    apt-get install --reinstall --no-install-recommends -y ffmpeg
+	ldconfig
 else
     echo "ffmpeg detected."
 fi
@@ -35,7 +37,8 @@ fi
 if ! ldconfig -p | grep -q "libvulkan.so.1"; then
     echo "libvulkan missing. Installing..."
     apt-get update
-    apt-get install -y libvulkan1
+    apt-get install --reinstall --no-install-recommends -y libvulkan1
+	ldconfig
 else
     echo "libvulkan detected."
 fi
@@ -53,16 +56,11 @@ if [ ! -f "$MP4" ] && [ ! -f "$GIF" ]; then
     exit 1
 fi
 
-
-DATE=$(date +%Y%m%d_%H%M%S)
-
-
 echo ""
 echo "[3/5] Backing up originals..."
 
 [ -f "$MP4" ] && cp "$MP4" "$MP4.bak"
 [ -f "$GIF" ] && cp "$GIF" "$GIF.bak"
-
 
 echo ""
 echo "[4/5] Converting MP4..."
@@ -88,44 +86,43 @@ if [ -f "$MP4" ]; then
 		echo "MP4 conversion complete."
 	else
 		echo "ERROR: MP4 conversion failed."
-		exit 1
+		sleep 2
+		ok=1
 	fi
 
 else
     echo "No MP4 found. Skipping."
+	sleep 2
+	ok=1
 fi
-
 
 echo ""
 echo "[5/5] Converting GIF..."
 
-if [ -f "$GIF" ]; then
-
-    echo "Source: $GIF"
-    echo "Creating: $GIF_NEW"
-
-    ffmpeg -hide_banner -loglevel info -y \
-        -i "$GIF" \
-        -vf "fps=10,scale=640:480:flags=lanczos,split[s0][s1];[s0]palettegen=max_colors=256[p];[s1][p]paletteuse=dither=sierra2_4a" \
-        "$GIF_NEW"
-
-    if [ $? -eq 0 ]; then
-        mv "$GIF_NEW" "$GIF"
-        echo "GIF conversion complete."
-    else
-        echo "ERROR: GIF conversion failed."
-        exit 1
-    fi
-
+if ffmpeg -hide_banner -loglevel info -y \
+    -i "$GIF" \
+    -vf "fps=10,scale=640:480:flags=lanczos,split[s0][s1];[s0]palettegen=max_colors=256[p];[s1][p]paletteuse=dither=sierra2_4a" \
+    "$GIF_NEW"
+then
+    mv "$GIF_NEW" "$GIF"
+    echo "GIF conversion complete."
 else
-    echo "No GIF found. Skipping."
+    echo "ERROR: GIF conversion failed."
+    ok=1
 fi
-
 
 sync
 
-echo ""
-echo "========================================================="
-echo "            Loading animations converted!"
-echo "========================================================="
-sleep 3
+if [ "$ok" -eq 0 ]; then
+	echo ""
+	echo "========================================================="
+	echo "            Loading animations converted!"
+	echo "========================================================="
+	sleep 3
+else
+	echo ""
+	echo "========================================================="
+	echo "                  Please Try Again!"
+	echo "========================================================="
+	sleep 3
+fi
