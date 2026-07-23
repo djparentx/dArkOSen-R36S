@@ -2,8 +2,8 @@
 
 # =========================================================
 # dArkOSen - Convert GIF to MP4
-# Converts loading.gif to loading.mp4 in a R36S/fcamod 
-# compatible format. Does not delete input file.
+# Converts /roms/launchimages/loading.gif to /roms/launchimages/loading.mp4
+# in a R36S/fcamod compatible format. Does not delete input file.
 # =========================================================
 
 set -e
