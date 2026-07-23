@@ -1,7 +1,8 @@
 #!/bin/bash
 # =========================================================
 # dArkOSen - Convert Loading Animation
-# Converts loading.mp4 and loading.gif into R36S/fcamod compatible formats
+# Converts /roms/launchimages/loading.mp4 and /roms/launchimages/loading.gif
+# into R36S/fcamod compatible formats
 # =========================================================
 set -e
 if [ "$(id -u)" -ne 0 ]; then
