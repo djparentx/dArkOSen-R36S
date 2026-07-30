@@ -1,6 +1,6 @@
 #!/bin/bash
 # =========================================================
-# Simple CPU Manager 2.3 - Processor Management Script
+# Simple CPU Manager 2.3.2 - Processor Management Script
 # created by djparent
 # A derivative of Ark Manager by @lcdyk
 # =========================================================
@@ -871,8 +871,7 @@ EOF
 [Unit]
 Description=ZRam Manager Service
 Documentation=man:zram(4)
-After=local-fs.target
-Before=swap.target
+After=systemd-udevd.service
 
 [Service]
 Type=oneshot
@@ -881,7 +880,7 @@ RemainAfterExit=yes
 ExecStop=/usr/bin/swapoff /dev/zram0
 
 [Install]
-WantedBy=swap.target multi-user.target
+WantedBy=multi-user.target
 EOF
     
     systemctl daemon-reload
