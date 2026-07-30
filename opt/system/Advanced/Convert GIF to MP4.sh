@@ -27,6 +27,7 @@ echo ""
 echo "[1/2] Checking and validating input files..."
 if [ ! -f "$GIF" ]; then
     echo "ERROR: No loading.gif found."
+	sleep 2
     exit 1
 fi
 
@@ -36,10 +37,12 @@ if [ -f "$GIF" ]; then
         GIF_VALID=1
     else
         echo "ERROR: $GIF failed validation (corrupt or unreadable)."
+		sleep 2
         GIF_OK=1
     fi
 else
     echo "No GIF found. Skipping."
+	sleep 2
 fi
 
 echo ""
@@ -87,4 +90,4 @@ else
     echo "Conversion FAILED."
 fi
 echo "========================================================="
-sleep 5
+sleep 3

@@ -11,7 +11,9 @@ ASOUNDRC_BAK="/home/ark/.asoundrcbak"
 PULSE_SOCKET="/run/user/${ARK_UID}/pulse/native"
 INSTALLED_FLAG="/home/ark/.bt_manager_installed"
 
-if [[ ! -f "$INSTALLED_FLAG" ]] || ! systemctl is-enabled --quiet pulseaudio.service 2>/dev/null; then
+if [[ ! -f "$INSTALLED_FLAG" ]] \
+   || pgrep -x kodi >/dev/null \
+   || ! systemctl is-enabled --quiet pulseaudio.service 2>/dev/null; then
     exit 1
 fi
 

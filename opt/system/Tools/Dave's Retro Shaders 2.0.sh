@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # =======================================
-# Dave's Retro Shaders v1.6
+# Dave's Retro Shaders v2.0
 # by djparent
 # =======================================
 
@@ -39,8 +39,8 @@ export TERM=linux
 GPTOKEYB_PID=""
 CURR_TTY="/dev/tty1"
 TMP_KEYS="/tmp/keys.gptk.$$"
-FLAG="/home/ark/.retroshaders_v1_7_installed"
-OLD_FLAG="/home/ark/.retroshaders_v16_installed"
+FLAG="/home/ark/.retroshaders_v2_installed"
+OLD_FLAG="/home/ark/.retroshaders_v1_7_installed"
 TV_FLAG="/home/ark/.crt-retro"
 MON_FLAG="/home/ark/.monitor-retro"
 SHADERPATH="/home/ark/.config/retroarch/shaders"
@@ -1136,7 +1136,7 @@ dialog --backtitle "$T_BACKTITLE" --title "$T_DEPEND" --infobox "\n $T_INSTALL" 
 
 [[ -f "$SHADERPATH/gb.glslp" ]] && delete_files
 
-# --- Create GameBoy shader file ---
+# --- Create GameBoy shader reference ---
 	cat > $SHADERPATH/gb-grid.glslp << 'EOF'
 shaders = "2"
 feedback_pass = "0"
@@ -1164,7 +1164,7 @@ COLOR_PALETTE_mipmap = "false"
 COLOR_PALETTE_wrap_mode = "clamp_to_border"
 EOF
 
-# --- Create GameBoy Advance shader file --
+# --- Create GameBoy Advance shader reference --
 	cat > $SHADERPATH/gba-grid.glslp << 'EOF'
 shaders = "2"
 feedback_pass = "0"
@@ -1189,7 +1189,7 @@ srgb_framebuffer1 = "false"
 
 EOF
 
-# --- Create GameBoy Color shader file ---
+# --- Create GameBoy Color shader reference ---
 	cat > $SHADERPATH/gbc-grid.glslp << 'EOF'
 shaders = "2"
 feedback_pass = "0"
@@ -1214,39 +1214,48 @@ srgb_framebuffer1 = "false"
 
 EOF
 
-# --- Create GameGear shader file ---
+# --- Create GameGear shader reference ---
 	cat > $SHADERPATH/gamegear-retro.glslp << 'EOF'
-#reference "shaders_glsl/handheld/lcd-grid-v2-motionblur.glslp"
-response_time = "0.05"
-RSUBPIX_R = "1.000000"
-GSUBPIX_G = "1.000000"
-BSUBPIX_B = "1.000000"
-gain = "1.350000"
-gamma = "2.500000"
-outgamma = "1.500000"
-blacklevel = "0.150000"
-ambient = "0.030000"
-BGR = "1.000000"
+shaders = "2"
+shader0 = "shaders_glsl/motionblur/shaders/response-time-0.04.glsl"
+shader1 = "shaders_glsl/handheld/shaders/lcd-cgwg/lcd-grid-v2-gamegear.glsl"
+
+scale_type0 = "source"
+scale0 = "1.0"
+
+scale_type1 = "viewport"
+scale1 = "1.0"
+
+filter_linear0 = "false"
+filter_linear1 = "false"
 EOF
 
 # --- Create Lynx shader file ---
 	cat > $SHADERPATH/lynx-retro.glslp << 'EOF'
-#reference "shaders_glsl/handheld/lcd-grid-v2-gbc-color-motionblur.glslp"
-response_time = "0.05"
-gain = "1.750000"
-gamma = "2.400000"
-outgamma = "1.800000"
-blacklevel = "0.100000"
-ambient = "0.050000"
-lighten_screen = "0.250000"
+shaders = "3"
+
+shader0 = "shaders_glsl/motionblur/shaders/response-time-0.04.glsl"
+filter_linear0 = "false"
+scale_type0 = "source"
+scale0 = "1.0"
+
+shader1 = "shaders_glsl/handheld/shaders/lcd-cgwg/lcd-grid-v2-lynx.glsl"
+filter_linear1 = "false"
+scale_type1 = "viewport"
+scale1 = "1.0"
+
+shader2 = "shaders_glsl/handheld/shaders/color/gbc-color.glsl"
+filter_linear2 = "false"
+scale_type2 = "source"
+scale2 = "1.0"
 EOF
 
-# --- Create NeoGeo Pocket shader file ---
+# --- Create NeoGeo Pocket shader reference ---
 	cat > $SHADERPATH/ngp-grid.glslp << 'EOF'
 #reference "shaders_glsl/motionblur/motionblur-simple.glslp"
 EOF
 
-# --- Create NeoGeo Pocket Color shader file ---
+# --- Create NeoGeo Pocket Color shader reference ---
 	cat > $SHADERPATH/ngpc-grid.glslp << 'EOF'
 shaders = "2"
 feedback_pass = "0"
@@ -1272,46 +1281,690 @@ EOF
 
 # --- Create Wonderswan Color shader file ---
 	cat > $SHADERPATH/wsc-retro.glslp << 'EOF'
-#reference "gbc.glslp"
-gain = "1.000000"
-blacklevel = "0.100000"
-ambient = "0.020000"
-BGR = "0.000000"
-lighten_screen = "0.500000"
+shaders = "3"
+
+shader0 = "shaders_glsl/motionblur/shaders/response-time-0.04.glsl"
+filter_linear0 = "false"
+scale_type0 = "source"
+scale0 = "1.0"
+
+shader1 = "shaders_glsl/handheld/shaders/lcd-cgwg/lcd-grid-v2-wsc.glsl"
+filter_linear1 = "false"
+scale_type1 = "viewport"
+scale1 = "1.0"
+
+shader2 = "shaders_glsl/handheld/shaders/color/gbc-color.glsl"
+filter_linear2 = "false"
+scale_type2 = "source"
+scale2 = "1.0"
 EOF
 
-# --- Create CRT-Monitor shader file ---
+# --- Create CRT-Monitor shader reference ---
 	cat > $SHADERPATH/monitor-retro.glslp << 'EOF'
-#reference "shaders_glsl/crt/crt-nobody.glslp"
-SCAN_SIZE = "0.900000"
-COLOR_BOOST = "1.000000"
-InputGamma = "2.500000"
-OutputGamma = "2.000000"
+shaders = 1
+
+shader0 = "shaders_glsl/crt/shaders/crt-dave-nobody.glsl"
+filter_linear0 = false
 EOF
 
-# --- Create CRT-TV shader file ---
+# --- Create CRT-TV shader reference ---
 	cat > $SHADERPATH/crt-retro.glslp << 'EOF'
-#reference "shaders_glsl/crt/crt-consumer.glslp"
-beamlow = "0.650000"
-beamhigh = "0.600000"
-EOF
-
-# --- Create CRT-Consumer shader file ---
-	cat > $SHADERPATH/shaders_glsl/crt/crt-consumer.glslp << 'EOF'
 shaders = "5"
 feedback_pass = "0"
-shader0 = "../misc/shaders/convergence.glsl"
+shader0 = "shaders_glsl/misc/shaders/convergence.glsl"
 filter_linear0 = "true"
-shader1 = "../crt/shaders/crt-consumer/linearize.glsl"
+shader1 = "shaders_glsl/crt/shaders/crt-consumer/linearize.glsl"
 filter_linear1 = "false"
-shader2 = "../crt/shaders/crt-consumer/glow_x.glsl"
+shader2 = "shaders_glsl/crt/shaders/crt-consumer/glow_x.glsl"
 filter_linear2 = "false"
-shader3 = "../crt/shaders/crt-consumer/glow_y.glsl"
+shader3 = "shaders_glsl/crt/shaders/crt-consumer/glow_y.glsl"
 filter_linear3 = "false"
-shader4 = "../crt/shaders/crt-consumer/crt-consumer.glsl"
+shader4 = "shaders_glsl/crt/shaders/crt-consumer/crt-dave-consumer.glsl"
 filter_linear4 = "true"
 EOF
 
+# --- Create GameGear LCD shader config file ---
+	cat > $SHADERPATH/shaders_glsl/handheld/shaders/lcd-cgwg/lcd-grid-v2-gamegear.glsl << 'EOF'
+#version 130
+
+#if defined(VERTEX)
+
+#if __VERSION__ >= 130
+#define COMPAT_VARYING out
+#define COMPAT_ATTRIBUTE in
+#define COMPAT_TEXTURE texture
+#else
+#define COMPAT_VARYING varying 
+#define COMPAT_ATTRIBUTE attribute 
+#define COMPAT_TEXTURE texture2D
+#endif
+
+#ifdef GL_ES
+#define COMPAT_PRECISION highp
+#else
+#define COMPAT_PRECISION
+#endif
+
+COMPAT_ATTRIBUTE vec4 VertexCoord;
+COMPAT_ATTRIBUTE vec4 COLOR;
+COMPAT_ATTRIBUTE vec4 TexCoord;
+COMPAT_VARYING vec4 COL0;
+COMPAT_VARYING vec4 TEX0;
+
+uniform mat4 MVPMatrix;
+uniform COMPAT_PRECISION int FrameDirection;
+uniform COMPAT_PRECISION int FrameCount;
+uniform COMPAT_PRECISION vec2 OutputSize;
+uniform COMPAT_PRECISION vec2 TextureSize;
+uniform COMPAT_PRECISION vec2 InputSize;
+
+void main()
+{
+    gl_Position = MVPMatrix * VertexCoord;
+    COL0 = COLOR;
+    TEX0.xy = TexCoord.xy;
+}
+
+#elif defined(FRAGMENT)
+
+#ifdef GL_ES
+#ifdef GL_FRAGMENT_PRECISION_HIGH
+precision highp float;
+#else
+precision mediump float;
+#endif
+#define COMPAT_PRECISION highp
+#else
+#define COMPAT_PRECISION
+#endif
+
+#if __VERSION__ >= 130
+#define COMPAT_VARYING in
+#define COMPAT_TEXTURE texture
+
+out COMPAT_PRECISION vec4 FragColor;
+#else
+#define COMPAT_VARYING varying
+#define FragColor gl_FragColor
+#define COMPAT_TEXTURE texture2D
+#endif
+
+uniform COMPAT_PRECISION int FrameDirection;
+uniform COMPAT_PRECISION int FrameCount;
+uniform COMPAT_PRECISION vec2 OutputSize;
+uniform COMPAT_PRECISION vec2 TextureSize;
+uniform COMPAT_PRECISION vec2 InputSize;
+uniform sampler2D Texture;
+COMPAT_VARYING vec4 TEX0;
+
+// compatibility #defines
+#define Source Texture
+#define vTexCoord TEX0.xy
+
+#define SourceSize vec4(TextureSize, 1.0 / TextureSize) //either TextureSize or InputSize
+#define outsize vec4(OutputSize, 1.0 / OutputSize)
+
+// Hardcoded from gamegear-retro.glslp (no PARAMETER_UNIFORM branch, no runtime uniforms)
+#define gain 1.35
+#define gamma 2.5
+#define outgamma 1.5
+#define blacklevel 0.15
+#define ambient 0.03
+// RSUBPIX/GSUBPIX/BSUBPIX and BGR are not #defined here: they resolved to an
+// identity mapping (pure R/G/B, BGR swap fixed on), so the color-matrix step
+// below was removed entirely instead of folded as constants.
+
+#define fetch_offset(coord, offset) (pow(vec3(gain) * texelFetchOffset(Source, (coord), 0, (offset)).rgb + vec3(blacklevel), vec3(gamma)) + vec3(ambient))
+
+// integral of (1 - x^2 - x^4 + x^6)^2
+float coeffs_x[7] = float[](1.0, -2.0/3.0, -1.0/5.0, 4.0/7.0, -1.0/9.0, -2.0/11.0, 1.0/13.0);
+// integral of (1 - 2x^4 + x^6)^2
+float coeffs_y[7] = float[](1.0,      0.0, -4.0/5.0, 2.0/7.0,  4.0/9.0, -4.0/11.0, 1.0/13.0);
+
+float intsmear_func(float z, float coeffs[7])
+{
+    float z2 = z*z;
+    float zn = z;
+    float ret = 0.0;
+    for (int i = 0; i < 7; i++) {
+        ret += zn*coeffs[i];
+        zn *= z2;
+    }
+    return ret;
+}
+
+float intsmear(float x, float dx, float d, float coeffs[7])
+{
+    float zl = clamp((x-dx*0.5)/d,-1.0,1.0);
+    float zh = clamp((x+dx*0.5)/d,-1.0,1.0);
+    return d * ( intsmear_func(zh,coeffs) - intsmear_func(zl,coeffs) )/dx;
+}
+
+void main()
+{
+    vec2 texelSize = SourceSize.zw;
+    /* float2 range = IN.video_size / (IN.output_size * IN.texture_size); */
+    vec2 range = InputSize.xy / (OutputSize.xy * TextureSize.xy);//outsize.zw;
+
+    ivec2 tli = ivec2(floor(vTexCoord/texelSize-vec2(0.4999)));
+
+    vec3 lcol, rcol;
+    float subpix = (vTexCoord.x/texelSize.x - 0.4999 - float(tli.x))*3.0;
+    float rsubpix = range.x/texelSize.x * 3.0;
+
+    lcol = vec3(intsmear(subpix+1.0, rsubpix, 1.5, coeffs_x),
+                intsmear(subpix    , rsubpix, 1.5, coeffs_x),
+                intsmear(subpix-1.0, rsubpix, 1.5, coeffs_x));
+    rcol = vec3(intsmear(subpix-2.0, rsubpix, 1.5, coeffs_x),
+                intsmear(subpix-3.0, rsubpix, 1.5, coeffs_x),
+                intsmear(subpix-4.0, rsubpix, 1.5, coeffs_x));
+
+    // BGR is fixed on (gamegear-retro.glslp BGR=1.0) -- swap always applied,
+    // branch removed
+    lcol.rgb = lcol.bgr;
+    rcol.rgb = rcol.bgr;
+
+    float tcol, bcol;
+    subpix = vTexCoord.y/texelSize.y - 0.4999 - float(tli.y);
+    rsubpix = range.y/texelSize.y;
+    tcol = intsmear(subpix    ,rsubpix, 0.63, coeffs_y);
+    bcol = intsmear(subpix-1.0,rsubpix, 0.63, coeffs_y);
+
+    vec3 topLeftColor     = fetch_offset(tli, ivec2(0,0)) * lcol * vec3(tcol);
+    vec3 bottomRightColor = fetch_offset(tli, ivec2(1,1)) * rcol * vec3(bcol);
+    vec3 bottomLeftColor  = fetch_offset(tli, ivec2(0,1)) * lcol * vec3(bcol);
+    vec3 topRightColor    = fetch_offset(tli, ivec2(1,0)) * rcol * vec3(tcol);
+
+    vec3 averageColor = topLeftColor + bottomRightColor + bottomLeftColor + topRightColor;
+
+    // Color matrix step removed: RSUBPIX/GSUBPIX/BSUBPIX for gamegear-retro
+    // are pure identity (R->R, G->G, B->B), so mat3(cred,cgreen,cblue) was
+    // the identity matrix and multiplying by it was a no-op.
+
+    FragColor = vec4(pow(averageColor, vec3(1.0/outgamma)),0.0);
+} 
+#endif
+EOF
+
+# --- Create Lynx LCD shader config file ---
+	cat > $SHADERPATH/shaders_glsl/handheld/shaders/lcd-cgwg/lcd-grid-v2-lynx.glsl << 'EOF'
+#version 130
+
+#if defined(VERTEX)
+
+#if __VERSION__ >= 130
+#define COMPAT_VARYING out
+#define COMPAT_ATTRIBUTE in
+#define COMPAT_TEXTURE texture
+#else
+#define COMPAT_VARYING varying 
+#define COMPAT_ATTRIBUTE attribute 
+#define COMPAT_TEXTURE texture2D
+#endif
+
+#ifdef GL_ES
+#define COMPAT_PRECISION highp
+#else
+#define COMPAT_PRECISION
+#endif
+
+COMPAT_ATTRIBUTE vec4 VertexCoord;
+COMPAT_ATTRIBUTE vec4 COLOR;
+COMPAT_ATTRIBUTE vec4 TexCoord;
+COMPAT_VARYING vec4 COL0;
+COMPAT_VARYING vec4 TEX0;
+
+uniform mat4 MVPMatrix;
+uniform COMPAT_PRECISION int FrameDirection;
+uniform COMPAT_PRECISION int FrameCount;
+uniform COMPAT_PRECISION vec2 OutputSize;
+uniform COMPAT_PRECISION vec2 TextureSize;
+uniform COMPAT_PRECISION vec2 InputSize;
+
+void main()
+{
+    gl_Position = MVPMatrix * VertexCoord;
+    COL0 = COLOR;
+    TEX0.xy = TexCoord.xy;
+}
+
+#elif defined(FRAGMENT)
+
+#ifdef GL_ES
+#ifdef GL_FRAGMENT_PRECISION_HIGH
+precision highp float;
+#else
+precision mediump float;
+#endif
+#define COMPAT_PRECISION highp
+#else
+#define COMPAT_PRECISION
+#endif
+
+#if __VERSION__ >= 130
+#define COMPAT_VARYING in
+#define COMPAT_TEXTURE texture
+
+out COMPAT_PRECISION vec4 FragColor;
+#else
+#define COMPAT_VARYING varying
+#define FragColor gl_FragColor
+#define COMPAT_TEXTURE texture2D
+#endif
+
+uniform COMPAT_PRECISION int FrameDirection;
+uniform COMPAT_PRECISION int FrameCount;
+uniform COMPAT_PRECISION vec2 OutputSize;
+uniform COMPAT_PRECISION vec2 TextureSize;
+uniform COMPAT_PRECISION vec2 InputSize;
+uniform sampler2D Texture;
+COMPAT_VARYING vec4 TEX0;
+
+// compatibility #defines
+#define Source Texture
+#define vTexCoord TEX0.xy
+
+#define SourceSize vec4(TextureSize, 1.0 / TextureSize) //either TextureSize or InputSize
+#define outsize vec4(OutputSize, 1.0 / OutputSize)
+
+// Hardcoded parameter values (from lcd-grid-v2-gbc-color-motionblur.glslp + lynx-retro.glslp overrides)
+#define RSUBPIX_R 0.75
+#define RSUBPIX_G 0.0
+#define RSUBPIX_B 0.0
+#define GSUBPIX_R 0.0
+#define GSUBPIX_G 0.75
+#define GSUBPIX_B 0.0
+#define BSUBPIX_R 0.0
+#define BSUBPIX_G 0.0
+#define BSUBPIX_B 0.75
+#define gain 1.75
+#define gamma 2.4
+#define outgamma 1.8
+#define blacklevel 0.1
+#define ambient 0.05
+#define BGR 0.0
+
+#define fetch_offset(coord, offset) (pow(vec3(gain) * texelFetchOffset(Source, (coord), 0, (offset)).rgb + vec3(blacklevel), vec3(gamma)) + vec3(ambient))
+
+// integral of (1 - x^2 - x^4 + x^6)^2
+float coeffs_x[7] = float[](1.0, -2.0/3.0, -1.0/5.0, 4.0/7.0, -1.0/9.0, -2.0/11.0, 1.0/13.0);
+// integral of (1 - 2x^4 + x^6)^2
+float coeffs_y[7] = float[](1.0,      0.0, -4.0/5.0, 2.0/7.0,  4.0/9.0, -4.0/11.0, 1.0/13.0);
+
+float intsmear_func(float z, float coeffs[7])
+{
+    float z2 = z*z;
+    float zn = z;
+    float ret = 0.0;
+    for (int i = 0; i < 7; i++) {
+        ret += zn*coeffs[i];
+        zn *= z2;
+    }
+    return ret;
+}
+
+float intsmear(float x, float dx, float d, float coeffs[7])
+{
+    float zl = clamp((x-dx*0.5)/d,-1.0,1.0);
+    float zh = clamp((x+dx*0.5)/d,-1.0,1.0);
+    return d * ( intsmear_func(zh,coeffs) - intsmear_func(zl,coeffs) )/dx;
+}
+
+void main()
+{
+    vec2 texelSize = SourceSize.zw;
+    /* float2 range = IN.video_size / (IN.output_size * IN.texture_size); */
+    vec2 range = InputSize.xy / (OutputSize.xy * TextureSize.xy);//outsize.zw;
+
+    vec3 cred   = pow(vec3(RSUBPIX_R, RSUBPIX_G, RSUBPIX_B), vec3(outgamma));
+    vec3 cgreen = pow(vec3(GSUBPIX_R, GSUBPIX_G, GSUBPIX_B), vec3(outgamma));
+    vec3 cblue  = pow(vec3(BSUBPIX_R, BSUBPIX_G, BSUBPIX_B), vec3(outgamma));
+
+    ivec2 tli = ivec2(floor(vTexCoord/texelSize-vec2(0.4999)));
+
+    vec3 lcol, rcol;
+    float subpix = (vTexCoord.x/texelSize.x - 0.4999 - float(tli.x))*3.0;
+    float rsubpix = range.x/texelSize.x * 3.0;
+
+    lcol = vec3(intsmear(subpix+1.0, rsubpix, 1.5, coeffs_x),
+                intsmear(subpix    , rsubpix, 1.5, coeffs_x),
+                intsmear(subpix-1.0, rsubpix, 1.5, coeffs_x));
+    rcol = vec3(intsmear(subpix-2.0, rsubpix, 1.5, coeffs_x),
+                intsmear(subpix-3.0, rsubpix, 1.5, coeffs_x),
+                intsmear(subpix-4.0, rsubpix, 1.5, coeffs_x));
+
+    if (BGR > 0.5) {
+        lcol.rgb = lcol.bgr;
+        rcol.rgb = rcol.bgr;
+    }
+
+    float tcol, bcol;
+    subpix = vTexCoord.y/texelSize.y - 0.4999 - float(tli.y);
+    rsubpix = range.y/texelSize.y;
+    tcol = intsmear(subpix    ,rsubpix, 0.63, coeffs_y);
+    bcol = intsmear(subpix-1.0,rsubpix, 0.63, coeffs_y);
+
+    vec3 topLeftColor     = fetch_offset(tli, ivec2(0,0)) * lcol * vec3(tcol);
+    vec3 bottomRightColor = fetch_offset(tli, ivec2(1,1)) * rcol * vec3(bcol);
+    vec3 bottomLeftColor  = fetch_offset(tli, ivec2(0,1)) * lcol * vec3(bcol);
+    vec3 topRightColor    = fetch_offset(tli, ivec2(1,0)) * rcol * vec3(tcol);
+
+    vec3 averageColor = topLeftColor + bottomRightColor + bottomLeftColor + topRightColor;
+
+    averageColor = mat3(cred, cgreen, cblue) * averageColor;
+
+    FragColor = vec4(pow(averageColor, vec3(1.0/outgamma)),0.0);
+} 
+#endif
+EOF
+
+# --- Create WSC LCD shader config file ---
+	cat > $SHADERPATH/shaders_glsl/handheld/shaders/lcd-cgwg/lcd-grid-v2-wsc.glsl << 'EOF'
+#version 130
+
+#if defined(VERTEX)
+
+#if __VERSION__ >= 130
+#define COMPAT_VARYING out
+#define COMPAT_ATTRIBUTE in
+#define COMPAT_TEXTURE texture
+#else
+#define COMPAT_VARYING varying 
+#define COMPAT_ATTRIBUTE attribute 
+#define COMPAT_TEXTURE texture2D
+#endif
+
+#ifdef GL_ES
+#define COMPAT_PRECISION highp
+#else
+#define COMPAT_PRECISION
+#endif
+
+COMPAT_ATTRIBUTE vec4 VertexCoord;
+COMPAT_ATTRIBUTE vec4 COLOR;
+COMPAT_ATTRIBUTE vec4 TexCoord;
+COMPAT_VARYING vec4 COL0;
+COMPAT_VARYING vec4 TEX0;
+
+uniform mat4 MVPMatrix;
+uniform COMPAT_PRECISION int FrameDirection;
+uniform COMPAT_PRECISION int FrameCount;
+uniform COMPAT_PRECISION vec2 OutputSize;
+uniform COMPAT_PRECISION vec2 TextureSize;
+uniform COMPAT_PRECISION vec2 InputSize;
+
+void main()
+{
+    gl_Position = MVPMatrix * VertexCoord;
+    COL0 = COLOR;
+    TEX0.xy = TexCoord.xy;
+}
+
+#elif defined(FRAGMENT)
+
+#ifdef GL_ES
+#ifdef GL_FRAGMENT_PRECISION_HIGH
+precision highp float;
+#else
+precision mediump float;
+#endif
+#define COMPAT_PRECISION highp
+#else
+#define COMPAT_PRECISION
+#endif
+
+#if __VERSION__ >= 130
+#define COMPAT_VARYING in
+#define COMPAT_TEXTURE texture
+
+out COMPAT_PRECISION vec4 FragColor;
+#else
+#define COMPAT_VARYING varying
+#define FragColor gl_FragColor
+#define COMPAT_TEXTURE texture2D
+#endif
+
+uniform COMPAT_PRECISION int FrameDirection;
+uniform COMPAT_PRECISION int FrameCount;
+uniform COMPAT_PRECISION vec2 OutputSize;
+uniform COMPAT_PRECISION vec2 TextureSize;
+uniform COMPAT_PRECISION vec2 InputSize;
+uniform sampler2D Texture;
+COMPAT_VARYING vec4 TEX0;
+
+// compatibility #defines
+#define Source Texture
+#define vTexCoord TEX0.xy
+
+#define SourceSize vec4(TextureSize, 1.0 / TextureSize) //either TextureSize or InputSize
+#define outsize vec4(OutputSize, 1.0 / OutputSize)
+
+// Hardcoded WonderSwan values (gbc-retro.glslp -> wsc-retro.glslp merged)
+#define RSUBPIX_R 0.9
+#define RSUBPIX_G 0.0
+#define RSUBPIX_B 0.0
+#define GSUBPIX_R 0.0
+#define GSUBPIX_G 0.9
+#define GSUBPIX_B 0.0
+#define BSUBPIX_R 0.0
+#define BSUBPIX_G 0.0
+#define BSUBPIX_B 0.9
+#define gain 1.0
+#define gamma 2.4
+#define outgamma 1.8
+#define blacklevel 0.1
+#define ambient 0.02
+#define BGR 0.0
+
+#define fetch_offset(coord, offset) (pow(vec3(gain) * texelFetchOffset(Source, (coord), 0, (offset)).rgb + vec3(blacklevel), vec3(gamma)) + vec3(ambient))
+
+// integral of (1 - x^2 - x^4 + x^6)^2
+float coeffs_x[7] = float[](1.0, -2.0/3.0, -1.0/5.0, 4.0/7.0, -1.0/9.0, -2.0/11.0, 1.0/13.0);
+// integral of (1 - 2x^4 + x^6)^2
+float coeffs_y[7] = float[](1.0,      0.0, -4.0/5.0, 2.0/7.0,  4.0/9.0, -4.0/11.0, 1.0/13.0);
+
+float intsmear_func(float z, float coeffs[7])
+{
+    float z2 = z*z;
+    float zn = z;
+    float ret = 0.0;
+    for (int i = 0; i < 7; i++) {
+        ret += zn*coeffs[i];
+        zn *= z2;
+    }
+    return ret;
+}
+
+float intsmear(float x, float dx, float d, float coeffs[7])
+{
+    float zl = clamp((x-dx*0.5)/d,-1.0,1.0);
+    float zh = clamp((x+dx*0.5)/d,-1.0,1.0);
+    return d * ( intsmear_func(zh,coeffs) - intsmear_func(zl,coeffs) )/dx;
+}
+
+void main()
+{
+    vec2 texelSize = SourceSize.zw;
+    /* float2 range = IN.video_size / (IN.output_size * IN.texture_size); */
+    vec2 range = InputSize.xy / (OutputSize.xy * TextureSize.xy);//outsize.zw;
+
+    vec3 cred   = pow(vec3(RSUBPIX_R, RSUBPIX_G, RSUBPIX_B), vec3(outgamma));
+    vec3 cgreen = pow(vec3(GSUBPIX_R, GSUBPIX_G, GSUBPIX_B), vec3(outgamma));
+    vec3 cblue  = pow(vec3(BSUBPIX_R, BSUBPIX_G, BSUBPIX_B), vec3(outgamma));
+
+    ivec2 tli = ivec2(floor(vTexCoord/texelSize-vec2(0.4999)));
+
+    vec3 lcol, rcol;
+    float subpix = (vTexCoord.x/texelSize.x - 0.4999 - float(tli.x))*3.0;
+    float rsubpix = range.x/texelSize.x * 3.0;
+
+    lcol = vec3(intsmear(subpix+1.0, rsubpix, 1.5, coeffs_x),
+                intsmear(subpix    , rsubpix, 1.5, coeffs_x),
+                intsmear(subpix-1.0, rsubpix, 1.5, coeffs_x));
+    rcol = vec3(intsmear(subpix-2.0, rsubpix, 1.5, coeffs_x),
+                intsmear(subpix-3.0, rsubpix, 1.5, coeffs_x),
+                intsmear(subpix-4.0, rsubpix, 1.5, coeffs_x));
+
+    if (BGR > 0.5) {
+        lcol.rgb = lcol.bgr;
+        rcol.rgb = rcol.bgr;
+    }
+
+    float tcol, bcol;
+    subpix = vTexCoord.y/texelSize.y - 0.4999 - float(tli.y);
+    rsubpix = range.y/texelSize.y;
+    tcol = intsmear(subpix    ,rsubpix, 0.63, coeffs_y);
+    bcol = intsmear(subpix-1.0,rsubpix, 0.63, coeffs_y);
+
+    vec3 topLeftColor     = fetch_offset(tli, ivec2(0,0)) * lcol * vec3(tcol);
+    vec3 bottomRightColor = fetch_offset(tli, ivec2(1,1)) * rcol * vec3(bcol);
+    vec3 bottomLeftColor  = fetch_offset(tli, ivec2(0,1)) * lcol * vec3(bcol);
+    vec3 topRightColor    = fetch_offset(tli, ivec2(1,0)) * rcol * vec3(tcol);
+
+    vec3 averageColor = topLeftColor + bottomRightColor + bottomLeftColor + topRightColor;
+
+    averageColor = mat3(cred, cgreen, cblue) * averageColor;
+
+    FragColor = vec4(pow(averageColor, vec3(1.0/outgamma)),0.0);
+} 
+#endif
+EOF
+
+# --- Create Motionblur shader config file ---
+	cat > $SHADERPATH/shaders_glsl/motionblur/shaders/response-time-0.04.glsl << 'EOF'
+/*
+    Response Time
+    Based on the response time function from Harlequin's Game Boy and LCD shaders
+ 
+    This program is free software; you can redistribute it and/or modify it
+    under the terms of the GNU General Public License as published by the Free
+    Software Foundation; either version 2 of the License, or (at your option)
+    any later version.
+*/
+
+#if defined(VERTEX)
+
+#if __VERSION__ >= 130
+#define COMPAT_VARYING out
+#define COMPAT_ATTRIBUTE in
+#define COMPAT_TEXTURE texture
+#else
+#define COMPAT_VARYING varying 
+#define COMPAT_ATTRIBUTE attribute 
+#define COMPAT_TEXTURE texture2D
+#endif
+
+#ifdef GL_ES
+#define COMPAT_PRECISION mediump
+#else
+#define COMPAT_PRECISION
+#endif
+
+COMPAT_ATTRIBUTE vec4 VertexCoord;
+COMPAT_ATTRIBUTE vec4 COLOR;
+COMPAT_ATTRIBUTE vec4 TexCoord;
+COMPAT_VARYING vec4 COL0;
+COMPAT_VARYING vec4 TEX0;
+
+vec4 _oPosition1; 
+uniform mat4 MVPMatrix;
+uniform COMPAT_PRECISION int FrameDirection;
+uniform COMPAT_PRECISION int FrameCount;
+uniform COMPAT_PRECISION vec2 OutputSize;
+uniform COMPAT_PRECISION vec2 TextureSize;
+uniform COMPAT_PRECISION vec2 InputSize;
+
+// compatibility #defines
+#define vTexCoord TEX0.xy
+#define SourceSize vec4(TextureSize, 1.0 / TextureSize) //either TextureSize or InputSize
+#define OutSize vec4(OutputSize, 1.0 / OutputSize)
+
+// Vertex Shader
+
+void main()
+{
+    gl_Position = MVPMatrix * VertexCoord;
+    TEX0.xy = TexCoord.xy;
+}
+
+#elif defined(FRAGMENT)
+
+#if __VERSION__ >= 130
+#define COMPAT_VARYING in
+#define COMPAT_TEXTURE texture
+out vec4 FragColor;
+#else
+#define COMPAT_VARYING varying
+#define FragColor gl_FragColor
+#define COMPAT_TEXTURE texture2D
+#endif
+
+#ifdef GL_ES
+#ifdef GL_FRAGMENT_PRECISION_HIGH
+precision highp float;
+#else
+precision mediump float;
+#endif
+#define COMPAT_PRECISION mediump
+#else
+#define COMPAT_PRECISION
+#endif
+
+uniform COMPAT_PRECISION int FrameDirection;
+uniform COMPAT_PRECISION int FrameCount;
+uniform COMPAT_PRECISION vec2 OutputSize;
+uniform COMPAT_PRECISION vec2 TextureSize;
+uniform COMPAT_PRECISION vec2 InputSize;
+uniform sampler2D Texture;
+uniform sampler2D PrevTexture;
+uniform sampler2D Prev1Texture;
+uniform sampler2D Prev2Texture;
+uniform sampler2D Prev3Texture;
+uniform sampler2D Prev4Texture;
+uniform sampler2D Prev5Texture;
+uniform sampler2D Prev6Texture;
+COMPAT_VARYING vec4 TEX0;
+
+// compatibility #defines
+#define Source Texture
+#define vTexCoord TEX0.xy
+
+#define SourceSize vec4(TextureSize, 1.0 / TextureSize) //either TextureSize or InputSize
+#define OutSize vec4(OutputSize, 1.0 / OutputSize)
+
+#define response_time 0.04   //hardcoded, was parameter [0, 1]
+
+// Frame sampling definitions
+#define curr_rgb  COMPAT_TEXTURE(Source,       vTexCoord).rgb
+#define prev0_rgb COMPAT_TEXTURE(PrevTexture,  vTexCoord).rgb
+#define prev1_rgb COMPAT_TEXTURE(Prev1Texture, vTexCoord).rgb
+#define prev2_rgb COMPAT_TEXTURE(Prev2Texture, vTexCoord).rgb
+#define prev3_rgb COMPAT_TEXTURE(Prev3Texture, vTexCoord).rgb
+#define prev4_rgb COMPAT_TEXTURE(Prev4Texture, vTexCoord).rgb
+#define prev5_rgb COMPAT_TEXTURE(Prev5Texture, vTexCoord).rgb
+#define prev6_rgb COMPAT_TEXTURE(Prev6Texture, vTexCoord).rgb
+
+
+// Fragment Shader
+
+void main()
+{
+    // Sample color from the current and previous frames, apply response time modifier
+    // Response time effect implemented through an exponential dropoff algorithm
+    vec3 input_rgb = curr_rgb;
+    input_rgb += (prev0_rgb - input_rgb) * response_time;
+    input_rgb += (prev1_rgb - input_rgb) * pow(response_time, 2.0);
+    input_rgb += (prev2_rgb - input_rgb) * pow(response_time, 3.0);
+    input_rgb += (prev3_rgb - input_rgb) * pow(response_time, 4.0);
+    input_rgb += (prev4_rgb - input_rgb) * pow(response_time, 5.0);
+    input_rgb += (prev5_rgb - input_rgb) * pow(response_time, 6.0);
+    input_rgb += (prev6_rgb - input_rgb) * pow(response_time, 7.0);
+
+    FragColor = vec4(input_rgb, 0.0);
+} 
+#endif
+
+EOF
 
 # --- Create Convergence shader file ---
 	cat > $SHADERPATH/shaders_glsl/misc/shaders/convergence.glsl << 'EOF'
@@ -1839,12 +2492,13 @@ EOF
 
 
 # --- Create CRT-Consumer shader config file ---
-	cat > $SHADERPATH/shaders_glsl/crt/shaders/crt-consumer/crt-consumer.glsl << 'EOF'
+	cat > $SHADERPATH/shaders_glsl/crt/shaders/crt-consumer/crt-dave-consumer.glsl << 'EOF'
 #version 110
 
 /* 
 crt-consumer by DariusG 2022-2023
-
+Trimmed for R36S/RK3326: removed unused Color Temp (WP), Noise, Contrast matrix,
+Slot Mask, and all mask() branches except Shadowmask=0 (hardcoded, no longer a runtime param).
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
@@ -1852,44 +2506,7 @@ Software Foundation; either version 2 of the License, or (at your option)
 any later version.
 */
 
-// Parameter lines go here:
-#pragma parameter bogus0 " [ CRT-CONSUMER ] " 0.0 0.0 0.0 0.0
-#pragma parameter sharpx "Sharpness Horizontal" 2.0 1.0 5.0 0.1
-#pragma parameter sharpy "Sharpness Vertical" 3.0 1.0 5.0 0.1
-#pragma parameter bogus_geo " [ GEOMETRY ] " 0.0 0.0 0.0 0.0
-#pragma parameter warpx "Curvature X" 0.03 0.0 0.12 0.01
-#pragma parameter warpy "Curvature Y" 0.04 0.0 0.12 0.01
-#pragma parameter corner "Corner size" 0.03 0.0 0.10 0.01
-#pragma parameter smoothness "Border Smoothness" 600.0 25.0 600.0 5.0
-#pragma parameter vignette "Vignette On/Off" 1.0 0.0 1.0 1.0
-#pragma parameter bogus_scan " [ SCANLINES/MASKS ] " 0.0 0.0 0.0 0.0
-#pragma parameter scanlow "Beam low" 6.0 1.0 15.0 1.0
-#pragma parameter scanhigh "Beam high" 8.0 1.0 15.0 1.0
-#pragma parameter inter "Interlacing Toggle" 1.0 0.0 1.0 1.0
-#pragma parameter scan_type "Scanline Type, pronounced/soft"  2.0 2.0 3.0 1.0 
-#pragma parameter beamlow "Scanlines dark" 1.35 0.5 2.5 0.05 
-#pragma parameter beamhigh "Scanlines bright" 0.9 0.5 2.5 0.05 
-#pragma parameter Shadowmask "Mask Type" 0.0 -1.0 8.0 1.0 
-#pragma parameter masksize "Mask Size" 1.0 1.0 2.0 1.0
-#pragma parameter MaskDark "Mask dark" 0.5 0.0 2.0 0.1
-#pragma parameter MaskLight "Mask light" 1.5 0.0 2.0 0.1
-#pragma parameter slotmask "Slot Mask Strength" 0.0 0.0 1.0 0.05
-#pragma parameter slotwidth "Slot Mask Width" 2.0 1.0 6.0 0.5
-#pragma parameter double_slot "Slot Mask Height: 2x1 or 4x1" 1.0 1.0 2.0 1.0
-#pragma parameter slotms "Slot Mask Size" 1.0 1.0 2.0 1.0
-#pragma parameter bogus_col " [ COLORS ] " 0.0 0.0 0.0 0.0
-#pragma parameter GAMMA_OUT "Gamma Out" 2.2 0.0 4.0 0.05
-#pragma parameter crt_lum "CRT Luminances On/Off" 1.0 0.0 1.0 1.0
-#pragma parameter brightboost1 "Bright boost dark pixels" 1.3 0.0 3.0 0.05
-#pragma parameter brightboost2 "Bright boost bright pixels" 1.05 0.0 3.0 0.05
-#pragma parameter sat "Saturation" 1.0 0.0 2.0 0.05
-#pragma parameter contrast "Contrast, 1.0:Off" 1.0 0.00 2.00 0.05
-#pragma parameter nois "Noise" 0.0 0.0 1.0 0.01
-#pragma parameter WP "Color Temperature %" 0.0 -100.0 100.0 5.0 
-#pragma parameter sawtooth "Sawtooth Effect" 1.0 0.0 1.0 1.0
-#pragma parameter bleed "Color Bleed Effect" 1.0 0.0 1.0 1.0
-#pragma parameter bl_size "Color Bleed Size, less is more" 1.5 0.1 4.0 0.05
-#pragma parameter alloff "Switch off shader" 0.0 0.0 1.0 1.0
+// All parameters hardcoded below (no #pragma parameter lines = not adjustable in RetroArch UI)
 #define pi 6.28318
 
 #if defined(VERTEX)
@@ -1977,80 +2594,32 @@ COMPAT_VARYING vec2 maskpos;
 #define SourceSize vec4(TextureSize, 1.0 / TextureSize) //either TextureSize or InputSize
 #define OutputSize vec4(OutputSize, 1.0 / OutputSize)
 
-#ifdef PARAMETER_UNIFORM
-// All parameter floats need to have COMPAT_PRECISION in front of them
-
-uniform COMPAT_PRECISION float warpx;
-uniform COMPAT_PRECISION float warpy;
-uniform COMPAT_PRECISION float corner;
-uniform COMPAT_PRECISION float smoothness;
-uniform COMPAT_PRECISION float scanlow;
-uniform COMPAT_PRECISION float scanhigh;
-uniform COMPAT_PRECISION float beamlow;
-uniform COMPAT_PRECISION float beamhigh;
-uniform COMPAT_PRECISION float scan_type;
-uniform COMPAT_PRECISION float brightboost1;
-uniform COMPAT_PRECISION float brightboost2;
-uniform COMPAT_PRECISION float Shadowmask;
-uniform COMPAT_PRECISION float masksize;
-uniform COMPAT_PRECISION float MaskDark;
-uniform COMPAT_PRECISION float MaskLight;
-uniform COMPAT_PRECISION float slotmask;
-uniform COMPAT_PRECISION float slotwidth;
-uniform COMPAT_PRECISION float double_slot;
-uniform COMPAT_PRECISION float slotms;
-uniform COMPAT_PRECISION float GAMMA_OUT;
-uniform COMPAT_PRECISION float sat;
-uniform COMPAT_PRECISION float contrast;
-uniform COMPAT_PRECISION float nois;
-uniform COMPAT_PRECISION float WP;
-uniform COMPAT_PRECISION float inter;
-uniform COMPAT_PRECISION float vignette;
-uniform COMPAT_PRECISION float alloff;
-uniform COMPAT_PRECISION float sawtooth;
-uniform COMPAT_PRECISION float bleed;
-uniform COMPAT_PRECISION float bl_size;
-uniform COMPAT_PRECISION float sharpx;
-uniform COMPAT_PRECISION float sharpy;
-uniform COMPAT_PRECISION float crt_lum;
-
-#else
-  
-#define warpx  0.0    
-#define warpy  0.0    
-#define corner 0.0    
-#define smoothness 300.0    
-#define scanlow  6.0    
-#define scanhigh  8.0    
-#define beamlow  1.35    
-#define beamhigh  1.05 
-#define scan_type 2.0   
-#define brightboost1 1.45    
-#define brightboost2 1.1    
-#define Shadowmask 0.0    
-#define masksize 1.0    
-#define MaskDark 0.5  
-#define MaskLight 1.5 
-#define slotmask     0.00     // Slot Mask ON/OFF
-#define slotwidth    2.00     // Slot Mask Width
-#define double_slot  1.00     // Slot Mask Height
-#define slotms       1.00     // Slot Mask Size 
+// Hardcoded to your tuned values — no uniforms, no runtime adjustment
+#define warpx  0.03
+#define warpy  0.04
+#define corner 0.03
+#define smoothness 600.0
+#define scanlow  6.0
+#define scanhigh  8.0
+#define beamlow  0.65
+#define beamhigh  0.60
+#define scan_type 2.0
+#define brightboost1 1.3
+#define brightboost2 1.05
+#define masksize 1.0
+#define MaskDark 0.5
+#define MaskLight 1.5
 #define GAMMA_OUT 2.2
-#define sat 1.0 
-#define contrast  1.0   
-#define nois 0.0
-#define WP  0.0
+#define sat 1.0
 #define inter 1.0
 #define vignette 1.0
 #define alloff 0.0
-#define sawtooth 0.0
-#define bleed 0.0
-#define bl_size 1.0
+#define sawtooth 1.0
+#define bleed 1.0
+#define bl_size 1.5
 #define sharpx 2.0
 #define sharpy 3.0
-#define crt_lum 1.0 
-
-#endif
+#define crt_lum 1.0
 
 
 vec2 Warp(vec2 pos)
@@ -2069,174 +2638,14 @@ float sw (float y,float l, float x)
     return exp2(-scan*pow(ex,scan_type));
 }
 
+// Hardcoded to Shadowmask==0 path only (dead branches for other mask types removed)
 vec3 mask(vec2 x,vec3 col,float l)
 {
     x = floor(x/masksize);        
-  
-
-    if (Shadowmask == 0.0)
-    {
     float m =fract(x.x*0.4999);
 
     if (m<0.4999) return vec3(1.0,MaskDark,1.0);
     else return vec3(MaskDark,1.0,MaskDark);
-    }
-   
-    else if (Shadowmask == 1.0)
-    {
-        vec3 Mask = vec3(MaskDark);
-
-        float line = MaskLight;
-        float odd  = 0.0;
-
-        if (fract(x.x/6.0) < 0.5)
-            odd = 1.0;
-        if (fract((x.y + odd)/2.0) < 0.5)
-            line = MaskDark;
-
-        float m = fract(x.x/3.0);
-    
-        if      (m< 0.333)  Mask.b = MaskLight;
-        else if (m < 0.666) Mask.g = MaskLight;
-        else                Mask.r = MaskLight;
-        
-        Mask*=line; 
-        return Mask; 
-    } 
-    
-
-    else if (Shadowmask == 2.0)
-    {
-    float m =fract(x.x*0.3333);
-
-    if (m<0.3333) return vec3(MaskDark,MaskDark,MaskLight);
-    if (m<0.6666) return vec3(MaskDark,MaskLight,MaskDark);
-    else return vec3(MaskLight,MaskDark,MaskDark);
-    }
-
-    if (Shadowmask == 3.0)
-    {
-    float m =fract(x.x*0.5);
-
-    if (m<0.5) return vec3(1.0);
-    else return vec3(MaskDark);
-    }
-   
-
-    else if (Shadowmask == 4.0)
-    {   
-        vec3 Mask = vec3(col.rgb);
-        float line = MaskLight;
-        float odd  = 0.0;
-
-        if (fract(x.x/4.0) < 0.5)
-            odd = 1.0;
-        if (fract((x.y + odd)/2.0) < 0.5)
-            line = MaskDark;
-
-        float m = fract(x.x/2.0);
-    
-        if  (m < 0.5) {Mask.r = 1.0; Mask.b = 1.0;}
-                else  Mask.g = 1.0;   
-
-        Mask*=line;  
-        return Mask;
-    } 
-
-	else if (Shadowmask == 5.0)
-
-    {
-        vec3 Mask = vec3(1.0);
-
-        if (fract(x.x/4.0)<0.5)   
-            {if (fract(x.y/3.0)<0.666)  {if (fract(x.x/2.0)<0.5) Mask=vec3(1.0,MaskDark,1.0); else Mask=vec3(MaskDark,1.0,MaskDark);}
-            else Mask*=l;}
-        else if (fract(x.x/4.0)>=0.5)   
-            {if (fract(x.y/3.0)>0.333)  {if (fract(x.x/2.0)<0.5) Mask=vec3(1.0,MaskDark,1.0); else Mask=vec3(MaskDark,1.0,MaskDark);}
-            else Mask*=l;}
-
-    return Mask;
-    }
-
-    else if (Shadowmask == 6.0)
-
-    {
-        vec3 Mask = vec3(MaskDark);
-        if (fract(x.x/6.0)<0.5)   
-            {if (fract(x.y/4.0)<0.75)  {if (fract(x.x/3.0)<0.3333) Mask.r=MaskLight; else if (fract(x.x/3.0)<0.6666) Mask.g=MaskLight; else Mask.b=MaskLight;}
-            else Mask*l*0.9;}
-        else if (fract(x.x/6.0)>=0.5)   
-            {if (fract(x.y/4.0)>=0.5 || fract(x.y/4.0)<0.25 )  {if (fract(x.x/3.0)<0.3333) Mask.r=MaskLight; else if (fract(x.x/3.0)<0.6666) Mask.g=MaskLight; else Mask.b=MaskLight;}
-            else Mask*l*0.9;}
-
-    return Mask;
-
-    }
-
-
-    else if (Shadowmask == 7.0)
-    {
-    float m =fract(x.x*0.3333);
-
-    if (m<0.3333) return vec3(MaskDark,MaskLight,MaskLight*col.b);  //Cyan
-    if (m<0.6666) return vec3(MaskLight*col.r,MaskDark,MaskLight);  //Magenta
-    else return vec3(MaskLight,MaskLight*col.g,MaskDark);           //Yellow
-    }
-
-  
-     else if (Shadowmask == 8.0)
-    {
-        vec3 Mask = vec3(MaskDark);
-
-        float bright = MaskLight;
-        float left  = 0.0;
-      
-
-        if (fract(x.x/6.0) < 0.5)
-            left = 1.0;
-             
-        float m = fract(x.x/3.0);
-    
-        if      (m < 0.333) Mask.b = 0.9;
-        else if (m < 0.666) Mask.g = 0.9;
-        else                Mask.r = 0.9;
-        
-        if      (mod(x.y,2.0)==1.0 && left == 1.0 || mod(x.y,2.0)==0.0 && left == 0.0 ) Mask*=bright; 
-      
-        return Mask; 
-    } 
-    
-    else return vec3(1.0);
-}
-
-float SlotMask(vec2 pos, vec3 c)
-{
-    if (slotmask == 0.0) return 1.0;
-    
-    pos = floor(pos/slotms);
-    float mx = pow(max(max(c.r,c.g),c.b),1.33);
-    float mlen = slotwidth*2.0;
-    float px = fract(pos.x/mlen);
-    float py = floor(fract(pos.y/(2.0*double_slot))*2.0*double_slot);
-    float slot_dark = mix(1.0-slotmask, 1.0-0.80*slotmask, mx);
-    float slot = 1.0 + 0.7*slotmask*(1.0-mx);
-    if (py == 0.0 && px <  0.5) slot = slot_dark; else
-    if (py == double_slot && px >= 0.5) slot = slot_dark;       
-    
-    return slot;
-}
-
-
-mat4 contrastMatrix( float contrast )
-{
-    
-	float t = ( 1.0 - contrast ) / 2.0;
-    
-    return mat4( contrast, 0, 0, 0,
-                 0, contrast, 0, 0,
-                 0, 0, contrast, 0,
-                 t, t, t, 1 );
-
 }
 
 
@@ -2254,11 +2663,6 @@ vec3 saturation (vec3 Color, float l, vec3 lweight)
 }
 
 
-float noise(vec2 co)
-{
-return fract(sin(iTimer * dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);
-}
-
 float corner0(vec2 coord)
 {
                 coord *= TextureSize / InputSize;
@@ -2269,26 +2673,6 @@ float corner0(vec2 coord)
                 float dist = sqrt(dot(coord,coord));
                 return clamp((cdist.x-dist)*smoothness,0.0, 1.0);
 }  
-
-const mat3 D65_to_XYZ = mat3 (
-           0.4306190,  0.2220379,  0.0201853,
-           0.3415419,  0.7066384,  0.1295504,
-           0.1783091,  0.0713236,  0.9390944);
-
-const mat3 XYZ_to_D65 = mat3 (
-           3.0628971, -0.9692660,  0.0678775,
-          -1.3931791,  1.8760108, -0.2288548,
-          -0.4757517,  0.0415560,  1.0693490);
-           
-const mat3 D50_to_XYZ = mat3 (
-           0.4552773,  0.2323025,  0.0145457,
-           0.3675500,  0.7077956,  0.1049154,
-           0.1413926,  0.0599019,  0.7057489);
-           
-const mat3 XYZ_to_D50 = mat3 (
-           2.9603944, -0.9787684,  0.0844874,
-          -1.4678519,  1.9161415, -0.2545973,
-          -0.4685105,  0.0334540,  1.4216174);         
 
 float RGB2Y(vec3 _rgb) {
     return dot(_rgb, vec3(0.29900, 0.58700, 0.11400));
@@ -2395,18 +2779,6 @@ if (bleed == 1.0){
 color =clamp(color, 0.0,1.0);
 //end of color bleeding
 } 
-    //COLOR TEMPERATURE FROM GUEST.R-DR.VENOM
-    if (WP !=0.0)
-    {
-    vec3 warmer = D50_to_XYZ*color;
-    warmer = XYZ_to_D65*warmer; 
-    vec3 cooler = D65_to_XYZ*color;
-    cooler = XYZ_to_D50*cooler;
-    float m = abs(WP)*0.01;
-    vec3 comp = (WP < 0.0) ? cooler : warmer;
-    comp=clamp(comp,0.0,1.0);   
-    color = vec3(mix(color, comp, m));
-    }
 
     vec3 lumWeighting = vec3(0.22,0.7,0.08);
 	float lum=dot(color,lumWeighting);
@@ -2422,7 +2794,6 @@ color =clamp(color, 0.0,1.0);
     color = color*sw(f,lum,x) + color*sw(1.0-f,lum,x);
     
     color*=mix(mask(maskpos.xy*1.0001,color,lum), vec3(1.0),lum*0.9);
-    if (slotmask !=0.0) color*=SlotMask(maskpos.xy*1.0001,color);
     
     color*=mix(brightboost1, brightboost2, lum);    
 if (crt_lum == 1.0){
@@ -2435,10 +2806,8 @@ if (crt_lum == 1.0){
     if (sat != 1.0) color = saturation(color, lum, lumWeighting);
     
     if (corner!=0.0) color *= corner0(pC4);
-    if (nois != 0.0) color *= 1.0+noise(pC4)*nois;
 	
 	res = vec4(color,1.0);
-	if (contrast !=1.0) res = contrastMatrix(contrast)*res;
     if (inter >0.5 && InputSize.y >400.0 && fract(iTime)<0.5) res=res*0.95; else res;
 }
 #if defined GL_ES
@@ -2451,6 +2820,209 @@ if (crt_lum == 1.0){
 #endif
 
     FragColor = res;
+} 
+#endif
+EOF
+
+# --- Create CRT-Consumer shader config file ---
+	cat > $SHADERPATH/shaders_glsl/crt/shaders/crt-dave-nobody.glsl << 'EOF'
+#version 120
+
+/*
+   Hyllian's crt-nobody Shader
+   
+   Copyright (C) 2011-2022 Hyllian - sergiogdb@gmail.com
+
+   Permission is hereby granted, free of charge, to any person obtaining a copy
+   of this software and associated documentation files (the "Software"), to deal
+   in the Software without restriction, including without limitation the rights
+   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+   copies of the Software, and to permit persons to whom the Software is
+   furnished to do so, subject to the following conditions:
+
+   The above copyright notice and this permission notice shall be included in
+   all copies or substantial portions of the Software.
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+   THE SOFTWARE.
+*/
+
+#define PIX_SIZE    1.11
+
+#define saturate(c) clamp(c, 0.0, 1.0)
+#define lerp(a,b,c) mix(a,b,c)
+#define mul(a,b) (b*a)
+#define fmod(c,d) mod(c,d)
+#define frac(c) fract(c)
+#define tex2D(c,d) COMPAT_TEXTURE(c,d)
+#define float2 vec2
+#define float3 vec3
+#define float4 vec4
+#define int2 ivec2
+#define int3 ivec3
+#define int4 ivec4
+#define bool2 bvec2
+#define bool3 bvec3
+#define bool4 bvec4
+#define float2x2 mat2x2
+#define float3x3 mat3x3
+#define float4x4 mat4x4
+
+#if defined(VERTEX)
+
+#if __VERSION__ >= 130
+#define COMPAT_VARYING out
+#define COMPAT_ATTRIBUTE in
+#define COMPAT_TEXTURE texture
+#else
+#define COMPAT_VARYING varying 
+#define COMPAT_ATTRIBUTE attribute 
+#define COMPAT_TEXTURE texture2D
+#endif
+
+#ifdef GL_ES
+#define COMPAT_PRECISION mediump
+#else
+#define COMPAT_PRECISION
+#endif
+
+COMPAT_ATTRIBUTE vec4 VertexCoord;
+COMPAT_ATTRIBUTE vec4 COLOR;
+COMPAT_ATTRIBUTE vec4 TexCoord;
+COMPAT_VARYING vec4 COL0;
+COMPAT_VARYING vec4 TEX0;
+COMPAT_VARYING vec4 t1;
+COMPAT_VARYING float pix_sizex;
+COMPAT_VARYING float scan_sizey;
+
+uniform mat4 MVPMatrix;
+uniform COMPAT_PRECISION int FrameDirection;
+uniform COMPAT_PRECISION int FrameCount;
+uniform COMPAT_PRECISION vec2 OutputSize;
+uniform COMPAT_PRECISION vec2 TextureSize;
+uniform COMPAT_PRECISION vec2 InputSize;
+
+#define vTexCoord TEX0.xy
+#define SourceSize vec4(TextureSize, 1.0 / TextureSize) //either TextureSize or InputSize
+#define outsize vec4(OutputSize, 1.0 / OutputSize)
+
+#define VSCANLINES  0.0
+#define SCAN_SIZE   0.9
+#define COLOR_BOOST 1.0
+#define InputGamma  2.5
+#define OutputGamma 2.0
+
+void main()
+{
+    gl_Position = MVPMatrix * VertexCoord;
+    COL0 = COLOR;
+    TEX0.xy = TexCoord.xy * 1.0001;
+
+    pix_sizex  = mix(PIX_SIZE, SCAN_SIZE, VSCANLINES);
+    scan_sizey = mix(SCAN_SIZE, PIX_SIZE, VSCANLINES);
+   
+    float2 ps = float2(SourceSize.z, SourceSize.w);
+	float dx = ps.x;
+	float dy = ps.y;
+
+	t1.xy = float2( dx,  0.); // F
+	t1.zw = float2(  0., dy); // H
+}
+
+#elif defined(FRAGMENT)
+
+#if __VERSION__ >= 130
+#define COMPAT_VARYING in
+#define COMPAT_TEXTURE texture
+out vec4 FragColor;
+#else
+#define COMPAT_VARYING varying
+#define FragColor gl_FragColor
+#define COMPAT_TEXTURE texture2D
+#endif
+
+#ifdef GL_ES
+#ifdef GL_FRAGMENT_PRECISION_HIGH
+precision highp float;
+#else
+precision mediump float;
+#endif
+#define COMPAT_PRECISION mediump
+#else
+#define COMPAT_PRECISION
+#endif
+
+uniform COMPAT_PRECISION int FrameDirection;
+uniform COMPAT_PRECISION int FrameCount;
+uniform COMPAT_PRECISION vec2 OutputSize;
+uniform COMPAT_PRECISION vec2 TextureSize;
+uniform COMPAT_PRECISION vec2 InputSize;
+uniform sampler2D Texture;
+COMPAT_VARYING vec4 TEX0;
+COMPAT_VARYING vec4 t1;
+COMPAT_VARYING float pix_sizex;
+COMPAT_VARYING float scan_sizey;
+
+#define VSCANLINES  0.0
+#define SCAN_SIZE   0.9
+#define COLOR_BOOST 1.0
+#define InputGamma  2.5
+#define OutputGamma 2.0
+
+// compatibility #defines
+#define Source Texture
+#define vTexCoord TEX0.xy
+
+#define SourceSize vec4(TextureSize, 1.0 / TextureSize) //either TextureSize or InputSize
+#define outsize vec4(OutputSize, 1.0 / OutputSize)
+
+#define decal Source
+
+#define GAMMA_IN(color)     pow(color, float3(InputGamma, InputGamma, InputGamma))
+#define GAMMA_OUT(color)    pow(color, float3(1.0 / OutputGamma, 1.0 / OutputGamma, 1.0 / OutputGamma))
+
+float wgt(float size)
+{
+   size = clamp(size, -1.0, 1.0);
+
+   size = 1.0 - size * size;
+
+   return size * size * size;
+}
+
+
+void main()
+{
+    float2 pos = frac(vTexCoord*SourceSize.xy)-float2(0.5, 0.5); // pos = pixel position
+    float2 dir = sign(pos); // dir = pixel direction
+    pos        = abs(pos);
+
+    float2 g1 = dir*t1.xy;
+    float2 g2 = dir*t1.zw;
+
+    float3 A = GAMMA_IN(tex2D(decal, vTexCoord       ).xyz);
+    float3 B = GAMMA_IN(tex2D(decal, vTexCoord +g1   ).xyz);
+    float3 C = GAMMA_IN(tex2D(decal, vTexCoord    +g2).xyz);
+    float3 D = GAMMA_IN(tex2D(decal, vTexCoord +g1+g2).xyz);
+
+    float2 dx = float2(pos.x, 1.0-pos.x) / pix_sizex;
+    float2 dy = float2(pos.y, 1.0-pos.y) / scan_sizey;
+
+    float2 wx = float2(wgt(dx.x), wgt(dx.y));
+    float2 wy = float2(wgt(dy.x), wgt(dy.y));
+
+    float3 color = (A*wx.x + B*wx.y)*wy.x + (C*wx.x + D*wx.y)*wy.y;
+
+    color *= COLOR_BOOST;
+
+    color  = GAMMA_OUT(color);
+
+    FragColor = vec4(color, 1.0);
 } 
 #endif
 EOF
@@ -2541,6 +3113,7 @@ fi
 
 rm -f "/home/ark/.retroshaders"
 rm -f "/home/ark/.retro_shaders"
+rm -f "/home/ark/.retroshaders_v16_installed"
 rm -f "$OLD_FLAG"
 
 [[ ! -f "$FLAG" ]] && create_files
