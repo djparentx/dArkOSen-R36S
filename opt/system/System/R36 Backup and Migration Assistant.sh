@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # =======================================================
-# R36 Backup and Migration Assistant v1.0
+# R36 Backup and Migration Assistant v1.1
 # by djparent
 # =======================================================
-VERSION="1.0"
+VERSION="1.1"
 
 # Copyright (c) 2026 djparent
 #
@@ -631,6 +631,25 @@ OneClick() {
 )		
 
 	declare -A SETTINGS=(
+		[input_exit_emulator_btn]="13"
+		[input_frame_advance_btn]="8"
+		[input_load_state_btn]="1"
+		[input_menu_toggle]="f1"
+		[input_menu_toggle_btn]="nul"
+		[input_menu_toggle_gamepad_combo]="8"
+		[input_quit_gamepad_combo]="4"
+		[input_pause_toggle_btn]="15"
+		[input_reset_btn]="7"
+		[input_rewind_btn]="10"
+		[input_save_state_btn]="0"
+		[input_screenshot_btn]="14"
+		[input_state_slot_decrease_btn]="3"
+		[input_state_slot_increase_btn]="2"
+		[input_hold_fast_forward]="nul"
+		[input_hold_fast_forward_btn]="9"
+		[input_toggle_fast_forward_btn]="11"
+		[network_cmd_enable]="true"
+		[quit_press_twice]="false"		
 		[config_save_on_exit]="true"
 		[sort_savefiles_by_core_name]="true"
 		[sort_savestates_by_core_name]="true"
@@ -644,8 +663,6 @@ OneClick() {
 		[savestate_auto_load]="true"
 		[aspect_ratio_index]="22"
 		[menu_driver]="ozone"
-		[input_menu_toggle_gamepad_combo]="8"
-		[input_quit_gamepad_combo]="4"
 		[video_frame_delay_auto]="true"
 )
 
