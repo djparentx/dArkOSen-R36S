@@ -28,7 +28,7 @@ The dtb selector tool has been borrowed from dArkOSRE (why reinvent the wheel?) 
 * RetroArch fully updated
 * **file explorers have root access**
 * **root filesharing enabled**
-* KODI (credit to southoz)
+* KODI (taken from dArkOSSRE, credit to @southoz)
 * dArkOSen system hotkeys
 * dArkOSen Retroarch hotkeys
 * new boot logo, low battery and loading screens
@@ -36,8 +36,8 @@ The dtb selector tool has been borrowed from dArkOSRE (why reinvent the wheel?) 
 * dArkOSen custom OC kernel (1296 Mhz default, 1512 Mhz max)
 * GPU overclocked to 600 Mhz (520Mhz default)
 * ZRAM enabled, 768MB
-* [Jason3x's Realtek driver pack](https://www.mediafire.com/file/gdiu09nk5e1zk5n/rtl.zip/file)
-* [Jason\_3x's Emulation Station Icons](https://github.com/Jason3x/ES-Icons-Installer.git) (with my icon mod)
+* [@Jason3x's Realtek driver pack](https://www.mediafire.com/file/gdiu09nk5e1zk5n/rtl.zip/file)
+* [@Jason3x's Emulation Station Icons](https://github.com/Jason3x/ES-Icons-Installer.git) (with my icon mod)
 * color battery icons
 * [SjslTech's Portmaster fix for dArkOS](https://www.reddit.com/r/R36S/s/hFQVcJqxML)
 * [volume resume fix ](https://github.com/djparentx/R36S-Volume-Resume-Fix-for-ArkOS-dArkOS/releases)applied to prevent speaker pops
@@ -55,7 +55,7 @@ The dtb selector tool has been borrowed from dArkOSRE (why reinvent the wheel?) 
 * [R36S Theme Patcher](https://github.com/djparentx/R36S-dArkOS-Enhanced-Setup-Tool/releases/tag/theme_patcher)
 * [patched themes](https://github.com/djparentx/R36S-dArkOS-Enhanced-Setup-Tool/releases/tag/themes): - RetroOz - Simple - Switch - Minimal - Freeplay - NES Box - Replica - XMB FCAMod
 
-ES Icons Installer by Jason\_3x.  ([https://github.com/Jason3x/ES-Icons-Installer](https://github.com/Jason3x/ES-Icons-Installer))
+ES Icons Installer by @Jason3x.  ([https://github.com/Jason3x/ES-Icons-Installer](https://github.com/Jason3x/ES-Icons-Installer))
 
 Use CPU Manager or R36 Tuner to tune the kernel clock speeds.
 
