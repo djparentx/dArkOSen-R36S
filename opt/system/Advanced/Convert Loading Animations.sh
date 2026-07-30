@@ -29,6 +29,7 @@ echo ""
 echo "[1/3] Checking and validating input files..."
 if [ ! -f "$MP4" ] && [ ! -f "$GIF" ]; then
     echo "ERROR: No loading.mp4 or loading.gif found."
+	sleep 2
     exit 1
 fi
 
@@ -38,10 +39,12 @@ if [ -f "$MP4" ]; then
         MP4_VALID=1
     else
         echo "ERROR: $MP4 failed validation (corrupt or unreadable)."
+		sleep 2
         MP4_OK=1
     fi
 else
     echo "No MP4 found. Skipping."
+	sleep 1
 fi
 
 GIF_VALID=0
@@ -50,10 +53,12 @@ if [ -f "$GIF" ]; then
         GIF_VALID=1
     else
         echo "ERROR: $GIF failed validation (corrupt or unreadable)."
+		sleep 2
         GIF_OK=1
     fi
 else
     echo "No GIF found. Skipping."
+	sleep 1
 fi
 
 echo ""

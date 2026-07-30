@@ -3,11 +3,11 @@ UPDATE="ON"
 HOSTNAME="MYDEVICE"
 
 # =======================================================
-# 		 Wi-Fi Manager 4.3.4 for ArkOS and dArkOS
+# 		 Wi-Fi Manager 4.3.6 for ArkOS and dArkOS
 # 					  by djparent
 # 		   inspired by Wifi by Kris Henriksen
 # =======================================================
-VERSION="4.3.4"
+VERSION="4.3.6"
 
 # Additional code adapted from Wifi-Toggle v3.6 and Bluetooth Manager for dArkOS by Jason3x
 
@@ -657,9 +657,8 @@ Change_Log() {
 		--msgbox "\n\
       \Z4https://github.com/djparentx\Zn\n\
           --------------------\n\
-   ◦ fixed IPV6 wasn't being disabled,\n\
-     added NetworkManager dispatcher to\n\
-     kill at IPV6 boot\n\
+   ◦ automated detection of /roms2 in samba\n\
+     shares\n\
  	" \
 		14 45 > "$CURR_TTY"
 		
@@ -1806,14 +1805,7 @@ EOF
 		chmod 644 "$SMB"
 		touch $SMB_FLAG
 	fi
-	
-	# --- comment or uncomment /roms2 if exists ---
-	if [ ! -d "/roms2" ]; then
-		sed -i '/^\[roms2\]/,/^$/{s/^/#/}' "$SMB"
-	else
-		sed -i '/^#\[roms2\]/,/^#$/{s/^#//}' "$SMB"
-	fi
-	
+
 	# --- comment out NOBODY folder ---
 	sed -i '/^#\?\[homes\]/,/^\[roms\]/{/^\[roms\]/!{/^#/!s/^/#/}}' "$SMB"
 	
@@ -2200,8 +2192,17 @@ chmod +x /etc/NetworkManager/dispatcher.d/99-disable-ipv6.sh
 fi
 
 # remove old sysctl override if present
-rm -f /etc/sysctl.d/99-disable-ipv6.conf
-systemctl restart NetworkManager
+if [[ -f /etc/sysctl.d/99-disable-ipv6.conf ]]; then
+	rm -f /etc/sysctl.d/99-disable-ipv6.conf
+	systemctl restart NetworkManager
+fi
+
+# --- comment or uncomment /roms2 in samba.conf if exists ---
+if [ ! -d "/roms2" ]; then
+	sed -i '/^\[roms2\]/,/^$/{s/^/#/}' "$SMB"
+else
+	sed -i '/^#\[roms2\]/,/^#$/{s/^#//}' "$SMB"
+fi
 
 [[ -f "/home/ark/.wifi_show_changelog" ]] && Change_Log
 		

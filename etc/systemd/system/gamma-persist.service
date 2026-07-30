@@ -1,0 +1,13 @@
+[Unit]
+Description=Apply persisted gamma setting
+After=systemd-udev-settle.service
+Wants=systemd-udev-settle.service
+
+[Service]
+Type=oneshot
+EnvironmentFile=-/etc/gamma-settings.conf
+ExecStart=/bin/bash -c '/usr/local/bin/gamma -s "${GAMMA:-1.0}"'
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

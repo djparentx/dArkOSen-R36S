@@ -8,7 +8,7 @@ CURR_TTY="/dev/tty1"
 WIFI_USB_PATH="/sys/bus/usb/devices/1-1"
 PREFERRED_WIFI_MODULES=("8188eu" "r8188eu" "rtl8723bu")
 
-if [[ ! -d "$WIFI_USB_PATH" ]]; then
+if [[ ! -d "$WIFI_USB_PATH" ]] || pgrep -x kodi >/dev/null; then
     exit 1
 fi
 
