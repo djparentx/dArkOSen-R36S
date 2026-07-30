@@ -1,0 +1,13 @@
+[Unit]
+Description=Fn button -> RetroArch MENU_TOGGLE watcher
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/fn_menu_watcher.sh
+Restart=always
+RestartSec=2
+User=root
+
+[Install]
+WantedBy=multi-user.target
