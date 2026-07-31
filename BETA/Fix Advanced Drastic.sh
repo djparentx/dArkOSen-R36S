@@ -13,7 +13,7 @@ echo "fixing file ownership..."
 sudo chown -R ark:ark /opt/advanceddrastic
 
 if [[ -f "$LAUNCHER" ]] && ! grep -q "LD_PRELOAD=/opt/advanceddrastic/libs/libadvdrastic.so" "$LAUNCHER"; then
-    sed -i '/export LD_LIBRARY_PATH=.\/libs:\$LD_LIBRARY_PATH/a\        unset LD_PRELOAD\n        export LD_PRELOAD=/opt/advanceddrastic/libs/libadvdrastic.so' "$LAUNCHER"
+    sed -i '/export LD_LIBRARY_PATH=.\/libs:\$LD_LIBRARY_PATH/a\    unset LD_PRELOAD\n    export LD_PRELOAD=/opt/advanceddrastic/libs/libadvdrastic.so' "$LAUNCHER"
 fi
 
 if [[ -f "$STUB" ]] && [[ "$(file -b "$STUB")" == *"ASCII text"* ]]; then
