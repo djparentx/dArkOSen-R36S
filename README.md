@@ -1,3 +1,5 @@
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/O8Z424G15Y)
+
 Built from dArkOS\_RG351MP\_trixie\_07262026.
 
 A/B button swap has been enabled globally for this build. Use Button Mapper to restore defaults.
