@@ -61,3 +61,4 @@ modified.
 ## Verified working on
 - R36H ProMax (1024x768 panel)
 - R36S V21-2551 (640x480 panel)
+
