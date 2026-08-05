@@ -20,6 +20,8 @@ The dtb selector tool has been borrowed from dArkOSRE (why reinvent the wheel?) 
 4. the console will reboot twice as it expands partitions
 5. the console will reboot into dArkOSen
 
+**Rufus is the only supported flashing software at this time. Almost all other software has shown a tendency to corrupt the system files. If you are on a Mac then Balena Etcher has shown the least amount of failures but still has occasional problems. If your install is acting strangely and you did not use Rufus please re-flash the image with Rufus before contacting for support.**
+
 *If you can't find your model in the MODEL SELECTOR then make copies of your original dtbs and rename them* `rg351mp-uboot.dtb` *and* `rk3326-r36s-linux.dtb` *then copy them to the boot partition. You will not have full access to the overclock without patching.*
 
 # Features:
