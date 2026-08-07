@@ -12,6 +12,19 @@ Portmaster and ThemeMaster are pre-installed and work out of the box. RetroArch 
 
 The dtb selector tool has been borrowed from dArkOSRE (credit to @southoz) but all of the dtbs have been customized with the values necessary for this build.
 
+Not all of the dtbs in the selector are supported models, they have been left in place for those who wish to tinker.
+
+## Compatibility
+
+dArkOSen is currently compatible with most genuine R36 devices. *It is not compatible with any clones, including the G80CA and Soy Sauce models.*
+
+  - all genuine R36S models
+  - R36S Plus
+  - R36H
+  - R36H ProMax
+  - R45H
+  - R46H
+
 # HOW TO INSTALL:
 
 1. unzip the .img file and flash it to your card with Rufus
@@ -23,10 +36,6 @@ The dtb selector tool has been borrowed from dArkOSRE (credit to @southoz) but a
 **Rufus is the only supported flashing software at this time. Almost all other software has shown a tendency to corrupt the system files. If you are on a Mac then Balena Etcher has shown the least amount of failures but still has occasional problems. If your install is acting strangely and you did not use Rufus please re-flash the image with Rufus before contacting for support.**
 
 *If you can't find your model in the MODEL SELECTOR then make copies of your original dtbs and rename them* `rg351mp-uboot.dtb` *and* `rk3326-r36s-linux.dtb` *then copy them to the boot partition. You will not have full access to the overclock without patching.*
-
-## Compatibility
-
-dArkOSen is currently compatible with most genuine R36 devices. *It is not compatible with any clones, including the G80CA and Soy Sauce models. More models will be added in time but there is no set schedule.*
 
 # Features:
 
