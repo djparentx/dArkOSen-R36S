@@ -21,7 +21,8 @@ Love dArkOSen and want to show your support? You can buy me a coffee. All procee
 
 ## Compatibility
 
-dArkOSen is currently compatible with all genuine R36 devices. 
+dArkOSen is currently compatible with all genuine R36 devices.
+
 **_It is not compatible with any clones, including the G80CA and Soy Sauce models._**
 
   - all genuine R36S models
