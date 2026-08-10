@@ -1,4 +1,4 @@
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/O8Z424G15Y)
+# dArkOSen-R36 for Genuine Devices
 
 Built from dArkOS\_RG351MP\_trixie\_07262026.
 
@@ -13,6 +13,11 @@ Portmaster and ThemeMaster are pre-installed and work out of the box. RetroArch 
 The dtb selector tool has been borrowed from dArkOSRE (credit to @southoz) but all of the dtbs have been customized with the values necessary for this build.
 
 Not all of the dtbs in the selector are supported models, they have been left in place for those who wish to tinker.
+
+Love dArkOSen and want to show your support? You can buy me a coffee. All proceeds go towards developing new updates and features and covering costs for things like SD cards and new consoles. I do this for the love of it - so donations are never expected but they will always be appreciated.
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/O8Z424G15Y)
+
 
 ## Compatibility
 
