@@ -89,24 +89,6 @@ ES Icons Installer by @Jason3x.  ([https://github.com/Jason3x/ES-Icons-Installer
 
 Use CPU Manager or R36 Tuner to tune the kernel clock speeds.
 
-### System Hotkeys
-
-- Fn or R3 (right joystick press) both act as the hotkey
-
-| FUNCTION | HOTKEY COMBO |
-| :--- | :--- |
-| Brightness Up | Hotkey + D-Pad Up |
-| Brightness Down | Hotkey + D-Pad Down |
-| Gamma Up | Hotkey + D-Pad Right |
-| Gamma Down | Hotkey + D-Pad Left |
-| Volume Up | Hotkey + R1 |
-| Volume Down | Hotkey + L1 |
-| Safe Shutdown | Hotkey + Power |
-| Mute | Hotkey + L3 |
-| Battery Level | Select + R3 |
-| Toggle Wifi | Select + L1 |
-| Toogle Bluetooth | Select + R1 |
-
 # How the Overclock Works
 - Chips get a factory "grade" based on quality — lower-grade chips get told to stay slow
 - Unlocked new speed steps (1368–1512MHz) in the DTB that didn't exist before
