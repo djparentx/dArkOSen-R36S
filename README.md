@@ -1,5 +1,7 @@
 # dArkOSen-R36 for Genuine Devices
 
+<img width="500" height="500" alt="intro" src="https://github.com/user-attachments/assets/a6223084-c408-42fd-bbed-dd862a4e4deb" />
+
 Built from dArkOS\_RG351MP\_trixie\_07262026.
 
 **_A/B button swap has been enabled globally for this build. Use Button Mapper to restore defaults._**
@@ -17,8 +19,6 @@ Not all of the dtbs in the selector are supported models, they have been left in
 Love dArkOSen and want to show your support? You can buy me a coffee. All proceeds go towards developing new updates and features and covering costs for things like SD cards and new consoles. I do this for the love of it - so donations are never expected but they will always be appreciated.
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/O8Z424G15Y)
-
-<img width="500" height="500" alt="intro" src="https://github.com/user-attachments/assets/a6223084-c408-42fd-bbed-dd862a4e4deb" />
 
 ## Issues and Pull Requests
 
