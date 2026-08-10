@@ -18,6 +18,8 @@ Love dArkOSen and want to show your support? You can buy me a coffee. All procee
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/O8Z424G15Y)
 
+<img width="500" height="500" alt="intro" src="https://github.com/user-attachments/assets/a6223084-c408-42fd-bbed-dd862a4e4deb" />
+
 ## Issues and Pull Requests
 
 Issues and Pull Requests will be closed for the foreseeable future. dArkOSen is dArkOS 'enhanced', not a new OS, so it comes with all the problems and issues inherited from dArkOS. Most emulator issues will simply have to wait for a fix to come from upstream. For now dArkOSen is intended primarily to solve compatibility issues with installing dArkOS on genuine devices, stabilize the system on genuine devices, and to add new features that solve common problems faced by power users.
