@@ -2,7 +2,7 @@
 
 Built from dArkOS\_RG351MP\_trixie\_07262026.
 
-A/B button swap has been enabled globally for this build. Use Button Mapper to restore defaults.
+**_A/B button swap has been enabled globally for this build. Use Button Mapper to restore defaults._**
 
 351Files and Files both have root access by default, *be careful!*
 
@@ -16,7 +16,8 @@ Not all of the dtbs in the selector are supported models, they have been left in
 
 ## Compatibility
 
-dArkOSen is currently compatible with most genuine R36 devices. *It is not compatible with any clones, including the G80CA and Soy Sauce models.*
+dArkOSen is currently compatible with most genuine R36 devices. 
+**_It is not compatible with any clones, including the G80CA and Soy Sauce models._**
 
   - all genuine R36S models
   - R36S Plus
@@ -33,7 +34,7 @@ dArkOSen is currently compatible with most genuine R36 devices. *It is not compa
 4. the console will reboot twice as it expands partitions
 5. the console will reboot into dArkOSen
 
-**Rufus is the only supported flashing software at this time. Almost all other software has shown a tendency to corrupt the system files. If you are on a Mac then Balena Etcher has shown the least amount of failures but still has occasional problems. If your install is acting strangely and you did not use Rufus please re-flash the image with Rufus before contacting for support.**
+**Rufus is the only supported flashing software at this time. Almost all other software has shown a tendency to corrupt the system files. If you are on a Mac then Balena Etcher has shown the least amount of failures but still has occasional problems. If your install is acting strangely and you did not use Rufus re-flashing the image with Rufus solves most problems.**
 
 *If you can't find your model in the MODEL SELECTOR then make copies of your original dtbs and rename them* `rg351mp-uboot.dtb` *and* `rk3326-r36s-linux.dtb` *then copy them to the boot partition. You will not have full access to the overclock without patching.*
 
