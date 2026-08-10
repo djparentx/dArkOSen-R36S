@@ -89,28 +89,9 @@ ES Icons Installer by @Jason3x.  ([https://github.com/Jason3x/ES-Icons-Installer
 
 Use CPU Manager or R36 Tuner to tune the kernel clock speeds.
 
-### Retroarch Hotkeys
-
-| FUNCTION | HOTKEY COMBO |
-| :--- | :--- |
-| Retroarch Menu | Function or Select for 2 seconds |
-| Quit Retroarch | Start + Select |
-| Pause | Select + R3 |
-| Reset Core | Select + R2 |
-| Save State | Select + B (Bottom) |
-| Load State | Select + A (Right) |
-| Prev State | Select + Y (Left) |
-| Next State | Select + X (Top) |
-| Fast Forward | Select + D-Pad Right |
-| Fast Forward Hold | Select + D-Pad Down |
-| Rewind | Select + D-Pad Left |
-| Frame Advance | Select + D-Pad Up |
-| Screenshot | Select + L3 |
-
 ### System Hotkeys
 
 - Fn or R3 (right joystick press) both act as the hotkey
-- gamma hotkeys switched to D-Pad left and right
 
 | FUNCTION | HOTKEY COMBO |
 | :--- | :--- |
