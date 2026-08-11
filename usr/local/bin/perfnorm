@@ -1,0 +1,58 @@
+#!/bin/bash
+rm -f /tmp/game-running
+
+printf "\033c" >> /dev/tty1
+export SDL_VIDEO_EGL_DRIVER=libEGL.so
+if [[ ! -z "$(tr -d '\0' < /proc/device-tree/compatible | grep rk3326)" ]] && [[ $(tty) != *"pts"* ]]; then
+  cp /home/ark/.asoundrcbak /home/ark/.asoundrc
+  gpu="ff400000"
+else
+  gpu="fde60000"
+fi
+
+if [ -e "/home/ark/.config/.GameLoadingIModeASCII" ] && [[ $(tty) != *"pts"* ]]; then
+  if [ -f "/roms/launchimages/loading.ascii" ]; then
+    echo -en "\033[21m" > /dev/tty1 && cat /roms/launchimages/loading.ascii > /dev/tty1
+  else
+    continue
+  fi
+elif [ -e "/home/ark/.config/.GameLoadingIModeGIF" ] && [[ $(tty) != *"pts"* ]]; then
+  #if [ -e "/home/ark/.config/.IMAGEDELAYTIME" ]; then
+  #  delay="$(cat /home/ark/.config/.IMAGEDELAYTIME)"
+  #else
+    delay="1.5"
+  #fi
+  if [ -f "/roms/launchimages/loading.gif" ]; then
+    sudo -u ark ffplay -x 1280 -y 720 -loglevel quiet -autoexit /roms/launchimages/loading.gif &
+    (sleep ${delay}s; kill -9 $(pidof ffplay))
+  else
+    continue
+  fi
+
+elif [ -e "/home/ark/.config/.GameLoadingIModeVID" ] && [[ $(tty) != *"pts"* ]]; then
+  if [ -f "/roms/launchimages/loading.mp4" ]; then
+    sudo -u ark ffplay -x 1280 -y 720 -loglevel quiet -autoexit /roms/launchimages/loading.mp4 &
+    (sleep 4s; kill -9 $(pidof ffplay))
+  else
+    continue
+  fi
+elif [ -e "/home/ark/.config/.GameLoadingIModePIC" ] && [[ $(tty) != *"pts"* ]]; then
+  #if [ -e "/home/ark/.config/.IMAGEDELAYTIME" ]; then
+  #  delay="$(cat /home/ark/.config/.IMAGEDELAYTIME)"
+  #else
+    delay="1.5"
+  #fi
+  if [ -f "/roms/launchimages/loading.jpg" ]; then
+    image-viewer /roms/launchimages/loading.jpg &
+    PROC=$!
+    (sleep ${delay}s; kill -9 $PROC)
+  else
+    continue
+  fi
+else
+  clear > /dev/tty1
+fi
+
+echo simple_ondemand > /sys/devices/platform/${gpu}.gpu/devfreq/${gpu}.gpu/governor
+echo ondemand > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
+echo dmc_ondemand > /sys/devices/platform/dmc/devfreq/dmc/governor
