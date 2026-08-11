@@ -40,7 +40,7 @@ dArkOSen is currently compatible with all genuine R36 devices.
 
 # HOW TO INSTALL:
 
-_See the Wiki for full installation instructions._
+_[Read the Wiki before installing.](https://github.com/djparentx/dArkOSen-R36S/wiki)_
 
 1. unzip the .img file and flash it to your card with Rufus
 2. use SELECT MODEL.bat to select your model
