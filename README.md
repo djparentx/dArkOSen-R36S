@@ -1,8 +1,10 @@
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/O8Z424G15Y)
+# dArkOSen-R36 for Genuine Devices
+
+<img width="500" height="500" alt="intro" src="https://github.com/user-attachments/assets/a6223084-c408-42fd-bbed-dd862a4e4deb" />
 
 Built from dArkOS\_RG351MP\_trixie\_07262026.
 
-A/B button swap has been enabled globally for this build. Use Button Mapper to restore defaults.
+**_A/B button swap has been enabled globally for this build. Use Button Mapper to restore defaults._**
 
 351Files and Files both have root access by default, *be careful!*
 
@@ -14,9 +16,20 @@ The dtb selector tool has been borrowed from dArkOSRE (credit to @southoz) but a
 
 Not all of the dtbs in the selector are supported models, they have been left in place for those who wish to tinker.
 
+Love dArkOSen and want to show your support? You can buy me a coffee. All proceeds go towards developing new updates and features and covering costs for things like SD cards and new consoles. I do this for the love of it - so donations are never expected but they will always be appreciated.
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/O8Z424G15Y)
+
+## Issues and Pull Requests
+
+Issues and Pull Requests will be closed for the foreseeable future. dArkOSen is dArkOS 'enhanced', not a new OS, so it comes with all the problems and issues inherited from dArkOS. Most emulator issues will simply have to wait for a fix to come from upstream. For now dArkOSen is intended primarily to solve compatibility issues with installing dArkOS on genuine devices, stabilize the system on genuine devices, and to add new features that solve common problems faced by power users.
+
+
 ## Compatibility
 
-dArkOSen is currently compatible with most genuine R36 devices. *It is not compatible with any clones, including the G80CA and Soy Sauce models.*
+dArkOSen is currently compatible with all genuine R36 devices.
+
+**_It is not compatible with any clones, including the G80CA and Soy Sauce models._**
 
   - all genuine R36S models
   - R36S Plus
@@ -27,13 +40,15 @@ dArkOSen is currently compatible with most genuine R36 devices. *It is not compa
 
 # HOW TO INSTALL:
 
+_See the Wiki for full installation instructions._
+
 1. unzip the .img file and flash it to your card with Rufus
 2. use SELECT MODEL.bat to select your model
 3. insert card into console and boot
 4. the console will reboot twice as it expands partitions
 5. the console will reboot into dArkOSen
 
-**Rufus is the only supported flashing software at this time. Almost all other software has shown a tendency to corrupt the system files. If you are on a Mac then Balena Etcher has shown the least amount of failures but still has occasional problems. If your install is acting strangely and you did not use Rufus please re-flash the image with Rufus before contacting for support.**
+**Rufus is the only supported flashing software at this time. Almost all other software has shown a tendency to corrupt the system files. If you are on a Mac then Balena Etcher has shown the least amount of failures but still has occasional problems. If your install is acting strangely and you did not use Rufus re-flashing the image with Rufus solves most problems.**
 
 *If you can't find your model in the MODEL SELECTOR then make copies of your original dtbs and rename them* `rg351mp-uboot.dtb` *and* `rk3326-r36s-linux.dtb` *then copy them to the boot partition. You will not have full access to the overclock without patching.*
 
@@ -75,43 +90,6 @@ dArkOSen is currently compatible with most genuine R36 devices. *It is not compa
 ES Icons Installer by @Jason3x.  ([https://github.com/Jason3x/ES-Icons-Installer](https://github.com/Jason3x/ES-Icons-Installer))
 
 Use CPU Manager or R36 Tuner to tune the kernel clock speeds.
-
-### Retroarch Hotkeys
-
-| FUNCTION | HOTKEY COMBO |
-| :--- | :--- |
-| Retroarch Menu | Function or Select for 2 seconds |
-| Quit Retroarch | Start + Select |
-| Pause | Select + R3 |
-| Reset Core | Select + R2 |
-| Save State | Select + B (Bottom) |
-| Load State | Select + A (Right) |
-| Prev State | Select + Y (Left) |
-| Next State | Select + X (Top) |
-| Fast Forward | Select + D-Pad Right |
-| Fast Forward Hold | Select + D-Pad Down |
-| Rewind | Select + D-Pad Left |
-| Frame Advance | Select + D-Pad Up |
-| Screenshot | Select + L3 |
-
-### System Hotkeys
-
-- Fn or R3 (right joystick press) both act as the hotkey
-- gamma hotkeys switched to D-Pad left and right
-
-| FUNCTION | HOTKEY COMBO |
-| :--- | :--- |
-| Brightness Up | Hotkey + D-Pad Up |
-| Brightness Down | Hotkey + D-Pad Down |
-| Gamma Up | Hotkey + D-Pad Right |
-| Gamma Down | Hotkey + D-Pad Left |
-| Volume Up | Hotkey + R1 |
-| Volume Down | Hotkey + L1 |
-| Safe Shutdown | Hotkey + Power |
-| Mute | Hotkey + L3 |
-| Battery Level | Select + R3 |
-| Toggle Wifi | Select + L1 |
-| Toogle Bluetooth | Select + R1 |
 
 # How the Overclock Works
 - Chips get a factory "grade" based on quality — lower-grade chips get told to stay slow
