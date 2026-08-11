@@ -18,7 +18,7 @@ Not all of the dtbs in the selector are supported models, they have been left in
 
 Love dArkOSen and want to show your support? You can buy me a coffee. All proceeds go towards developing new updates and features and covering costs for things like SD cards and new consoles. I do this for the love of it - so donations are never expected but they will always be appreciated.
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/O8Z424G15Y)
+[<img width="300" height="150" alt="ChatGPT Image Aug 11, 2026, 10_52_38 AM" src="https://github.com/user-attachments/assets/8680b713-26ad-4d3a-90ea-da1b27a0fe93" />](https://ko-fi.com/O8Z424G15Y)
 
 ## Issues and Pull Requests
 
