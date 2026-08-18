@@ -185,7 +185,9 @@ for variant in "${sorted_variants[@]}"; do
     count=${#group_items[@]}
     (( count == 0 )) && continue
 
-    echo -e "${MAGENTA}Variant: ${variant}${NC}"
+	variant_label="$variant"
+    [[ "$variant" == "clone" || "$variant" == "soysauce" ]] && variant_label="$variant (UNSUPPORTED)"
+    echo -e "${MAGENTA}Variant: ${variant_label}${NC}"
     echo -e "${DARKGRAY}----------------------------------------------------------------------${NC}"
 
     half=$(( (count + 1) / 2 ))

@@ -32,6 +32,10 @@ if [ "$(id -u)" -ne 0 ]; then
     exec sudo -- "$0" "$@"
 fi
 
+exec 19>>/tmp/debug.log
+export BASH_XTRACEFD=19
+set -x
+
 # -------------------------------------------------------
 # Initialization
 # -------------------------------------------------------
@@ -71,6 +75,7 @@ T_UNDO="Undo All Changes"
 T_RESTORE="Restoring all SYSTEMS to /roms2/."
 T_EXIT="Exit"
 T_BACK="Back"
+T_WAIT="Please wait ..."
 
 # --- FRANÇAIS (FR) --- 
 if [[ "$SYSTEM_LANG" == *"fr"* ]]; then
@@ -97,6 +102,7 @@ T_UNDO="Annuler toutes les modifications"
 T_RESTORE="Restauration de tous les SYSTEMS vers /roms2/."
 T_EXIT="Quitter"
 T_BACK="Retour"
+T_WAIT="Veuillez patienter ..."
 
 # --- ESPAÑOL (ES) ---
 elif [[ "$SYSTEM_LANG" == *"es"* ]]; then
@@ -123,6 +129,7 @@ T_UNDO="Deshacer todos los cambios"
 T_RESTORE="Restaurando todos los SYSTEMS a /roms2/."
 T_EXIT="Salir"
 T_BACK="Atras"
+T_WAIT="Por favor espere ..."
 
 # --- PORTUGUÊS (PT) ---
 elif [[ "$SYSTEM_LANG" == *"pt"* ]]; then
@@ -149,6 +156,7 @@ T_UNDO="Desfazer todas as alteracoes"
 T_RESTORE="Restaurando todos os SYSTEMS para /roms2/."
 T_EXIT="Sair"
 T_BACK="Voltar"
+T_WAIT="Por favor aguarde ..."
 
 # --- ITALIANO (IT) ---
 elif [[ "$SYSTEM_LANG" == *"it"* ]]; then
@@ -175,6 +183,7 @@ T_UNDO="Annulla tutte le modifiche"
 T_RESTORE="Ripristino di tutti i SYSTEMS su /roms2/."
 T_EXIT="Esci"
 T_BACK="Indietro"
+T_WAIT="Attendere prego ..."
 
 # --- DEUTSCH (DE) ---
 elif [[ "$SYSTEM_LANG" == *"de"* ]]; then
@@ -201,6 +210,7 @@ T_UNDO="Alle Anderungen rueckgaengig machen"
 T_RESTORE="Alle SYSTEMS werden nach /roms2/ wiederhergestellt."
 T_EXIT="Beenden"
 T_BACK="Zuruck"
+T_WAIT="Bitte warten ..."
 
 # --- POLSKI (PL) ---
 elif [[ "$SYSTEM_LANG" == *"pl"* ]]; then
@@ -227,6 +237,7 @@ T_UNDO="Cofnij wszystkie zmiany"
 T_RESTORE="Przywracanie wszystkich SYSTEMS do /roms2/."
 T_EXIT="Wyjscie"
 T_BACK="Wstecz"
+T_WAIT="Prosze czekac ..."
 fi
 
 # -------------------------------------------------------
@@ -349,7 +360,6 @@ AutoDetect() {
 			if [[ "$line" =~ \<path\>([^<]+)\</path\> ]]; then
 				path="${BASH_REMATCH[1]}"
 			fi
-			[[ "$path" == *"/ports/"* || "$path" == *"/tools/"* || "$path" == *"/themes/"* ]] && continue
 			if [[ -n "$name" && -n "$extensions" && -n "$path" ]]; then
 				if [[ "$path" == *"/roms2/"* ]]; then
 					folder="${path%/}"
@@ -406,7 +416,6 @@ AutoDetect() {
 			if [[ "$line" =~ \<path\>([^<]+)\</path\> ]]; then
 				path="${BASH_REMATCH[1]}"
 			fi
-			[[ "$path" == *"/ports/"* || "$path" == *"/tools/"* || "$path" == *"/themes/"* ]] && continue
 			if [[ -n "$name" && -n "$extensions" && -n "$path" ]]; then
 				if [[ "$path" == *"/roms/"* ]]; then
 					rom_dir="${path%/}"
@@ -467,9 +476,39 @@ AutoDetect() {
         printf "\033c" > /dev/tty1
 		touch /tmp/es-restart
 		killall emulationstation
+		exit 0
     fi
 	return
 }
+
+# -------------------------------------------------------
+# Tools Helpers
+# -------------------------------------------------------
+# move Tools to SD1
+Tools_SD1() {
+    dialog --backtitle "$T_BACKTITLE" --title "$T_MANUAL" --infobox "\n    $T_WAIT" 5 40 2>&1 > "$CURR_TTY"
+	umount /opt/system/Tools 2>/dev/null || true
+	mount -B /roms/tools /opt/system/Tools
+	sed -i '/roms2\/tools/s//roms\/tools/' /etc/fstab
+	systemctl daemon-reload
+}
+
+# move Tools to SD2
+Tools_SD2() {
+    dialog --backtitle "$T_BACKTITLE" --title "$T_MANUAL" --infobox "\n    $T_WAIT" 5 40 2>&1 > "$CURR_TTY"
+	umount /opt/system/Tools 2>/dev/null || true
+	mount -B /roms2/tools /opt/system/Tools
+	sed -i '/roms\/tools/s//roms2\/tools/' /etc/fstab
+	systemctl daemon-reload
+}
+
+# get current Tools location, save to TOOLS as /roms or /roms2
+Get_Tools() {
+    TOOLS=$(grep -E '^[[:space:]]*/roms2?/tools[[:space:]]+/opt/system/Tools[[:space:]]' /etc/fstab |
+            awk '{print $1}' |
+            sed 's|/tools$||')
+}
+
 
 # -------------------------------------------------------
 # Systems Menu
@@ -478,7 +517,10 @@ SystemsMenu() {
     declare -A FULLNAME_PATH_MAP
     declare -A PATH_STATE
     local name="" fullname="" path="" folder="" in_system=0
+    local tools_state="OFF"
 
+    Get_Tools
+    [[ "$TOOLS" == "/roms" ]] && tools_state="ON"
     while IFS= read -r line; do
         if [[ "$line" =~ \<system\> ]]; then
             in_system=1
@@ -498,7 +540,6 @@ SystemsMenu() {
                 path="${BASH_REMATCH[1]}"
             fi
             if [[ -n "$fullname" && -n "$path" && -z "${FULLNAME_PATH_MAP[$path]}" ]]; then
-                [[ "$path" == *"/ports/"* || "$path" == *"/tools/"* || "$path" == *"/themes/"* ]] && continue
                 if [[ "$path" == *"/roms2/"* ]]; then
                     folder="${path%/}"
                     folder="${folder##*/}"
@@ -519,10 +560,25 @@ SystemsMenu() {
     done < "$CFG"
 
     # --- Build OPTIONS sorted alphabetically by fullname ---
-    OPTIONS=()
+	OPTIONS=()
+
+	# Tools is always the first item
+	OPTIONS+=("TOOLS" "Tools" "$tools_state")
+
+	# Ports goes right after Tools
+	ports_path=""
+	for path in "${!FULLNAME_PATH_MAP[@]}"; do
+		if [[ "$path" == *"/ports/"* ]]; then
+			ports_path="$path"
+			OPTIONS+=("$path" "${FULLNAME_PATH_MAP[$path]}" "${PATH_STATE[$path]}")
+			break
+		fi
+	done
+
+	# Remaining systems sorted alphabetically by fullname
     while IFS= read -r fullname; do
         for path in "${!FULLNAME_PATH_MAP[@]}"; do
-            if [[ "${FULLNAME_PATH_MAP[$path]}" == "$fullname" ]]; then
+            if [[ "${FULLNAME_PATH_MAP[$path]}" == "$fullname" && "$path" != "$ports_path" ]]; then
                 OPTIONS+=("$path" "$fullname" "${PATH_STATE[$path]}")
             fi
         done
@@ -538,11 +594,30 @@ SystemsMenu() {
     EXIT_CODE=$?
     [[ $EXIT_CODE -ne 0 ]] && return
 
-    SELECTED_PATHS=()
-    for path in $CHOICES; do
-        path="${path//\"/}"
-        SELECTED_PATHS+=("$path")
-    done
+	SELECTED_PATHS=()
+	TOOLS_SELECTED=0
+	for path in $CHOICES; do
+		path="${path//\"/}"
+		if [[ "$path" == "TOOLS" ]]; then
+			TOOLS_SELECTED=1
+			continue
+		fi
+		SELECTED_PATHS+=("$path")
+	done
+
+    MOVED=()
+    REVERTED=()
+	TOOLS_CHANGED=0
+
+	if [[ "$TOOLS_SELECTED" -eq 1 && "$TOOLS" == "/roms2" ]]; then
+		Tools_SD1
+		TOOLS_CHANGED=1
+		MOVED+=("  - Tools")
+	elif [[ "$TOOLS_SELECTED" -eq 0 && "$TOOLS" == "/roms" ]]; then
+		Tools_SD2
+		TOOLS_CHANGED=1
+		REVERTED+=("  - Tools")
+	fi
 
     declare -A SELECTED_MAP
     for path in "${SELECTED_PATHS[@]}"; do
@@ -552,7 +627,6 @@ SystemsMenu() {
     cp -a "$CFG" "${CFG}.bak"
 
     # --- Selected + /roms2/ → change to /roms/ ---
-    MOVED=()
     for path in "${SELECTED_PATHS[@]}"; do
         if [[ "$path" == *"/roms2/"* ]]; then
             new_path="${path/\/roms2\//\/roms\/}"
@@ -563,7 +637,6 @@ SystemsMenu() {
     done
 
     # --- Unselected + /roms/ → change to /roms2/ ---
-    REVERTED=()
     local rpath="" in_system=0
     while IFS= read -r line; do
         if [[ "$line" =~ \<system\> ]]; then
@@ -576,7 +649,6 @@ SystemsMenu() {
                 rpath="${BASH_REMATCH[1]}"
             fi
             if [[ -n "$rpath" ]]; then
-                [[ "$rpath" == *"/ports/"* || "$rpath" == *"/tools/"* || "$rpath" == *"/themes/"* ]] && continue
                 if [[ "$rpath" == *"/roms/"* && -z "${SELECTED_MAP[$rpath]}" ]]; then
                     new_path="${rpath/\/roms\//\/roms2\/}"
                     sed -i "s|<path>${rpath}</path>|<path>${new_path}</path>|" "$CFG"
@@ -587,7 +659,7 @@ SystemsMenu() {
         fi
     done < "$CFG"
 
-    if [[ ${#MOVED[@]} -eq 0 && ${#REVERTED[@]} -eq 0 ]]; then
+    if [[ ${#MOVED[@]} -eq 0 && ${#REVERTED[@]} -eq 0 && "$TOOLS_CHANGED" -eq 0 ]]; then
         dialog --backtitle "$T_BACKTITLE" --title "$T_PROC_COMP" \
             --msgbox "\n $T_NO_CHANGE" 7 45 > "$CURR_TTY"
 		return
@@ -615,6 +687,7 @@ SystemsMenu() {
         printf "\033c" > /dev/tty1
 		touch /tmp/es-restart
 		killall emulationstation
+		exit 0
     fi
 	return
 }
@@ -641,7 +714,6 @@ Revert() {
                 rpath="${BASH_REMATCH[1]}"
             fi
             if [[ -n "$rpath" ]]; then
-                [[ "$rpath" == *"/ports/"* || "$rpath" == *"/tools/"* || "$rpath" == *"/themes/"* ]] && continue
                 if [[ "$rpath" == *"/roms/"* ]]; then
                     new_path="${rpath/\/roms\//\/roms2\/}"
                     sed -i "s|<path>${rpath}</path>|<path>${new_path}</path>|" "$CFG"
@@ -655,6 +727,7 @@ Revert() {
         printf "\033c" > /dev/tty1
 		touch /tmp/es-restart
 		killall emulationstation
+		exit 0
     fi
 	return
 }

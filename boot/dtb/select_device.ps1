@@ -93,7 +93,8 @@ foreach ($variant in $sortedVariants) {
 
     if ($devicesInGroup.Count -eq 0) { continue }
 
-    Write-Host "Variant: $variant" -ForegroundColor Magenta
+    $variantLabel = if ($variant -in @("clone","soysauce")) { "$variant (UNSUPPORTED)" } else { $variant }
+    Write-Host "Variant: $variantLabel" -ForegroundColor Magenta
     Write-Host ("-" * 70) -ForegroundColor DarkGray
 
     $half = [math]::Ceiling($devicesInGroup.Count / 2)

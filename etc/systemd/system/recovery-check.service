@@ -1,9 +1,13 @@
 [Unit]
 Description=Recovery Script Runner
 Before=emulationstation.service
+RequiresMountsFor=/boot
+After=boot.mount
 
 [Service]
 Type=oneshot
+User=root
+WorkingDirectory=/boot
 ExecStart=/usr/local/bin/recovery-runner.sh
 RemainAfterExit=yes
 
