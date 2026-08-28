@@ -1,6 +1,8 @@
 # dArkOSen-R36 for Genuine Devices
 
-<img width="500" height="500" alt="intro" src="https://github.com/user-attachments/assets/a6223084-c408-42fd-bbed-dd862a4e4deb" />
+<p align="center">
+  <img width="500" height="500" alt="intro" src="https://github.com/user-attachments/assets/a6223084-c408-42fd-bbed-dd862a4e4deb" />
+</p>p>
 
 Built from dArkOS\_RG351MP\_trixie\_07262026.
 
