@@ -1,0 +1,10 @@
+[Unit]
+Description=Set boot volume
+After=emulationstation.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/boot_volume.sh
+
+[Install]
+WantedBy=emulationstation.service

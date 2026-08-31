@@ -1,0 +1,8 @@
+[Unit]
+Description=WiFi Connection Monitor
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/wifi_monitor.sh
+Restart=on-failure

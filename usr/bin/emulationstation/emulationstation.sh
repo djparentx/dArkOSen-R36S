@@ -1,8 +1,6 @@
 #!/bin/bash
 
 export SDL_ASSERT="always_ignore"
-export SDL_RENDER_VSYNC=0
-export SDL_JOYSTICK_ALLOW_BACKGROUND_EVENTS=1
 
 . /usr/local/bin/buttonmon.sh
 
@@ -75,8 +73,8 @@ if [ "$?" -eq "10" ]; then
                   "3)" "Wifi"
                   "4)" "Enable Remote Services"
                   "5)" "351Files"
-                  "6)" "Backup ArkOS Settings"
-                  "7)" "Restore ArkOS Settings"
+                  "6)" "Backup dArkOS Settings"
+                  "7)" "Restore dArkOS Settings"
                   "8)" "Reboot"
                   "9)" "Power Off"
           )
@@ -116,11 +114,11 @@ if [ "$?" -eq "10" ]; then
                           "5)") /opt/system/351Files.sh 2>&1 > /dev/tty1
                                 ;;
                           "6)") kill_boot_controls
-                                /opt/system/Advanced/"Backup ArkOS Settings.sh" 2>&1 > /dev/tty1
+                                /opt/system/Advanced/"Backup dArkOS Settings.sh" 2>&1 > /dev/tty1
                                 boot_controls
                                 ;;
                           "7)") kill_boot_controls
-                                /opt/system/Advanced/"Restore ArkOS Settings.sh" 2>&1 > /dev/tty1
+                                /opt/system/Advanced/"Restore dArkOS Settings.sh" 2>&1 > /dev/tty1
                                 boot_controls
                                 ;;
                           "8)") sudo reboot
@@ -158,6 +156,8 @@ else
       gpu="fde60000"
     fi
     echo performance | sudo tee /sys/devices/platform/${gpu}.gpu/devfreq/${gpu}.gpu/governor
+    echo performance | sudo tee /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
+    echo performance | sudo tee /sys/devices/platform/dmc/devfreq/dmc/governor
     while true; do
       retroarch "$@"
     done

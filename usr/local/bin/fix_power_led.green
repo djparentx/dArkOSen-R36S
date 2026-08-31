@@ -1,0 +1,4 @@
+#!/bin/bash
+echo 77 > /sys/class/gpio/export 2>/dev/null || true
+echo out > /sys/class/gpio/gpio77/direction
+echo 0 > /sys/class/gpio/gpio77/value

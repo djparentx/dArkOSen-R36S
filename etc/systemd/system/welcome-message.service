@@ -1,0 +1,17 @@
+[Unit]
+Description=Show custom boot welcome message
+DefaultDependencies=no
+After=local-fs.target firstboot.service
+Conflicts=shutdown.target
+#ConditionKernelCommandLine=!quiet
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/boot_text.sh
+StandardOutput=tty
+StandardInput=tty
+TTYPath=/dev/tty1
+RemainAfterExit=yes
+
+[Install]
+WantedBy=sysinit.target

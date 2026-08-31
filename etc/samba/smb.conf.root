@@ -1,0 +1,183 @@
+#
+# Sample configuration file for the Samba suite for Debian GNU/Linux.
+#
+#
+# This is the main Samba configuration file. You should read the
+# smb.conf(5) manual page in order to understand the options listed
+# here. Samba has a huge number of configurable options most of which 
+# are not shown in this example
+#
+# Some options that are often worth tuning have been included as
+# commented-out examples in this file.
+#  - When such options are commented with ";", the proposed setting
+#    differs from the default Samba behaviour
+#  - When commented with "#", the proposed setting is the default
+#    behaviour of Samba but the option is considered important
+#    enough to be mentioned here
+#
+# NOTE: Whenever you modify this file you should run the command
+# "testparm" to check that you have not made any basic syntactic 
+# errors. 
+
+#======================= Global Settings =======================
+
+[global]
+
+## Browsing/Identification ###
+
+# Change this to the workgroup/NT-domain name your Samba server will part of
+   workgroup = WORKGROUP
+
+#### Debugging/Accounting ####
+
+# This tells Samba to use a separate log file for each machine
+# that connects
+   log file = /var/log/samba/log.%m
+
+# Cap the size of the individual log files (in KiB).
+   max log size = 1000
+
+# We want Samba to only log to /var/log/samba/log.{smbd,nmbd}.
+# Append syslog@1 if you want important messages to be sent to syslog too.
+   logging = file
+
+# Do something sensible when Samba crashes: mail the admin a backtrace
+   panic action = /usr/share/samba/panic-action %d
+
+####### Authentication #######
+
+# Server role. Defines in which mode Samba will operate. Possible
+# values are "standalone server", "member server", "classic primary
+# domain controller", "classic backup domain controller", "active
+# directory domain controller". 
+#
+# Most people will want "standalone server" or "member server".
+# Running as "active directory domain controller" will require first
+# running "samba-tool domain provision" to wipe databases and create a
+# new domain.
+   server role = standalone server
+
+   obey pam restrictions = yes
+
+# This boolean parameter controls whether Samba attempts to sync the Unix
+# password with the SMB password when the encrypted SMB password in the
+# passdb is changed.
+   unix password sync = yes
+
+# For Unix password sync to work on a Debian GNU/Linux system, the following
+# parameters must be set (thanks to Ian Kahan <<kahan@informatik.tu-muenchen.de> for
+# sending the correct chat script for the passwd program in Debian Sarge).
+   passwd program = /usr/bin/passwd %u
+   passwd chat = *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n\n *password\supdated\ssuccessfully* .
+
+# This boolean controls whether PAM will be used for password changes
+# when requested by an SMB client instead of the program listed in
+# 'passwd program'. The default is 'no'.
+   pam password change = yes
+
+# This option controls how unsuccessful authentication attempts are mapped
+# to anonymous connections
+   map to guest = bad user
+
+# Maximum number of usershare. 0 means that usershare is disabled.
+#   usershare max shares = 100
+
+# Allow users who've been granted usershare privileges to create
+# public shares, not just authenticated ones
+   usershare allow guests = yes
+   
+   server min protocol = SMB2
+   server max protocol = SMB3
+   socket options = TCP_NODELAY IPTOS_LOWDELAY SO_RCVBUF=524288 SO_SNDBUF=524288
+   smb2 max read = 8388608
+   smb2 max write = 8388608
+   smb2 max trans = 8388608
+   use sendfile = yes
+   strict locking = no
+   oplocks = no
+   level2 oplocks = no
+   nt acl support = no
+   acl allow execute always = yes
+   smb2 leases = no
+
+# Set netbios name to change the device hostname for Samba shares  
+#  netbios name = MYDEVICE
+
+#======================= Share Definitions =======================
+
+[roms]
+   comment = ROMS
+   path = /roms
+   browsable = yes
+   read only = no
+   map archive = no
+   map system = no
+   map hidden = no
+   guest ok = yes
+   force user = root
+
+[opt]
+   comment = OPT
+   path = /opt
+   browsable = yes
+   read only = no
+   map archive = no
+   map system = no
+   map hidden = no
+   guest ok = yes
+   force user = root
+   
+[ark]
+   comment = ark
+   path = /home/ark
+   browsable = yes
+   read only = no
+   map archive = no
+   map system = no
+   map hidden = no
+   guest ok = yes
+   force user = root
+   
+[Tools]
+   comment = TOOLS
+   path = /opt/system/Tools
+   browsable = yes
+   read only = no
+   map archive = no
+   map system = no
+   map hidden = no
+   guest ok = yes
+   force user = root
+   
+[roms2]
+   comment = ROMS2
+   path = /roms2
+   browsable = yes
+   read only = no
+   map archive = no
+   map system = no
+   map hidden = no
+   guest ok = yes
+   force user = root
+
+[boot]
+   comment = BOOT
+   path = /boot
+   browsable = yes
+   read only = no
+   map archive = no
+   map system = no
+   map hidden = no
+   guest ok = yes
+   force user = root
+   
+[root]
+   comment = ROOT
+   path = /
+   browsable = yes
+   read only = no
+   map archive = no
+   map system = no
+   map hidden = no
+   guest ok = yes
+   force user = root

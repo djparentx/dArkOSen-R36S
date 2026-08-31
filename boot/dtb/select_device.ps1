@@ -213,6 +213,10 @@ if ($deleted.Count -gt 0) {
     Write-Host "  No .dtb files to delete"
 }
 
+# Copy logo.bmp from dtb folder to root
+$logoSource = Join-Path $rootDir "dtb\logo.bmp"
+Copy-Item -Path $logoSource -Destination $rootDir -Force -ErrorAction Stop
+
 # Copy new files
 Write-Host "`nCopying new files to root..." -ForegroundColor Yellow
 

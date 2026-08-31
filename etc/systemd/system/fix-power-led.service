@@ -1,0 +1,11 @@
+[Unit]
+Description=Initialize Power LED GPIO
+Before=batt_led.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/fix_power_led
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,13 @@
+[Unit]
+Description=Set GPU max frequency at boot
+After=systemd-udev-settle.service
+Requires=systemd-udev-settle.service
+
+[Service]
+Type=oneshot
+TimeoutStartSec=10
+NoNewPrivileges=no
+ExecStart=/bin/bash -c 'source /etc/gpu-settings.conf 2>/dev/null || exit 0; echo userspace > "/sys/class/devfreq/ff400000.gpu/governor" 2>/dev/null; [ -w "/sys/class/devfreq/ff400000.gpu/max_freq" ] && echo "$FREQ" > "/sys/class/devfreq/ff400000.gpu/max_freq"'
+
+[Install]
+WantedBy=multi-user.target

@@ -299,6 +299,8 @@ else
     log_echo "  No .dtb files to delete"
 fi
 
+cp -f "${ROOT_DIR}/dtb/logo.bmp" "${ROOT_DIR}/logo.bmp"
+
 log_echo "\nCopying new files to root..."
 if (( ${#files_to_copy[@]} > 0 )); then
     cp -rf "${files_to_copy[@]}" "$ROOT_DIR/"
