@@ -32,12 +32,12 @@ static HOTKEY:         EventCode = EventCode::EV_KEY(EV_KEY::BTN_TRIGGER_HAPPY5)
 static HOTKEY2:        EventCode = EventCode::EV_KEY(EV_KEY::BTN_TRIGGER_HAPPY4);
 static BRIGHT_UP:      EventCode = EventCode::EV_KEY(EV_KEY::BTN_DPAD_UP);
 static BRIGHT_DOWN:    EventCode = EventCode::EV_KEY(EV_KEY::BTN_DPAD_DOWN);
-static VOL_UP:         EventCode = EventCode::EV_KEY(EV_KEY::BTN_DPAD_RIGHT);
-static VOL_DOWN:       EventCode = EventCode::EV_KEY(EV_KEY::BTN_DPAD_LEFT);
-static VOL_UP2:        EventCode = EventCode::EV_KEY(EV_KEY::BTN_TR);
-static VOL_DOWN2:      EventCode = EventCode::EV_KEY(EV_KEY::BTN_TL);
-static GAMMA_UP:       EventCode = EventCode::EV_KEY(EV_KEY::BTN_TR2);
-static GAMMA_DOWN:     EventCode = EventCode::EV_KEY(EV_KEY::BTN_TL2);
+static GAMMA_UP:       EventCode = EventCode::EV_KEY(EV_KEY::BTN_DPAD_RIGHT);
+static GAMMA_DOWN:     EventCode = EventCode::EV_KEY(EV_KEY::BTN_DPAD_LEFT);
+static VOL_UP:         EventCode = EventCode::EV_KEY(EV_KEY::BTN_TR);
+static VOL_DOWN:       EventCode = EventCode::EV_KEY(EV_KEY::BTN_TL);
+/*static GAMMA_UP:     EventCode = EventCode::EV_KEY(EV_KEY::BTN_TR2);
+static GAMMA_DOWN:     EventCode = EventCode::EV_KEY(EV_KEY::BTN_TL2);*/
 static VOLUME_UP:      EventCode = EventCode::EV_KEY(EV_KEY::KEY_VOLUMEUP);
 static VOLUME_DOWN:    EventCode = EventCode::EV_KEY(EV_KEY::KEY_VOLUMEDOWN);
 static MUTE:           EventCode = EventCode::EV_KEY(EV_KEY::BTN_TRIGGER_HAPPY3);
@@ -50,10 +50,10 @@ fn process_event(_dev: &Device, ev: &InputEvent, hotkey: bool, repeat_action: &A
         } else if ev.event_code == BRIGHT_DOWN || ev.event_code == VOLUME_DOWN {
             repeat_action.store(RepeatAction::BrightDown as u8, Ordering::Relaxed);
             repeat_active.store(true, Ordering::Relaxed);
-        } else if ev.event_code == VOL_UP || ev.event_code == VOL_UP2 {
+        } else if ev.event_code == VOL_UP {
             repeat_action.store(RepeatAction::VolUp as u8, Ordering::Relaxed);
             repeat_active.store(true, Ordering::Relaxed);
-        } else if ev.event_code == VOL_DOWN || ev.event_code == VOL_DOWN2 {
+        } else if ev.event_code == VOL_DOWN {
             repeat_action.store(RepeatAction::VolDown as u8, Ordering::Relaxed);
             repeat_active.store(true, Ordering::Relaxed);
 		} else if ev.event_code == GAMMA_UP {
@@ -92,9 +92,7 @@ fn process_event(_dev: &Device, ev: &InputEvent, hotkey: bool, repeat_action: &A
         if *code == BRIGHT_UP
             || *code == BRIGHT_DOWN
             || *code == VOL_UP
-            || *code == VOL_UP2
             || *code == VOL_DOWN
-            || *code == VOL_DOWN2
 			|| *code == VOLUME_UP
 			|| *code == VOLUME_DOWN
             || *code == GAMMA_UP
