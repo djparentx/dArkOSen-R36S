@@ -1,0 +1,16 @@
+[package]
+name = "ogage"
+version = "0.1.0"
+authors = ["valadaa48 <valadaa48@gmx.com>"]
+edition = "2018"
+
+[profile.release]
+lto = true
+panic = 'abort'
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+evdev-rs = "0.4.0"
+mio = { version = "0.7", features = ["os-poll", "os-util"]}
+
