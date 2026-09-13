@@ -123,7 +123,7 @@ fn process_event2(_dev: &Device, ev: &InputEvent, selectkey: bool, happy3key: bo
 		}
     }
     if happy3key {
-        if ev.event_code == EventCode::EV_KEY(EV_KEY::BTN_SOUTH) && ev.value == 1 {
+        if ev.event_code == EventCode::EV_KEY(EV_KEY::BTN_EAST) && ev.value == 1 {
             if let Ok(mut child) = Command::new("/usr/local/bin/savesync.sh").arg("--bg").spawn() {
                 std::thread::spawn(move || { let _ = child.wait(); });
             }
