@@ -104,7 +104,7 @@ fn process_event(_dev: &Device, ev: &InputEvent, hotkey: bool, repeat_action: &A
     }
 }
 
-fn process_event2(_dev: &Device, ev: &InputEvent, selectkey: bool) {
+fn process_event2(_dev: &Device, ev: &InputEvent, selectkey: bool, happy3key: bool) {
     if selectkey{
         if ev.event_code == EventCode::EV_KEY(EV_KEY::BTN_TRIGGER_HAPPY4) && ev.value == 1 {
             if let Ok(mut child) = Command::new("speak_bat_life.sh").spawn() {
@@ -122,6 +122,13 @@ fn process_event2(_dev: &Device, ev: &InputEvent, selectkey: bool) {
             }
 		}
     }
+    if happy3key {
+        if ev.event_code == EventCode::EV_KEY(EV_KEY::BTN_SOUTH) && ev.value == 1 {
+            if let Ok(mut child) = Command::new("/usr/local/bin/savesync.sh").arg("--bg").spawn() {
+                std::thread::spawn(move || { let _ = child.wait(); });
+            }
+        }
+    }
 }
 
 fn main() -> io::Result<()> {
@@ -130,6 +137,7 @@ fn main() -> io::Result<()> {
     let mut devs: Vec<Device> = Vec::new();
     let mut hotkey = false;
     let mut selectkey = false;
+    let mut happy3key = false;
     let repeat_action = Arc::new(AtomicU8::new(RepeatAction::None as u8));
     let repeat_active = Arc::new(AtomicBool::new(false));
 {
@@ -213,7 +221,10 @@ for s in ["/dev/input/event10", "/dev/input/event9", "/dev/input/event8", "/dev/
                         if ev.event_code == EventCode::EV_KEY(EV_KEY::BTN_TRIGGER_HAPPY1) {
                             selectkey = ev.value == 1 || ev.value == 2;
                         }
-                        process_event2(&dev, &ev, selectkey)
+                        if ev.event_code == EventCode::EV_KEY(EV_KEY::BTN_TRIGGER_HAPPY3) {
+                            happy3key = ev.value == 1 || ev.value == 2;
+                        }
+                        process_event2(&dev, &ev, selectkey, happy3key)
                     },
                     _ => ()
                 }
