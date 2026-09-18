@@ -1,0 +1,3 @@
+#!/bin/zsh
+BASE="$(cd "$(dirname "$0")/../../.." && pwd)"
+exec "$BASE/dtb/select_device_OSX.sh"
