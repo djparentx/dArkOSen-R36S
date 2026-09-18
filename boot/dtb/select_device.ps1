@@ -213,9 +213,40 @@ if ($deleted.Count -gt 0) {
     Write-Host "  No .dtb files to delete"
 }
 
-# Copy logo.bmp from dtb folder to root
-$logoSource = Join-Path $rootDir "dtb\logo.bmp"
-Copy-Item -Path $logoSource -Destination $rootDir -Force -ErrorAction Stop
+# Copy boot images based on the selected model
+if ($chosen -match 'ProMax|R45H|R46H') {
+    $bootSource = Join-Path $rootDir "dtb\1024"
+}
+elseif ($chosen -match 'R36S-Plus') {
+    $bootSource = Join-Path $rootDir "dtb\720"
+}
+elseif ($chosen -match 'R50S|R50H') {
+    $bootSource = Join-Path $rootDir "dtb\1280"
+}
+else {
+    $bootSource = Join-Path $rootDir "dtb\640"
+}
+
+if (-not (Test-Path $bootSource -PathType Container)) {
+    Write-Host "ERROR: Boot file folder not found: $bootSource" -ForegroundColor Red
+    Pause
+    exit 1
+}
+
+Write-Host "`nSelected boot images for: $chosen" -ForegroundColor Cyan
+Write-Host "  Source: $bootSource" -ForegroundColor White
+Write-Host "  Destination: $rootDir" -ForegroundColor White
+
+$bootFiles = @(Get-ChildItem -Path $bootSource -File -ErrorAction Stop)
+
+if ($bootFiles.Count -eq 0) {
+    Write-Host "ERROR: No files found in boot folder!" -ForegroundColor Red
+    Pause
+    exit 1
+}
+
+Copy-Item -Path "$bootSource\*" -Destination $rootDir -Force -ErrorAction Stop
+Write-Host "  Copied $($bootFiles.Count) boot files." -ForegroundColor Green
 
 # Copy new files
 Write-Host "`nCopying new files to root..." -ForegroundColor Yellow

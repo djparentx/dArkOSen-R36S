@@ -299,7 +299,36 @@ else
     log_echo "  No .dtb files to delete"
 fi
 
-cp -f "${ROOT_DIR}/dtb/logo.bmp" "${ROOT_DIR}/logo.bmp"
+# Select boot images based on the selected model
+if [[ "$chosen" == *ProMax* || "$chosen" == *R45H* || "$chosen" == *R46H* ]]; then
+    boot_source="${ROOT_DIR}/dtb/1024"
+elif [[ "$chosen" == *R36S-Plus* ]]; then
+    boot_source="${ROOT_DIR}/dtb/720"
+elif [[ "$chosen" == *R50S* || "$chosen" == *R50H* ]]; then
+    boot_source="${ROOT_DIR}/dtb/1280"
+else
+    boot_source="${ROOT_DIR}/dtb/640"
+fi
+
+if [[ ! -d "$boot_source" ]]; then
+    echo -e "${RED}ERROR: Boot image folder not found: ${boot_source}${NC}"
+    pause && exit 1
+fi
+
+log_echo "\nSelected boot images for: ${chosen}"
+log_echo "  Source: ${boot_source}"
+log_echo "  Destination: ${ROOT_DIR}"
+
+boot_files=("$boot_source"/*(N.))
+
+if (( ${#boot_files[@]} == 0 )); then
+    echo -e "${RED}ERROR: No files found in boot folder!${NC}"
+    pause && exit 1
+fi
+
+cp -rf "${boot_files[@]}" "$ROOT_DIR/"
+
+log_echo "  Copied ${#boot_files[@]} boot files."
 
 log_echo "\nCopying new files to root..."
 if (( ${#files_to_copy[@]} > 0 )); then
