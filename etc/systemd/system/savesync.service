@@ -1,0 +1,14 @@
+[Unit]
+Description=SaveSync Boot Sync Service
+Wants=NetworkManager-wait-online.service
+After=NetworkManager-wait-online.service
+ExecStartPre=/bin/sleep 5
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/savesync.sh --scan
+ExecStart=/usr/local/bin/savesync.sh --bg
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

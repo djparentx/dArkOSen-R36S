@@ -142,8 +142,6 @@ echo "ON" > /var/cache/wifi_manager_state
 # --- Remove sleep hook so wifi stays on across suspend/resume ---
 rm -f /etc/systemd/system-sleep/wifi-manager-hook.sh
 	
-systemctl start wifi-usb-old-scheme.service
-
 for ((i=0; i<12; i++)); do
 	iface_check=$(Get_Wifi_Interface || true)
 	if [ -z "$iface_check" ]; then

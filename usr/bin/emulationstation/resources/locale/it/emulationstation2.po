@@ -2799,3 +2799,395 @@ msgstr ""
 
 msgid "SHOW NETWORK ICON"
 msgstr "MOSTRA ICONA RETE"
+
+msgid "SHOW WIFI ICON"
+msgstr "MOSTRA ICONA WI-FI"
+
+msgid "SHOW BLUETOOTH ICON"
+msgstr "MOSTRA ICONA BLUETOOTH"
+
+msgid "BLUETOOTH MANAGER"
+msgstr "GESTORE BLUETOOTH"
+
+msgid "BATTERYPLUS STATUS"
+msgstr "STATO BATTERYPLUS"
+
+msgid "ACTIVE"
+msgstr "ATTIVO"
+
+msgid "INACTIVE"
+msgstr "INATTIVO"
+
+msgid "CALIBRATION"
+msgstr "CALIBRAZIONE"
+
+msgid "CALIBRATED"
+msgstr "CALIBRATO"
+
+msgid "NOT CALIBRATED"
+msgstr "NON CALIBRATO"
+
+msgid "BATTERY LEVEL"
+msgstr "LIVELLO BATTERIA"
+
+msgid "BATTERYPLUS MODE"
+msgstr "MODALITÀ BATTERYPLUS"
+
+msgid "VOLTAGE"
+msgstr "TENSIONE"
+
+msgid "PMIC"
+msgstr "PMIC"
+
+msgid "RESET CALIBRATION"
+msgstr "REIMPOSTA CALIBRAZIONE"
+
+msgid "RESET BATTERYPLUS CALIBRATION?\nThis will delete learned voltage anchors."
+msgstr "REIMPOSTA CALIBRAZIONE?\nQuesto eliminerà i dati appresi."
+
+msgid "BATTERY ICON"
+msgstr "ICONA BATTERIA"
+
+msgid "HEARTS"
+msgstr "CUORI"
+
+msgid "GAMMA"
+msgstr "GAMMA"
+
+msgid "CPU TEMP"
+msgstr "TEMP. CPU"
+
+msgid "CPU CORES"
+msgstr "CORE CPU"
+
+msgid "CPU GOVERNOR"
+msgstr "GOVERNOR CPU"
+
+msgid "CPU MAX FREQ"
+msgstr "FREQ. MAX CPU"
+
+msgid "CPU APPLY AT BOOT"
+msgstr "APPLICA ALL'AVVIO CPU"
+
+msgid "GPU MAX FREQ"
+msgstr "FREQ. MAX GPU"
+
+msgid "GPU APPLY AT BOOT"
+msgstr "APPLICA ALL'AVVIO GPU"
+
+msgid "RAM MAX FREQ"
+msgstr "FREQ. MAX RAM"
+
+msgid "PERFORMANCE SETTINGS"
+msgstr "IMPOSTAZIONI PRESTAZIONI"
+
+msgid "REMOTE SERVICES"
+msgstr "SERVIZI REMOTI"
+
+msgid "REMOTE SERVICES AUTO-START"
+msgstr "AVVIO AUTO SERVIZI REMOTI"
+
+msgid "ROOT SAMBA ACCESS"
+msgstr "ACCESSO SAMBA ROOT"
+
+msgid "ROOT FILE ACCESS"
+msgstr "ACCESSO FILE ROOT"
+
+msgid "WIFI MONITOR SERVICE"
+msgstr "MONITOR WIFI"
+
+msgid "SCAN WIFI NETWORKS"
+msgstr "SCANSIONA RETI WIFI"
+
+msgid "SCANNING WIFI NETWORKS"
+msgstr "SCANSIONE..."
+
+msgid "SELECT WIFI NETWORK"
+msgstr "SELEZIONA RETE WIFI"
+
+msgid "CURRENT NETWORK"
+msgstr "RETE ATTUALE"
+
+msgid "CONNECT"
+msgstr "CONNETTI"
+
+msgid "CONNECTED TO"
+msgstr "CONNESSO A"
+
+msgid "CONNECTING TO"
+msgstr "CONNESSIONE A"
+
+msgid "CONNECTING..."
+msgstr "CONNESSIONE..."
+
+msgid "CONNECTION FAILED"
+msgstr "CONNESSIONE FALLITA"
+
+msgid "NETWORK NOT FOUND"
+msgstr "RETE NON TROVATA"
+
+msgid "NO WIFI NETWORKS FOUND"
+msgstr "NESSUNA RETE WIFI"
+
+msgid "NO SAVED CONNECTIONS"
+msgstr "NESSUNA CONNESSIONE SALVATA"
+
+msgid "SELECT CONNECTION"
+msgstr "SELEZIONA CONNESSIONE"
+
+msgid "ACTIVATE EXISTING CONNECTION"
+msgstr "ATTIVA CONNESSIONE"
+
+msgid "DELETE CONNECTION"
+msgstr "ELIMINA CONNESSIONE"
+
+msgid "DELETE EXISTING CONNECTIONS"
+msgstr "ELIMINA CONNESSIONI"
+
+msgid "DELETED"
+msgstr "ELIMINATO"
+
+msgid "PASSWORD FOR"
+msgstr "PASSWORD PER"
+
+msgid "INVALID PASSWORD"
+msgstr "PASSWORD NON VALIDA"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "GATEWAY"
+msgstr "GATEWAY"
+
+msgid "HOSTNAME CHANGED"
+msgstr "HOSTNAME MODIFICATO"
+
+msgid "REBOOT REQUIRED FOR FULL EFFECT"
+msgstr "RIAVVIO RICHIESTO"
+
+msgid "BATTERYPLUS SETTINGS"
+msgstr "IMPOSTAZIONI BATTERYPLUS"
+
+msgid "BATTERYPLUS ENABLED"
+msgstr "BATTERYPLUS ATTIVO"
+
+msgid "JOYSTICK DEADZONE"
+msgstr "ZONA MORTA JOYSTICK"
+
+msgid "DEADZONE CHANGED"
+msgstr "ZONA MORTA CAMBIATA"
+
+msgid "LED COLOR"
+msgstr "COLORE LED"
+
+msgid "RED"
+msgstr "ROSSO"
+
+msgid "BOOT VOLUME (%)"
+msgstr "VOLUME AVVIO (%)"
+
+msgid "ZRAM ENABLE"
+msgstr "ABILITA ZRAM"
+
+msgid "ZRAM SIZE"
+msgstr "DIMENSIONE ZRAM"
+
+msgid "ZRAM COMPRESSION"
+msgstr "COMPRESSIONE ZRAM"
+
+msgid "COMP ALGO"
+msgstr "ALGORITMO COMPRESSIONE"
+
+msgid "N/A"
+msgstr "N/A"
+
+msgid "AVERAGE"
+msgstr "MEDIO"
+
+msgid "POOR"
+msgstr "SCARSO"
+
+msgid "BEST"
+msgstr "OTTIMALE"
+
+msgid "STANDARD"
+msgstr "STANDARD"
+
+msgid "SIZE"
+msgstr "DIMENSIONE"
+
+msgid "GIF"
+msgstr "GIF"
+
+msgid "VID"
+msgstr "VIDEO"
+
+msgid "API KEY"
+msgstr "CHIAVE API"
+
+msgid "BLUETOOTH MANAGER NOT FOUND\n/usr/local/bin/BT Manager.sh"
+msgstr "GESTORE BLUETOOTH NON TROVATO\n/usr/local/bin/BT Manager.sh"
+
+msgid "COLORFUL"
+msgstr "COLORATO"
+
+msgid "CPU GRADE"
+msgstr "GRADO CPU"
+
+msgid "MAX FREQ"
+msgstr "FREQ. MAX"
+
+msgid "UPDATE SCRIPT NOT FOUND\n/usr/local/bin/Update.sh"
+msgstr "SCRIPT DI AGGIORNAMENTO NON TROVATO\n/usr/local/bin/Update.sh"
+
+msgid "DATE & TIME"
+msgstr "DATA E ORA"
+
+msgid "CURRENT TIME"
+msgstr "ORA ATTUALE"
+
+msgid "NETWORK SYNC"
+msgstr "SINCRONIZZAZIONE DI RETE"
+
+msgid "NO NETWORK CONNECTION"
+msgstr "NESSUNA CONNESSIONE DI RETE"
+
+msgid "TIME SYNCED"
+msgstr "ORA SINCRONIZZATA"
+
+msgid "SET MANUALLY"
+msgstr "IMPOSTA MANUALMENTE"
+
+msgid "SET YEAR"
+msgstr "IMPOSTA ANNO"
+
+msgid "SET MONTH"
+msgstr "IMPOSTA MESE"
+
+msgid "SET DATE"
+msgstr "IMPOSTA DATA"
+
+msgid "SET HOURS"
+msgstr "IMPOSTA ORE"
+
+msgid "SET MINUTES"
+msgstr "IMPOSTA MINUTI"
+
+msgid "INVALID DATE SET"
+msgstr "DATA NON VALIDA"
+
+msgid "TIME SET"
+msgstr "ORA IMPOSTATA"
+
+msgid "NETWORK ICON"
+msgstr "ICONA RETE"
+
+msgid "MARIO"
+msgstr "MARIO"
+
+msgid "POKEMON"
+msgstr "POKÉMON"
+
+msgid "SOLSTICE"
+msgstr "SOLSTICE"
+
+msgid "ZELDA"
+msgstr "ZELDA"
+
+msgid "QUICK SETTINGS"
+msgstr "IMPOSTAZIONI RAPIDE"
+
+msgid "BATTERY PLUS"
+msgstr "BATTERYPLUS"
+
+msgid "SOUND"
+msgstr "AUDIO"
+
+msgid "WI-FI"
+msgstr "WI-FI"
+msgid "Unknown"
+msgstr "Sconosciuto"
+msgid "MORE OPTIONS IN THE 'UI SETTINGS' -> 'VIDEO SCREENSAVER SETTINGS' MENU."
+msgstr "ALTRE OPZIONI NEL MENU 'IMPOSTAZIONI UI' -> 'IMPOSTAZIONI SALVASCHERMO VIDEO'."
+msgid "Game Loading Image delay (secs)"
+msgstr "Ritardo immagine di caricamento (sec)"
+msgid "IF YOU DON'T HAVE VIDEOS, OR IF NONE OF THEM CAN BE PLAYED AFTER A FEW ATTEMPTS, IT WILL DEFAULT TO 'BLACK'."
+msgstr "SE NON HAI VIDEO, O SE NESSUNO DI ESSI PUÒ ESSERE RIPRODOTTO DOPO ALCUNI TENTATIVI, VERRÀ USATO 'NERO' COME PREDEFINITO."
+msgid "SEGMENTED"
+msgstr "SEGMENTATO"
+msgid "VERTICAL"
+msgstr "VERTICALE"
+msgid "RAM APPLY ON BOOT"
+msgstr "APPLICA RAM ALL'AVVIO"
+
+msgid "SAVESYNC SETTINGS"
+msgstr "IMPOSTAZIONI SAVESYNC"
+
+msgid "ENABLE SAVESYNC"
+msgstr "ABILITA SAVESYNC"
+
+msgid "SYNCHRONIZE NOW"
+msgstr "SINCRONIZZA ORA"
+
+msgid "REBUILD FOLDER CACHE"
+msgstr "RICOSTRUISCI CACHE CARTELLE"
+
+msgid "CREDENTIALS"
+msgstr "CREDENZIALI"
+
+msgid "PROTOCOL"
+msgstr "PROTOCOLLO"
+
+msgid "LOG"
+msgstr "REGISTRO"
+
+msgid "SYNCING"
+msgstr "SINCRONIZZAZIONE"
+
+msgid "SUCCESS!"
+msgstr "RIUSCITO!"
+
+msgid "FAILED."
+msgstr "FALLITO."
+
+msgid "NO ERROR DETAILS WERE RECORDED."
+msgstr "NESSUN DETTAGLIO DELL'ERRORE È STATO REGISTRATO."
+
+msgid "HOST"
+msgstr "HOST"
+
+msgid "PATH"
+msgstr "PERCORSO"
+
+msgid "SMB (WINDOWS / SAMBA SHARE)"
+msgstr "SMB (CONDIVISIONE WINDOWS / SAMBA)"
+
+msgid "NFS (LINUX / NAS EXPORT)"
+msgstr "NFS (EXPORT LINUX / NAS)"
+
+msgid "SSHFS (SSH / SFTP SERVER)"
+msgstr "SSHFS (SERVER SSH / SFTP)"
+
+msgid "WEBDAV (NEXTCLOUD / OWNCLOUD / DAV)"
+msgstr "WEBDAV (NEXTCLOUD / OWNCLOUD / DAV)"
+
+msgid "INSTALLING DEPENDENCIES"
+msgstr "INSTALLAZIONE DIPENDENZE"
+
+msgid "UNABLE TO INSTALL REQUIRED NETWORK SUPPORT."
+msgstr "IMPOSSIBILE INSTALLARE IL SUPPORTO DI RETE RICHIESTO."
+
+msgid "VIEW LOG"
+msgstr "VISUALIZZA REGISTRO"
+
+msgid "CLEAR LOG"
+msgstr "CANCELLA REGISTRO"
+
+msgid "NO LOG FILE FOUND."
+msgstr "NESSUN FILE DI REGISTRO TROVATO."
+
+msgid "LOG CLEARED."
+msgstr "REGISTRO CANCELLATO."
+
+msgid "ENABLE FAST SYNC"
+msgstr "ABILITA SINCRONIZZAZIONE RAPIDA"

@@ -1,0 +1,11 @@
+[Unit]
+Description=Set DMC (RAM) frequency at boot
+After=systemd-udev-settle.service
+Requires=systemd-udev-settle.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c 'source /etc/dmc-settings.conf 2>/dev/null || exit 0; [ -w "/sys/class/devfreq/dmc/max_freq" ] && echo "$FREQ" > "/sys/class/devfreq/dmc/max_freq"'
+
+[Install]
+WantedBy=multi-user.target
