@@ -39,7 +39,7 @@ dArkOSen is currently compatible with all genuine R36 devices.
   - R36H ProMax
   - R45H
   - R46H
-  - R40S
+  - R50H
 
 # HOW TO INSTALL:
 
