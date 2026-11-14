@@ -1979,3 +1979,330 @@ msgstr "REGISTO LIMPO."
 
 msgid "ENABLE FAST SYNC"
 msgstr "ATIVAR SINCRONIZAÇÃO RÁPIDA"
+
+msgid "SWITCH A/B BUTTONS GLOBALLY"
+msgstr "TROCAR BOTÕES A/B GLOBALMENTE"
+
+msgid "STORAGE SETTINGS"
+msgstr "CONFIGURAÇÕES DE ARMAZENAMENTO"
+
+msgid "ENABLE SD2"
+msgstr "ATIVAR SD2"
+
+msgid "REASSIGN SYSTEMS TO SD1"
+msgstr "REATRIBUIR SISTEMAS PARA SD1"
+
+msgid "SCAN AND REPAIR"
+msgstr "VERIFICAR E REPARAR"
+
+msgid "BOOT"
+msgstr "ARRANQUE"
+
+msgid "ROOTFS"
+msgstr "ROOTFS"
+
+msgid "SD1 GAMES"
+msgstr "JOGOS SD1"
+
+msgid "SD2"
+msgstr "SD2"
+
+msgid "MANUAL SELECTION"
+msgstr "SELEÇÃO MANUAL"
+
+msgid "AUTOMATED SCAN"
+msgstr "VERIFICAÇÃO AUTOMÁTICA"
+
+msgid "UNDO ALL CHANGES"
+msgstr "DESFAZER TODAS AS ALTERAÇÕES"
+
+msgid "SCAN /roms/ FOR CHANGES?"
+msgstr "VERIFICAR /roms/ POR ALTERAÇÕES?"
+
+msgid "REVERT ALL SYSTEMS TO SD2?"
+msgstr "REVERTER TODOS OS SISTEMAS PARA SD2?"
+
+msgid "PLEASE WAIT..."
+msgstr "POR FAVOR AGUARDE..."
+
+msgid "SYSTEMS"
+msgstr "SISTEMAS"
+
+msgid "NOTHING WAS MODIFIED."
+msgstr "NADA FOI MODIFICADO."
+
+msgid "RESTORING ALL SYSTEMS TO /roms2/."
+msgstr "A RESTAURAR TODOS OS SISTEMAS PARA /roms2/."
+
+msgid "MOVED TO SD1:"
+msgstr "MOVIDO PARA SD1:"
+
+msgid "REVERTED TO SD2:"
+msgstr "REVERTIDO PARA SD2:"
+
+msgid "Scan failed. Repairs were not successful."
+msgstr "Verificação falhou. As reparações não foram bem-sucedidas."
+
+msgid "Scan failed. Repairs were successful."
+msgstr "Verificação falhou. As reparações foram bem-sucedidas."
+
+msgid "Scan passed. No repairs were needed."
+msgstr "Verificação concluída. Não foram necessárias reparações."
+
+msgid "Wi-fi has been turned off to ensure the disk is not busy."
+msgstr "O Wi-Fi foi desligado para garantir que o disco não está ocupado."
+
+msgid "Could not unmount /boot"
+msgstr "Não foi possível desmontar /boot"
+
+msgid "Dirty bit cleared"
+msgstr "Dirty bit limpo"
+
+msgid "Boot sector mismatch noted"
+msgstr "Incompatibilidade no setor de arranque detetada"
+
+msgid "Bad file entries fixed"
+msgstr "Entradas de ficheiro corrompidas corrigidas"
+
+msgid "Uncorrectable errors found on system partition"
+msgstr "Erros não corrigíveis encontrados na partição do sistema"
+
+msgid "Partition 2 (system) could not be fully repaired while running. Eject the card and run 'sudo btrfs check --repair /dev/mmcblk0p2' from a Linux PC."
+msgstr "A partição 2 (sistema) não pôde ser totalmente reparada em execução. Ejete o cartão e execute 'sudo btrfs check --repair /dev/mmcblk0p2' num PC Linux."
+
+msgid "HELPER SCRIPT NOT FOUND"
+msgstr "SCRIPT AUXILIAR NÃO ENCONTRADO"
+
+msgid "FAILED TO PREPARE RECOVERY SCRIPT"
+msgstr "FALHA AO PREPARAR SCRIPT DE RECUPERAÇÃO"
+
+msgid "SCAN SD1 GAMES?\nTHE CONSOLE WILL REBOOT TO COMPLETE THE SCAN."
+msgstr "VERIFICAR JOGOS SD1?\nA CONSOLA IRÁ REINICIAR PARA CONCLUIR A VERIFICAÇÃO."
+
+msgid "SCAN SD2?\nTHE CONSOLE WILL REBOOT TO COMPLETE THE SCAN."
+msgstr "VERIFICAR SD2?\nA CONSOLA IRÁ REINICIAR PARA CONCLUIR A VERIFICAÇÃO."
+
+msgid "BENCHMARKING"
+msgstr "TESTES DE DESEMPENHO"
+
+msgid "BENCHMARK"
+msgstr "BENCHMARK"
+
+msgid "BENCHMARK FAILED"
+msgstr "FALHA NO BENCHMARK"
+
+msgid "RUNNING, PLEASE WAIT"
+msgstr "EM EXECUÇÃO, POR FAVOR AGUARDE"
+
+msgid "LOG IS EMPTY."
+msgstr "O REGISTO ESTÁ VAZIO."
+
+msgid "%d d"
+msgstr "%d d"
+
+msgid "%d h"
+msgstr "%d h"
+
+msgid "%d mn"
+msgstr "%d min"
+
+msgid "%d sec"
+msgstr "%d s"
+
+msgid "LAST 20 PLAYED GAMES"
+msgstr "OS 20 ULTIMOS JOGOS JOGADOS"
+
+msgid "NO GAME PLAYED YET"
+msgstr "NENHUM JOGO JOGADO AINDA"
+
+#:
+msgid "datetime"
+msgstr "data e hora"
+
+#:
+msgid "DATE TIME SCREENSAVER SETTINGS"
+msgstr "CONFIGURAÇÕES DO PROTETOR DE ECRÃ DATA E HORA"
+
+#:
+msgid "DATE & TIME SCREENSAVER"
+msgstr "PROTETOR DE ECRÃ DATA E HORA"
+
+#:
+msgid "CLOCK TYPE"
+msgstr "TIPO DE RELÓGIO"
+
+#:
+msgid "CLOCK STYLE"
+msgstr "ESTILO DO RELÓGIO"
+
+#:
+msgid "CLOCK COLOR"
+msgstr "COR DO RELÓGIO"
+
+#:
+msgid "BACKGROUND MODE"
+msgstr "MODO DE FUNDO"
+
+#:
+msgid "BACKGROUND COLOR"
+msgstr "COR DE FUNDO"
+
+#:
+msgid "BACKGROUND IMAGE"
+msgstr "IMAGEM DE FUNDO"
+
+#:
+msgid "SHOW DATE"
+msgstr "MOSTRAR DATA"
+
+#:
+msgid "SHOW SECONDS"
+msgstr "MOSTRAR SEGUNDOS"
+
+#:
+msgid "ENABLE VIBRATION FEEDBACK"
+msgstr "ATIVAR VIBRAÇÃO"
+
+#:
+msgid "VIBRATION INTENSITY"
+msgstr "INTENSIDADE DA VIBRAÇÃO"
+
+#:
+msgid "TEMPERATURE"
+msgstr "TEMPERATURA"
+
+#:
+msgid "CLOCK FONT"
+msgstr "TIPO DE LETRA DO RELÓGIO"
+
+#:
+msgid "VERBAL PLAY TIMER WARNING"
+msgstr "AVISO DE VOZ DO TEMPORIZADOR DE JOGO"
+
+#:
+msgid "PLAY TIMER"
+msgstr "TEMPORIZADOR DE JOGO"
+
+#:
+msgid "TIME LEFT TODAY"
+msgstr "TEMPO RESTANTE HOJE"
+
+#:
+msgid "MIN"
+msgstr "MIN"
+
+#:
+msgid "DAILY PLAY TIME LIMIT REACHED"
+msgstr "LIMITE DIÁRIO DE TEMPO DE JOGO ATINGIDO"
+
+#:
+msgid "COME BACK TOMORROW!"
+msgstr "VOLTA AMANHÃ!"
+
+#:
+msgid "PLAY TIME LEFT TODAY: %i MIN"
+msgstr "TEMPO DE JOGO RESTANTE HOJE: %i MIN"
+
+#:
+msgid "PLAY TIME LEFT TODAY: < 1 MIN"
+msgstr "TEMPO DE JOGO RESTANTE HOJE: < 1 MIN"
+
+#:
+msgid "NIGHT FILTER"
+msgstr "FILTRO NOTURNO"
+
+#:
+msgid "ENABLE FILTER"
+msgstr "ATIVAR FILTRO"
+
+#:
+msgid "START TIME"
+msgstr "HORA DE INÍCIO"
+
+#:
+msgid "END TIME"
+msgstr "HORA DE FIM"
+
+#:
+msgid "NIGHT FILTER ACTIVE"
+msgstr "FILTRO NOTURNO ATIVO"
+
+#:
+msgid "AQUARIUM SCREENSAVER SETTINGS"
+msgstr "CONFIGURAÇÕES DO PROTETOR DE ECRÃ AQUÁRIO"
+
+#:
+msgid "AQUARIUM SCREENSAVER"
+msgstr "PROTETOR DE ECRÃ AQUÁRIO"
+
+#:
+msgid "FISH COUNT"
+msgstr "NÚMERO DE PEIXES"
+
+#:
+msgid "ALL RANDOM"
+msgstr "TODOS ALEATÓRIOS"
+
+#:
+msgid "FISH"
+msgstr "PEIXE"
+
+#:
+msgid "BUBBLE COLUMN"
+msgstr "COLUNA DE BOLHAS"
+
+#:
+msgid "AUTO LIGHTS"
+msgstr "LUZES AUTOMÁTICAS"
+
+#:
+msgid "FOREGROUND LIGHTS"
+msgstr "LUZES DO PRIMEIRO PLANO"
+
+#:
+msgid "BACKGROUND LIGHTS"
+msgstr "LUZES DO FUNDO"
+
+#:
+msgid "STARFISH ON GLASS"
+msgstr "ESTRELA-DO-MAR NO VIDRO"
+
+#:
+msgid "aquarium"
+msgstr "aquário"
+
+#:
+msgid "corridors"
+msgstr "corredores"
+
+#:
+msgid "CORRIDORS SCREENSAVER SETTINGS"
+msgstr "CONFIGURAÇÕES DO PROTETOR DE ECRÃ CORREDORES"
+
+#:
+msgid "CORRIDORS SCREENSAVER"
+msgstr "PROTETOR DE ECRÃ CORREDORES"
+
+#:
+msgid "SPEED"
+msgstr "VELOCIDADE"
+
+#:
+msgid "AMBIENT"
+msgstr "LUZ AMBIENTE"
+
+#:
+msgid "PANELS"
+msgstr "PAINÉIS"
+
+#:
+msgid "FLICKER"
+msgstr "CINTILAÇÃO"
+
+#:
+msgid "FOG"
+msgstr "NEVOEIRO"
+
+#:
+msgid "VOLUME"
+msgstr "VOLUME"

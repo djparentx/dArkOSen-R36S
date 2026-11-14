@@ -1,0 +1,12 @@
+{
+  "name": "Vibe Coding",
+  "background": "#0f172a",
+  "surface": "#111827",
+  "primary": "#38bdf8",
+  "secondary": "#a855f7",
+  "accent": "#f59e0b",
+  "text": "#e2e8f0",
+  "mutedText": "#94a3b8",
+  "border": "#1f2937",
+  "fontFamily": "Source Sans Pro, system-ui, sans-serif"
+}

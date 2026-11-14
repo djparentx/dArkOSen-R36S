@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gameList>
+  <game>
+    <path>./Super Mario Galaxy.sh</path>
+    <name>Super Mario Galaxy</name>
+    <desc>Mario heads into space to rescue Princess Peach, running across tiny planets and gravity-bending galaxies to collect Power Stars. A native port built on the Petari decompilation; it needs your own copy of the game.</desc>
+    <releasedate>20071112T000000</releasedate>
+    <developer>Nintendo EAD Tokyo</developer>
+    <publisher>Nintendo</publisher>
+    <genre>Platformer</genre>
+    <image>./smg/cover.jpg</image>
+  </game>
+</gameList>

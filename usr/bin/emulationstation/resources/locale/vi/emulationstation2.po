@@ -2304,3 +2304,330 @@ msgstr "ĐÃ XÓA NHẬT KÝ."
 
 msgid "ENABLE FAST SYNC"
 msgstr "BẬT ĐỒNG BỘ NHANH"
+
+msgid "SWITCH A/B BUTTONS GLOBALLY"
+msgstr "HOÁN ĐỔI NÚT A/B TOÀN CỤC"
+
+msgid "STORAGE SETTINGS"
+msgstr "CÀI ĐẶT LƯU TRỮ"
+
+msgid "ENABLE SD2"
+msgstr "BẬT SD2"
+
+msgid "REASSIGN SYSTEMS TO SD1"
+msgstr "GÁN LẠI HỆ THỐNG VÀO SD1"
+
+msgid "SCAN AND REPAIR"
+msgstr "QUÉT VÀ SỬA CHỮA"
+
+msgid "BOOT"
+msgstr "KHỞI ĐỘNG"
+
+msgid "ROOTFS"
+msgstr "HỆ THỐNG TỆP GỐC"
+
+msgid "SD1 GAMES"
+msgstr "TRÒ CHƠI SD1"
+
+msgid "SD2"
+msgstr "SD2"
+
+msgid "MANUAL SELECTION"
+msgstr "CHỌN THỦ CÔNG"
+
+msgid "AUTOMATED SCAN"
+msgstr "QUÉT TỰ ĐỘNG"
+
+msgid "UNDO ALL CHANGES"
+msgstr "HOÀN TÁC TẤT CẢ THAY ĐỔI"
+
+msgid "SCAN /roms/ FOR CHANGES?"
+msgstr "QUÉT /roms/ ĐỂ TÌM THAY ĐỔI?"
+
+msgid "REVERT ALL SYSTEMS TO SD2?"
+msgstr "KHÔI PHỤC TẤT CẢ HỆ THỐNG VỀ SD2?"
+
+msgid "PLEASE WAIT..."
+msgstr "VUI LÒNG CHỜ..."
+
+msgid "SYSTEMS"
+msgstr "HỆ THỐNG"
+
+msgid "NOTHING WAS MODIFIED."
+msgstr "KHÔNG CÓ GÌ ĐƯỢC THAY ĐỔI."
+
+msgid "RESTORING ALL SYSTEMS TO /roms2/."
+msgstr "ĐANG KHÔI PHỤC TẤT CẢ HỆ THỐNG VỀ /roms2/."
+
+msgid "MOVED TO SD1:"
+msgstr "ĐÃ CHUYỂN VÀO SD1:"
+
+msgid "REVERTED TO SD2:"
+msgstr "ĐÃ HOÀN NGUYÊN VỀ SD2:"
+
+msgid "Scan failed. Repairs were not successful."
+msgstr "Quét thất bại. Các sửa chữa không thành công."
+
+msgid "Scan failed. Repairs were successful."
+msgstr "Quét thất bại. Các sửa chữa đã thành công."
+
+msgid "Scan passed. No repairs were needed."
+msgstr "Quét hoàn tất. Không cần sửa chữa."
+
+msgid "Wi-fi has been turned off to ensure the disk is not busy."
+msgstr "Wi-Fi đã được tắt để đảm bảo ổ đĩa không bận."
+
+msgid "Could not unmount /boot"
+msgstr "Không thể gỡ kết nối /boot"
+
+msgid "Dirty bit cleared"
+msgstr "Đã xóa dirty bit"
+
+msgid "Boot sector mismatch noted"
+msgstr "Phát hiện sự không khớp của boot sector"
+
+msgid "Bad file entries fixed"
+msgstr "Đã sửa các mục tệp bị hỏng"
+
+msgid "Uncorrectable errors found on system partition"
+msgstr "Tìm thấy lỗi không thể sửa trên phân vùng hệ thống"
+
+msgid "Partition 2 (system) could not be fully repaired while running. Eject the card and run 'sudo btrfs check --repair /dev/mmcblk0p2' from a Linux PC."
+msgstr "Phân vùng 2 (hệ thống) không thể sửa chữa hoàn toàn khi đang chạy. Rút thẻ ra và chạy 'sudo btrfs check --repair /dev/mmcblk0p2' từ máy tính Linux."
+
+msgid "HELPER SCRIPT NOT FOUND"
+msgstr "KHÔNG TÌM THẤY SCRIPT HỖ TRỢ"
+
+msgid "FAILED TO PREPARE RECOVERY SCRIPT"
+msgstr "KHÔNG THỂ CHUẨN BỊ SCRIPT KHÔI PHỤC"
+
+msgid "SCAN SD1 GAMES?\nTHE CONSOLE WILL REBOOT TO COMPLETE THE SCAN."
+msgstr "QUÉT TRÒ CHƠI SD1?\nMÁY SẼ KHỞI ĐỘNG LẠI ĐỂ HOÀN TẤT VIỆC QUÉT."
+
+msgid "SCAN SD2?\nTHE CONSOLE WILL REBOOT TO COMPLETE THE SCAN."
+msgstr "QUÉT SD2?\nMÁY SẼ KHỞI ĐỘNG LẠI ĐỂ HOÀN TẤT VIỆC QUÉT."
+
+msgid "BENCHMARKING"
+msgstr "ĐO HIỆU NĂNG"
+
+msgid "BENCHMARK"
+msgstr "ĐO HIỆU NĂNG"
+
+msgid "BENCHMARK FAILED"
+msgstr "ĐO HIỆU NĂNG THẤT BẠI"
+
+msgid "RUNNING, PLEASE WAIT"
+msgstr "ĐANG CHẠY, VUI LÒNG CHỜ"
+
+msgid "LOG IS EMPTY."
+msgstr "NHẬT KÝ TRỐNG."
+
+msgid "%d d"
+msgstr "%d ngày"
+
+msgid "%d h"
+msgstr "%d giờ"
+
+msgid "%d mn"
+msgstr "%d phút"
+
+msgid "%d sec"
+msgstr "%d giây"
+
+msgid "LAST 20 PLAYED GAMES"
+msgstr "20 TRO CHOI CHOI GAN DAY"
+
+msgid "NO GAME PLAYED YET"
+msgstr "CHUA CHOI TRO CHOI NAO"
+
+#:
+msgid "datetime"
+msgstr "ngày giờ"
+
+#:
+msgid "DATE TIME SCREENSAVER SETTINGS"
+msgstr "CÀI ĐẶT BẢO VỆ MÀN HÌNH NGÀY GIỜ"
+
+#:
+msgid "DATE & TIME SCREENSAVER"
+msgstr "BẢO VỆ MÀN HÌNH NGÀY GIỜ"
+
+#:
+msgid "CLOCK TYPE"
+msgstr "KIỂU ĐỒNG HỒ"
+
+#:
+msgid "CLOCK STYLE"
+msgstr "PHONG CÁCH ĐỒNG HỒ"
+
+#:
+msgid "CLOCK COLOR"
+msgstr "MÀU ĐỒNG HỒ"
+
+#:
+msgid "BACKGROUND MODE"
+msgstr "CHẾ ĐỘ NỀN"
+
+#:
+msgid "BACKGROUND COLOR"
+msgstr "MÀU NỀN"
+
+#:
+msgid "BACKGROUND IMAGE"
+msgstr "HÌNH NỀN"
+
+#:
+msgid "SHOW DATE"
+msgstr "HIỆN NGÀY"
+
+#:
+msgid "SHOW SECONDS"
+msgstr "HIỆN GIÂY"
+
+#:
+msgid "ENABLE VIBRATION FEEDBACK"
+msgstr "BẬT PHẢN HỒI RUNG"
+
+#:
+msgid "VIBRATION INTENSITY"
+msgstr "CƯỜNG ĐỘ RUNG"
+
+#:
+msgid "TEMPERATURE"
+msgstr "NHIỆT ĐỘ"
+
+#:
+msgid "CLOCK FONT"
+msgstr "PHÔNG CHỮ ĐỒNG HỒ"
+
+#:
+msgid "VERBAL PLAY TIMER WARNING"
+msgstr "CẢNH BÁO BẰNG GIỌNG NÓI HẸN GIỜ CHƠI"
+
+#:
+msgid "PLAY TIMER"
+msgstr "HẸN GIỜ CHƠI"
+
+#:
+msgid "TIME LEFT TODAY"
+msgstr "THỜI GIAN CÒN LẠI HÔM NAY"
+
+#:
+msgid "MIN"
+msgstr "PHÚT"
+
+#:
+msgid "DAILY PLAY TIME LIMIT REACHED"
+msgstr "ĐÃ ĐẠT GIỚI HẠN THỜI GIAN CHƠI HÔM NAY"
+
+#:
+msgid "COME BACK TOMORROW!"
+msgstr "HẸN GẶP LẠI NGÀY MAI!"
+
+#:
+msgid "PLAY TIME LEFT TODAY: %i MIN"
+msgstr "THỜI GIAN CHƠI CÒN LẠI HÔM NAY: %i PHÚT"
+
+#:
+msgid "PLAY TIME LEFT TODAY: < 1 MIN"
+msgstr "THỜI GIAN CHƠI CÒN LẠI HÔM NAY: < 1 PHÚT"
+
+#:
+msgid "NIGHT FILTER"
+msgstr "BỘ LỌC BAN ĐÊM"
+
+#:
+msgid "ENABLE FILTER"
+msgstr "BẬT BỘ LỌC"
+
+#:
+msgid "START TIME"
+msgstr "GIỜ BẮT ĐẦU"
+
+#:
+msgid "END TIME"
+msgstr "GIỜ KẾT THÚC"
+
+#:
+msgid "NIGHT FILTER ACTIVE"
+msgstr "BỘ LỌC BAN ĐÊM ĐANG BẬT"
+
+#:
+msgid "AQUARIUM SCREENSAVER SETTINGS"
+msgstr "CÀI ĐẶT BẢO VỆ MÀN HÌNH BỂ CÁ"
+
+#:
+msgid "AQUARIUM SCREENSAVER"
+msgstr "BẢO VỆ MÀN HÌNH BỂ CÁ"
+
+#:
+msgid "FISH COUNT"
+msgstr "SỐ LƯỢNG CÁ"
+
+#:
+msgid "ALL RANDOM"
+msgstr "TẤT CẢ NGẪU NHIÊN"
+
+#:
+msgid "FISH"
+msgstr "CÁ"
+
+#:
+msgid "BUBBLE COLUMN"
+msgstr "CỘT BONG BÓNG"
+
+#:
+msgid "AUTO LIGHTS"
+msgstr "ĐÈN TỰ ĐỘNG"
+
+#:
+msgid "FOREGROUND LIGHTS"
+msgstr "ĐÈN TIỀN CẢNH"
+
+#:
+msgid "BACKGROUND LIGHTS"
+msgstr "ĐÈN NỀN"
+
+#:
+msgid "STARFISH ON GLASS"
+msgstr "SAO BIỂN TRÊN KÍNH"
+
+#:
+msgid "aquarium"
+msgstr "bể cá"
+
+#:
+msgid "corridors"
+msgstr "hành lang"
+
+#:
+msgid "CORRIDORS SCREENSAVER SETTINGS"
+msgstr "CÀI ĐẶT BẢO VỆ MÀN HÌNH HÀNH LANG"
+
+#:
+msgid "CORRIDORS SCREENSAVER"
+msgstr "BẢO VỆ MÀN HÌNH HÀNH LANG"
+
+#:
+msgid "SPEED"
+msgstr "TỐC ĐỘ"
+
+#:
+msgid "AMBIENT"
+msgstr "ÁNH SÁNG MÔI TRƯỜNG"
+
+#:
+msgid "PANELS"
+msgstr "TẤM ĐÈN"
+
+#:
+msgid "FLICKER"
+msgstr "NHẤP NHÁY"
+
+#:
+msgid "FOG"
+msgstr "SƯƠNG MÙ"
+
+#:
+msgid "VOLUME"
+msgstr "ÂM LƯỢNG"

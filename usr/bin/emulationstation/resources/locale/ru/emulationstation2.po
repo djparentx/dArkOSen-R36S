@@ -4003,3 +4003,323 @@ msgstr "ЖУРНАЛ ОЧИЩЕН."
 
 msgid "ENABLE FAST SYNC"
 msgstr "ВКЛЮЧИТЬ БЫСТРУЮ СИНХРОНИЗАЦИЮ"
+
+msgid "SWITCH A/B BUTTONS GLOBALLY"
+msgstr "ПОМЕНЯТЬ КНОПКИ A/B ГЛОБАЛЬНО"
+
+msgid "STORAGE SETTINGS"
+msgstr "НАСТРОЙКИ ХРАНИЛИЩА"
+
+msgid "ENABLE SD2"
+msgstr "ВКЛЮЧИТЬ SD2"
+
+msgid "REASSIGN SYSTEMS TO SD1"
+msgstr "ПЕРЕНАЗНАЧИТЬ СИСТЕМЫ НА SD1"
+
+msgid "SCAN AND REPAIR"
+msgstr "ПРОВЕРИТЬ И ИСПРАВИТЬ"
+
+msgid "BOOT"
+msgstr "ЗАГРУЗКА"
+
+msgid "ROOTFS"
+msgstr "КОРНЕВАЯ ФС"
+
+msgid "SD1 GAMES"
+msgstr "ИГРЫ SD1"
+
+msgid "SD2"
+msgstr "SD2"
+
+msgid "MANUAL SELECTION"
+msgstr "РУЧНОЙ ВЫБОР"
+
+msgid "AUTOMATED SCAN"
+msgstr "АВТОМАТИЧЕСКАЯ ПРОВЕРКА"
+
+msgid "UNDO ALL CHANGES"
+msgstr "ОТМЕНИТЬ ВСЕ ИЗМЕНЕНИЯ"
+
+msgid "SCAN /roms/ FOR CHANGES?"
+msgstr "ПРОВЕРИТЬ /roms/ НА ИЗМЕНЕНИЯ?"
+
+msgid "REVERT ALL SYSTEMS TO SD2?"
+msgstr "ВЕРНУТЬ ВСЕ СИСТЕМЫ НА SD2?"
+
+msgid "PLEASE WAIT..."
+msgstr "ПОЖАЛУЙСТА, ПОДОЖДИТЕ..."
+
+msgid "SYSTEMS"
+msgstr "СИСТЕМЫ"
+
+msgid "NOTHING WAS MODIFIED."
+msgstr "НИЧЕГО НЕ ИЗМЕНЕНО."
+
+msgid "RESTORING ALL SYSTEMS TO /roms2/."
+msgstr "ВОССТАНОВЛЕНИЕ ВСЕХ СИСТЕМ НА /roms2/."
+
+msgid "MOVED TO SD1:"
+msgstr "ПЕРЕМЕЩЕНО НА SD1:"
+
+msgid "REVERTED TO SD2:"
+msgstr "ВОЗВРАЩЕНО НА SD2:"
+
+msgid "Scan failed. Repairs were not successful."
+msgstr "Проверка не удалась. Исправления не помогли."
+
+msgid "Scan failed. Repairs were successful."
+msgstr "Проверка не удалась. Исправления выполнены успешно."
+
+msgid "Scan passed. No repairs were needed."
+msgstr "Проверка пройдена. Исправления не потребовались."
+
+msgid "Wi-fi has been turned off to ensure the disk is not busy."
+msgstr "Wi-Fi отключён, чтобы убедиться, что диск не занят."
+
+msgid "Could not unmount /boot"
+msgstr "Не удалось размонтировать /boot"
+
+msgid "Dirty bit cleared"
+msgstr "Dirty-бит сброшен"
+
+msgid "Boot sector mismatch noted"
+msgstr "Обнаружено несоответствие загрузочного сектора"
+
+msgid "Bad file entries fixed"
+msgstr "Повреждённые записи файлов исправлены"
+
+msgid "Uncorrectable errors found on system partition"
+msgstr "На системном разделе найдены неисправимые ошибки"
+
+msgid "Partition 2 (system) could not be fully repaired while running. Eject the card and run 'sudo btrfs check --repair /dev/mmcblk0p2' from a Linux PC."
+msgstr "Раздел 2 (системный) не удалось полностью восстановить в рабочем режиме. Извлеките карту и выполните 'sudo btrfs check --repair /dev/mmcblk0p2' на ПК с Linux."
+
+msgid "HELPER SCRIPT NOT FOUND"
+msgstr "ВСПОМОГАТЕЛЬНЫЙ СКРИПТ НЕ НАЙДЕН"
+
+msgid "FAILED TO PREPARE RECOVERY SCRIPT"
+msgstr "НЕ УДАЛОСЬ ПОДГОТОВИТЬ СКРИПТ ВОССТАНОВЛЕНИЯ"
+
+msgid "SCAN SD1 GAMES?\nTHE CONSOLE WILL REBOOT TO COMPLETE THE SCAN."
+msgstr "ПРОВЕРИТЬ ИГРЫ SD1?\nКОНСОЛЬ ПЕРЕЗАГРУЗИТСЯ ДЛЯ ЗАВЕРШЕНИЯ ПРОВЕРКИ."
+
+msgid "SCAN SD2?\nTHE CONSOLE WILL REBOOT TO COMPLETE THE SCAN."
+msgstr "ПРОВЕРИТЬ SD2?\nКОНСОЛЬ ПЕРЕЗАГРУЗИТСЯ ДЛЯ ЗАВЕРШЕНИЯ ПРОВЕРКИ."
+
+msgid "BENCHMARKING"
+msgstr "ТЕСТЫ ПРОИЗВОДИТЕЛЬНОСТИ"
+
+msgid "BENCHMARK"
+msgstr "ТЕСТ"
+
+msgid "BENCHMARK FAILED"
+msgstr "ТЕСТ НЕ УДАЛСЯ"
+
+msgid "RUNNING, PLEASE WAIT"
+msgstr "ВЫПОЛНЯЕТСЯ, ПОДОЖДИТЕ"
+
+msgid "LOG IS EMPTY."
+msgstr "ЖУРНАЛ ПУСТ."
+
+msgid "%d d"
+msgstr "%d д"
+
+msgid "%d mn"
+msgstr "%d м"
+
+msgid "%d sec"
+msgstr "%d с"
+
+msgid "LAST 20 PLAYED GAMES"
+msgstr "ПОСЛЕДНИЕ 20 ИГР"
+
+msgid "NO GAME PLAYED YET"
+msgstr "ПОКА НЕТ СЫГРАННЫХ ИГР"
+
+#:
+msgid "datetime"
+msgstr "дата и время"
+
+#:
+msgid "DATE TIME SCREENSAVER SETTINGS"
+msgstr "НАСТРОЙКА ЗАСТАВКИ ДАТЫ И ВРЕМЕНИ"
+
+#:
+msgid "DATE & TIME SCREENSAVER"
+msgstr "ЗАСТАВКА ДАТЫ И ВРЕМЕНИ"
+
+#:
+msgid "CLOCK TYPE"
+msgstr "ТИП ЧАСОВ"
+
+#:
+msgid "CLOCK STYLE"
+msgstr "СТИЛЬ ЧАСОВ"
+
+#:
+msgid "CLOCK COLOR"
+msgstr "ЦВЕТ ЧАСОВ"
+
+#:
+msgid "BACKGROUND MODE"
+msgstr "РЕЖИМ ФОНА"
+
+#:
+msgid "BACKGROUND COLOR"
+msgstr "ЦВЕТ ФОНА"
+
+#:
+msgid "BACKGROUND IMAGE"
+msgstr "ИЗОБРАЖЕНИЕ ФОНА"
+
+#:
+msgid "SHOW DATE"
+msgstr "ПОКАЗАТЬ ДАТУ"
+
+#:
+msgid "SHOW SECONDS"
+msgstr "ПОКАЗАТЬ СЕКУНДЫ"
+
+#:
+msgid "ENABLE VIBRATION FEEDBACK"
+msgstr "ВКЛЮЧИТЬ ВИБРООТКЛИК"
+
+#:
+msgid "VIBRATION INTENSITY"
+msgstr "СИЛА ВИБРАЦИИ"
+
+#:
+msgid "TEMPERATURE"
+msgstr "ТЕМПЕРАТУРА"
+
+#:
+msgid "CLOCK FONT"
+msgstr "ШРИФТ ЧАСОВ"
+
+#:
+msgid "VERBAL PLAY TIMER WARNING"
+msgstr "ГОЛОСОВОЕ ПРЕДУПРЕЖДЕНИЕ ТАЙМЕРА ИГРЫ"
+
+#:
+msgid "PLAY TIMER"
+msgstr "ТАЙМЕР ИГРЫ"
+
+#:
+msgid "TIME LEFT TODAY"
+msgstr "ОСТАЛОСЬ СЕГОДНЯ"
+
+#:
+msgid "MIN"
+msgstr "МИН"
+
+#:
+msgid "DAILY PLAY TIME LIMIT REACHED"
+msgstr "ДНЕВНОЙ ЛИМИТ ИГРОВОГО ВРЕМЕНИ ИСЧЕРПАН"
+
+#:
+msgid "COME BACK TOMORROW!"
+msgstr "ВОЗВРАЩАЙСЯ ЗАВТРА!"
+
+#:
+msgid "PLAY TIME LEFT TODAY: %i MIN"
+msgstr "ОСТАВШЕЕСЯ ИГРОВОЕ ВРЕМЯ СЕГОДНЯ: %i МИН"
+
+#:
+msgid "PLAY TIME LEFT TODAY: < 1 MIN"
+msgstr "ОСТАВШЕЕСЯ ИГРОВОЕ ВРЕМЯ СЕГОДНЯ: < 1 МИН"
+
+#:
+msgid "NIGHT FILTER"
+msgstr "НОЧНОЙ ФИЛЬТР"
+
+#:
+msgid "ENABLE FILTER"
+msgstr "ВКЛЮЧИТЬ ФИЛЬТР"
+
+#:
+msgid "START TIME"
+msgstr "ВРЕМЯ НАЧАЛА"
+
+#:
+msgid "END TIME"
+msgstr "ВРЕМЯ ОКОНЧАНИЯ"
+
+#:
+msgid "NIGHT FILTER ACTIVE"
+msgstr "НОЧНОЙ ФИЛЬТР АКТИВЕН"
+
+#:
+msgid "AQUARIUM SCREENSAVER SETTINGS"
+msgstr "НАСТРОЙКА ЗАСТАВКИ АКВАРИУМ"
+
+#:
+msgid "AQUARIUM SCREENSAVER"
+msgstr "ЗАСТАВКА АКВАРИУМ"
+
+#:
+msgid "FISH COUNT"
+msgstr "КОЛИЧЕСТВО РЫБ"
+
+#:
+msgid "ALL RANDOM"
+msgstr "ВСЕ СЛУЧАЙНЫЕ"
+
+#:
+msgid "FISH"
+msgstr "РЫБА"
+
+#:
+msgid "BUBBLE COLUMN"
+msgstr "СТОЛБ ПУЗЫРЬКОВ"
+
+#:
+msgid "AUTO LIGHTS"
+msgstr "АВТООСВЕЩЕНИЕ"
+
+#:
+msgid "FOREGROUND LIGHTS"
+msgstr "ОСВЕЩЕНИЕ ПЕРЕДНЕГО ПЛАНА"
+
+#:
+msgid "BACKGROUND LIGHTS"
+msgstr "ОСВЕЩЕНИЕ ФОНА"
+
+#:
+msgid "STARFISH ON GLASS"
+msgstr "МОРСКАЯ ЗВЕЗДА НА СТЕКЛЕ"
+
+#:
+msgid "aquarium"
+msgstr "аквариум"
+
+#:
+msgid "corridors"
+msgstr "коридоры"
+
+#:
+msgid "CORRIDORS SCREENSAVER SETTINGS"
+msgstr "НАСТРОЙКА ЗАСТАВКИ КОРИДОРЫ"
+
+#:
+msgid "CORRIDORS SCREENSAVER"
+msgstr "ЗАСТАВКА КОРИДОРЫ"
+
+#:
+msgid "SPEED"
+msgstr "СКОРОСТЬ"
+
+#:
+msgid "AMBIENT"
+msgstr "ФОНОВЫЙ СВЕТ"
+
+#:
+msgid "PANELS"
+msgstr "ПАНЕЛИ"
+
+#:
+msgid "FLICKER"
+msgstr "МЕРЦАНИЕ"
+
+#:
+msgid "FOG"
+msgstr "ТУМАН"

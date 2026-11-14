@@ -2778,3 +2778,330 @@ msgstr "Η ΚΑΤΑΓΡΑΦΗ ΕΚΚΑΘΑΡΙΣΤΗΚΕ."
 
 msgid "ENABLE FAST SYNC"
 msgstr "ΕΝΕΡΓΟΠΟΙΗΣΗ ΓΡΗΓΟΡΟΥ ΣΥΓΧΡΟΝΙΣΜΟΥ"
+
+msgid "SWITCH A/B BUTTONS GLOBALLY"
+msgstr "ΕΝΑΛΛΑΓΗ ΚΟΥΜΠΙΩΝ A/B ΚΑΘΟΛΙΚΑ"
+
+msgid "STORAGE SETTINGS"
+msgstr "ΡΥΘΜΙΣΕΙΣ ΑΠΟΘΗΚΕΥΣΗΣ"
+
+msgid "ENABLE SD2"
+msgstr "ΕΝΕΡΓΟΠΟΙΗΣΗ SD2"
+
+msgid "REASSIGN SYSTEMS TO SD1"
+msgstr "ΕΠΑΝΑΤΑΞΙΝΟΜΗΣΗ ΣΥΣΤΗΜΑΤΩΝ ΣΤΟ SD1"
+
+msgid "SCAN AND REPAIR"
+msgstr "ΣΑΡΩΣΗ ΚΑΙ ΕΠΙΔΙΟΡΘΩΣΗ"
+
+msgid "BOOT"
+msgstr "ΕΚΚΙΝΗΣΗ"
+
+msgid "ROOTFS"
+msgstr "ROOTFS"
+
+msgid "SD1 GAMES"
+msgstr "ΠΑΙΧΝΙΔΙΑ SD1"
+
+msgid "SD2"
+msgstr "SD2"
+
+msgid "MANUAL SELECTION"
+msgstr "ΧΕΙΡΟΚΙΝΗΤΗ ΕΠΙΛΟΓΗ"
+
+msgid "AUTOMATED SCAN"
+msgstr "ΑΥΤΟΜΑΤΗ ΣΑΡΩΣΗ"
+
+msgid "UNDO ALL CHANGES"
+msgstr "ΑΝΑΙΡΕΣΗ ΟΛΩΝ ΤΩΝ ΑΛΛΑΓΩΝ"
+
+msgid "SCAN /roms/ FOR CHANGES?"
+msgstr "ΣΑΡΩΣΗ /roms/ ΓΙΑ ΑΛΛΑΓΕΣ;"
+
+msgid "REVERT ALL SYSTEMS TO SD2?"
+msgstr "ΕΠΑΝΑΦΟΡΑ ΟΛΩΝ ΤΩΝ ΣΥΣΤΗΜΑΤΩΝ ΣΤΟ SD2;"
+
+msgid "PLEASE WAIT..."
+msgstr "ΠΑΡΑΚΑΛΩ ΠΕΡΙΜΕΝΕΤΕ..."
+
+msgid "SYSTEMS"
+msgstr "ΣΥΣΤΗΜΑΤΑ"
+
+msgid "NOTHING WAS MODIFIED."
+msgstr "ΤΙΠΟΤΑ ΔΕΝ ΤΡΟΠΟΠΟΙΗΘΗΚΕ."
+
+msgid "RESTORING ALL SYSTEMS TO /roms2/."
+msgstr "ΕΠΑΝΑΦΟΡΑ ΟΛΩΝ ΤΩΝ ΣΥΣΤΗΜΑΤΩΝ ΣΤΟ /roms2/."
+
+msgid "MOVED TO SD1:"
+msgstr "ΜΕΤΑΦΕΡΘΗΚΕ ΣΤΟ SD1:"
+
+msgid "REVERTED TO SD2:"
+msgstr "ΕΠΑΝΑΦΕΡΘΗΚΕ ΣΤΟ SD2:"
+
+msgid "Scan failed. Repairs were not successful."
+msgstr "Η σάρωση απέτυχε. Οι επιδιορθώσεις δεν ήταν επιτυχείς."
+
+msgid "Scan failed. Repairs were successful."
+msgstr "Η σάρωση απέτυχε. Οι επιδιορθώσεις ήταν επιτυχείς."
+
+msgid "Scan passed. No repairs were needed."
+msgstr "Η σάρωση ολοκληρώθηκε. Δεν χρειάστηκαν επιδιορθώσεις."
+
+msgid "Wi-fi has been turned off to ensure the disk is not busy."
+msgstr "Το Wi-Fi απενεργοποιήθηκε για να διασφαλιστεί ότι ο δίσκος δεν είναι απασχολημένος."
+
+msgid "Could not unmount /boot"
+msgstr "Δεν ήταν δυνατή η αποσύνδεση του /boot"
+
+msgid "Dirty bit cleared"
+msgstr "Το dirty bit καθαρίστηκε"
+
+msgid "Boot sector mismatch noted"
+msgstr "Εντοπίστηκε αναντιστοιχία τομέα εκκίνησης"
+
+msgid "Bad file entries fixed"
+msgstr "Διορθώθηκαν κατεστραμμένες καταχωρίσεις αρχείων"
+
+msgid "Uncorrectable errors found on system partition"
+msgstr "Βρέθηκαν μη διορθώσιμα σφάλματα στο διαμέρισμα συστήματος"
+
+msgid "Partition 2 (system) could not be fully repaired while running. Eject the card and run 'sudo btrfs check --repair /dev/mmcblk0p2' from a Linux PC."
+msgstr "Το διαμέρισμα 2 (σύστημα) δεν ήταν δυνατό να επισκευαστεί πλήρως εν λειτουργία. Αφαιρέστε την κάρτα και εκτελέστε 'sudo btrfs check --repair /dev/mmcblk0p2' από PC Linux."
+
+msgid "HELPER SCRIPT NOT FOUND"
+msgstr "ΔΕΝ ΒΡΕΘΗΚΕ ΒΟΗΘΗΤΙΚΟ ΣΕΝΑΡΙΟ"
+
+msgid "FAILED TO PREPARE RECOVERY SCRIPT"
+msgstr "ΑΠΟΤΥΧΙΑ ΠΡΟΕΤΟΙΜΑΣΙΑΣ ΣΕΝΑΡΙΟΥ ΑΠΟΚΑΤΑΣΤΑΣΗΣ"
+
+msgid "SCAN SD1 GAMES?\nTHE CONSOLE WILL REBOOT TO COMPLETE THE SCAN."
+msgstr "ΣΑΡΩΣΗ ΠΑΙΧΝΙΔΙΩΝ SD1;\nΗ ΚΟΝΣΟΛΑ ΘΑ ΕΠΑΝΕΚΚΙΝΗΣΕΙ ΓΙΑ ΝΑ ΟΛΟΚΛΗΡΩΘΕΙ Η ΣΑΡΩΣΗ."
+
+msgid "SCAN SD2?\nTHE CONSOLE WILL REBOOT TO COMPLETE THE SCAN."
+msgstr "ΣΑΡΩΣΗ SD2;\nΗ ΚΟΝΣΟΛΑ ΘΑ ΕΠΑΝΕΚΚΙΝΗΣΕΙ ΓΙΑ ΝΑ ΟΛΟΚΛΗΡΩΘΕΙ Η ΣΑΡΩΣΗ."
+
+msgid "BENCHMARKING"
+msgstr "ΜΕΤΡΗΣΕΙΣ ΑΠΟΔΟΣΗΣ"
+
+msgid "BENCHMARK"
+msgstr "ΜΕΤΡΗΣΗ ΑΠΟΔΟΣΗΣ"
+
+msgid "BENCHMARK FAILED"
+msgstr "Η ΜΕΤΡΗΣΗ ΑΠΟΔΟΣΗΣ ΑΠΕΤΥΧΕ"
+
+msgid "RUNNING, PLEASE WAIT"
+msgstr "ΕΚΤΕΛΕΙΤΑΙ, ΠΑΡΑΚΑΛΩ ΠΕΡΙΜΕΝΕΤΕ"
+
+msgid "LOG IS EMPTY."
+msgstr "Η ΚΑΤΑΓΡΑΦΗ ΕΙΝΑΙ ΚΕΝΗ."
+
+msgid "%d d"
+msgstr "%d ημ."
+
+msgid "%d h"
+msgstr "%d ώρ."
+
+msgid "%d mn"
+msgstr "%d λεπ."
+
+msgid "%d sec"
+msgstr "%d δευτ."
+
+msgid "LAST 20 PLAYED GAMES"
+msgstr "ΤΑ 20 ΤΕΛΕΥΤΑΙΑ ΠΑΙΧΝΙΔΙΑ"
+
+msgid "NO GAME PLAYED YET"
+msgstr "ΔΕΝ ΕΧΕΙ ΠΑΙΧΤΕΙ ΚΑΝΕΝΑ ΠΑΙΧΝΙΔΙ"
+
+#:
+msgid "datetime"
+msgstr "ημερομηνία και ώρα"
+
+#:
+msgid "DATE TIME SCREENSAVER SETTINGS"
+msgstr "ΡΥΘΜΙΣΕΙΣ ΠΡΟΣΤΑΣΙΑΣ ΟΘΟΝΗΣ ΗΜΕΡΟΜΗΝΙΑΣ ΚΑΙ ΩΡΑΣ"
+
+#:
+msgid "DATE & TIME SCREENSAVER"
+msgstr "ΠΡΟΣΤΑΣΙΑ ΟΘΟΝΗΣ ΗΜΕΡΟΜΗΝΙΑΣ ΚΑΙ ΩΡΑΣ"
+
+#:
+msgid "CLOCK TYPE"
+msgstr "ΤΥΠΟΣ ΡΟΛΟΓΙΟΥ"
+
+#:
+msgid "CLOCK STYLE"
+msgstr "ΣΤΥΛ ΡΟΛΟΓΙΟΥ"
+
+#:
+msgid "CLOCK COLOR"
+msgstr "ΧΡΩΜΑ ΡΟΛΟΓΙΟΥ"
+
+#:
+msgid "BACKGROUND MODE"
+msgstr "ΛΕΙΤΟΥΡΓΙΑ ΦΟΝΤΟΥ"
+
+#:
+msgid "BACKGROUND COLOR"
+msgstr "ΧΡΩΜΑ ΦΟΝΤΟΥ"
+
+#:
+msgid "BACKGROUND IMAGE"
+msgstr "ΕΙΚΟΝΑ ΦΟΝΤΟΥ"
+
+#:
+msgid "SHOW DATE"
+msgstr "ΕΜΦΑΝΙΣΗ ΗΜΕΡΟΜΗΝΙΑΣ"
+
+#:
+msgid "SHOW SECONDS"
+msgstr "ΕΜΦΑΝΙΣΗ ΔΕΥΤΕΡΟΛΕΠΤΩΝ"
+
+#:
+msgid "ENABLE VIBRATION FEEDBACK"
+msgstr "ΕΝΕΡΓΟΠΟΙΗΣΗ ΔΟΝΗΣΗΣ"
+
+#:
+msgid "VIBRATION INTENSITY"
+msgstr "ΕΝΤΑΣΗ ΔΟΝΗΣΗΣ"
+
+#:
+msgid "TEMPERATURE"
+msgstr "ΘΕΡΜΟΚΡΑΣΙΑ"
+
+#:
+msgid "CLOCK FONT"
+msgstr "ΓΡΑΜΜΑΤΟΣΕΙΡΑ ΡΟΛΟΓΙΟΥ"
+
+#:
+msgid "VERBAL PLAY TIMER WARNING"
+msgstr "ΦΩΝΗΤΙΚΗ ΠΡΟΕΙΔΟΠΟΙΗΣΗ ΧΡΟΝΟΜΕΤΡΟΥ ΠΑΙΧΝΙΔΙΟΥ"
+
+#:
+msgid "PLAY TIMER"
+msgstr "ΧΡΟΝΟΜΕΤΡΟ ΠΑΙΧΝΙΔΙΟΥ"
+
+#:
+msgid "TIME LEFT TODAY"
+msgstr "ΥΠΟΛΟΙΠΟΣ ΧΡΟΝΟΣ ΣΗΜΕΡΑ"
+
+#:
+msgid "MIN"
+msgstr "ΛΕΠ"
+
+#:
+msgid "DAILY PLAY TIME LIMIT REACHED"
+msgstr "ΕΠΙΤΕΥΧΘΗΚΕ ΤΟ ΗΜΕΡΗΣΙΟ ΟΡΙΟ ΠΑΙΧΝΙΔΙΟΥ"
+
+#:
+msgid "COME BACK TOMORROW!"
+msgstr "ΕΛΑ ΞΑΝΑ ΑΥΡΙΟ!"
+
+#:
+msgid "PLAY TIME LEFT TODAY: %i MIN"
+msgstr "ΥΠΟΛΟΙΠΟΣ ΧΡΟΝΟΣ ΠΑΙΧΝΙΔΙΟΥ ΣΗΜΕΡΑ: %i ΛΕΠ"
+
+#:
+msgid "PLAY TIME LEFT TODAY: < 1 MIN"
+msgstr "ΥΠΟΛΟΙΠΟΣ ΧΡΟΝΟΣ ΠΑΙΧΝΙΔΙΟΥ ΣΗΜΕΡΑ: < 1 ΛΕΠ"
+
+#:
+msgid "NIGHT FILTER"
+msgstr "ΝΥΧΤΕΡΙΝΟ ΦΙΛΤΡΟ"
+
+#:
+msgid "ENABLE FILTER"
+msgstr "ΕΝΕΡΓΟΠΟΙΗΣΗ ΦΙΛΤΡΟΥ"
+
+#:
+msgid "START TIME"
+msgstr "ΩΡΑ ΕΝΑΡΞΗΣ"
+
+#:
+msgid "END TIME"
+msgstr "ΩΡΑ ΛΗΞΗΣ"
+
+#:
+msgid "NIGHT FILTER ACTIVE"
+msgstr "ΝΥΧΤΕΡΙΝΟ ΦΙΛΤΡΟ ΕΝΕΡΓΟ"
+
+#:
+msgid "AQUARIUM SCREENSAVER SETTINGS"
+msgstr "ΡΥΘΜΙΣΕΙΣ ΠΡΟΣΤΑΣΙΑΣ ΟΘΟΝΗΣ ΕΝΥΔΡΕΙΟΥ"
+
+#:
+msgid "AQUARIUM SCREENSAVER"
+msgstr "ΠΡΟΣΤΑΣΙΑ ΟΘΟΝΗΣ ΕΝΥΔΡΕΙΟΥ"
+
+#:
+msgid "FISH COUNT"
+msgstr "ΑΡΙΘΜΟΣ ΨΑΡΙΩΝ"
+
+#:
+msgid "ALL RANDOM"
+msgstr "ΟΛΑ ΤΥΧΑΙΑ"
+
+#:
+msgid "FISH"
+msgstr "ΨΑΡΙ"
+
+#:
+msgid "BUBBLE COLUMN"
+msgstr "ΣΤΗΛΗ ΦΥΣΑΛΙΔΩΝ"
+
+#:
+msgid "AUTO LIGHTS"
+msgstr "ΑΥΤΟΜΑΤΟΣ ΦΩΤΙΣΜΟΣ"
+
+#:
+msgid "FOREGROUND LIGHTS"
+msgstr "ΦΩΤΙΣΜΟΣ ΠΡΟΣΚΗΝΙΟΥ"
+
+#:
+msgid "BACKGROUND LIGHTS"
+msgstr "ΦΩΤΙΣΜΟΣ ΦΟΝΤΟΥ"
+
+#:
+msgid "STARFISH ON GLASS"
+msgstr "ΑΣΤΕΡΙΑΣ ΣΤΟ ΤΖΑΜΙ"
+
+#:
+msgid "aquarium"
+msgstr "ενυδρείο"
+
+#:
+msgid "corridors"
+msgstr "διάδρομοι"
+
+#:
+msgid "CORRIDORS SCREENSAVER SETTINGS"
+msgstr "ΡΥΘΜΙΣΕΙΣ ΠΡΟΣΤΑΣΙΑΣ ΟΘΟΝΗΣ ΔΙΑΔΡΟΜΩΝ"
+
+#:
+msgid "CORRIDORS SCREENSAVER"
+msgstr "ΠΡΟΣΤΑΣΙΑ ΟΘΟΝΗΣ ΔΙΑΔΡΟΜΩΝ"
+
+#:
+msgid "SPEED"
+msgstr "ΤΑΧΥΤΗΤΑ"
+
+#:
+msgid "AMBIENT"
+msgstr "ΦΩΣ ΠΕΡΙΒΑΛΛΟΝΤΟΣ"
+
+#:
+msgid "PANELS"
+msgstr "ΦΩΤΙΣΤΙΚΑ"
+
+#:
+msgid "FLICKER"
+msgstr "ΤΡΕΜΟΠΑΙΓΜΑ"
+
+#:
+msgid "FOG"
+msgstr "ΟΜΙΧΛΗ"
+
+#:
+msgid "VOLUME"
+msgstr "ΕΝΤΑΣΗ"

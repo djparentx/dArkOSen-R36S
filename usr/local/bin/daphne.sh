@@ -28,7 +28,7 @@ if  [[ $1 == "standalone" ]]; then
   fi
 
   #./hypseus-singe "$basefilename" vldp -gamepad ${RES} -framefile "$dir/$basefilename.txt" -fullscreen -useoverlaysb 2 $extraparams
-  LD_PRELOAD=/opt/hypseus-singe/libSDL3.so.0.5.0 ./hypseus-singe "$basefilename" vldp -gamepad -texturestream ${RES} -framefile "$dir/$basefilename.txt" -fullscreen $extraparams
+  ./hypseus-singe "$basefilename" vldp -gamepad -texturestream ${RES} -framefile "$dir/$basefilename.txt" -fullscreen $extraparams
 
   rm *.csv
 

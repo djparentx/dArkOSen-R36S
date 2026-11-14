@@ -215,16 +215,16 @@ if ($deleted.Count -gt 0) {
 
 # Copy boot images based on the selected model
 if ($chosen -match 'ProMax|R45H|R46H') {
-    $bootSource = Join-Path $rootDir "dtb\1024"
+    $bootSource = Join-Path $rootDir "dtb\images\1024"
 }
 elseif ($chosen -match 'R36S-Plus') {
-    $bootSource = Join-Path $rootDir "dtb\720"
+    $bootSource = Join-Path $rootDir "dtb\images\720"
 }
-elseif ($chosen -match 'R50S|R50H') {
-    $bootSource = Join-Path $rootDir "dtb\1280"
+elseif ($chosen -match 'R50H') {
+    $bootSource = Join-Path $rootDir "dtb\images\1280"
 }
 else {
-    $bootSource = Join-Path $rootDir "dtb\640"
+    $bootSource = Join-Path $rootDir "dtb\images\640"
 }
 
 if (-not (Test-Path $bootSource -PathType Container)) {

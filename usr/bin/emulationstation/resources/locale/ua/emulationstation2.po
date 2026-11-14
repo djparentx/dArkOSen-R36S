@@ -4214,3 +4214,323 @@ msgstr "ЖУРНАЛ ОЧИЩЕНО."
 
 msgid "ENABLE FAST SYNC"
 msgstr "УВІМКНУТИ ШВИДКУ СИНХРОНІЗАЦІЮ"
+
+msgid "SWITCH A/B BUTTONS GLOBALLY"
+msgstr "ЗАМІНИТИ КНОПКИ A/B ГЛОБАЛЬНО"
+
+msgid "STORAGE SETTINGS"
+msgstr "НАЛАШТУВАННЯ СХОВИЩА"
+
+msgid "ENABLE SD2"
+msgstr "УВІМКНУТИ SD2"
+
+msgid "REASSIGN SYSTEMS TO SD1"
+msgstr "ПЕРЕПРИЗНАЧИТИ СИСТЕМИ НА SD1"
+
+msgid "SCAN AND REPAIR"
+msgstr "ПЕРЕВІРИТИ ТА ВИПРАВИТИ"
+
+msgid "BOOT"
+msgstr "ЗАВАНТАЖЕННЯ"
+
+msgid "ROOTFS"
+msgstr "КОРЕНЕВА ФС"
+
+msgid "SD1 GAMES"
+msgstr "ІГРИ SD1"
+
+msgid "SD2"
+msgstr "SD2"
+
+msgid "MANUAL SELECTION"
+msgstr "РУЧНИЙ ВИБІР"
+
+msgid "AUTOMATED SCAN"
+msgstr "АВТОМАТИЧНА ПЕРЕВІРКА"
+
+msgid "UNDO ALL CHANGES"
+msgstr "СКАСУВАТИ ВСІ ЗМІНИ"
+
+msgid "SCAN /roms/ FOR CHANGES?"
+msgstr "ПЕРЕВІРИТИ /roms/ НА ЗМІНИ?"
+
+msgid "REVERT ALL SYSTEMS TO SD2?"
+msgstr "ПОВЕРНУТИ ВСІ СИСТЕМИ НА SD2?"
+
+msgid "PLEASE WAIT..."
+msgstr "БУДЬ ЛАСКА, ЗАЧЕКАЙТЕ..."
+
+msgid "SYSTEMS"
+msgstr "СИСТЕМИ"
+
+msgid "NOTHING WAS MODIFIED."
+msgstr "НІЧОГО НЕ ЗМІНЕНО."
+
+msgid "RESTORING ALL SYSTEMS TO /roms2/."
+msgstr "ВІДНОВЛЕННЯ ВСІХ СИСТЕМ НА /roms2/."
+
+msgid "MOVED TO SD1:"
+msgstr "ПЕРЕМІЩЕНО НА SD1:"
+
+msgid "REVERTED TO SD2:"
+msgstr "ПОВЕРНУТО НА SD2:"
+
+msgid "Scan failed. Repairs were not successful."
+msgstr "Перевірка не вдалася. Виправлення не допомогли."
+
+msgid "Scan failed. Repairs were successful."
+msgstr "Перевірка не вдалася. Виправлення виконані успішно."
+
+msgid "Scan passed. No repairs were needed."
+msgstr "Перевірку пройдено. Виправлення не знадобились."
+
+msgid "Wi-fi has been turned off to ensure the disk is not busy."
+msgstr "Wi-Fi вимкнено, щоб переконатися, що диск не зайнятий."
+
+msgid "Could not unmount /boot"
+msgstr "Не вдалося відмонтувати /boot"
+
+msgid "Dirty bit cleared"
+msgstr "Dirty-біт скинуто"
+
+msgid "Boot sector mismatch noted"
+msgstr "Виявлено невідповідність завантажувального сектора"
+
+msgid "Bad file entries fixed"
+msgstr "Пошкоджені записи файлів виправлено"
+
+msgid "Uncorrectable errors found on system partition"
+msgstr "На системному розділі знайдено невиправні помилки"
+
+msgid "Partition 2 (system) could not be fully repaired while running. Eject the card and run 'sudo btrfs check --repair /dev/mmcblk0p2' from a Linux PC."
+msgstr "Розділ 2 (системний) не вдалося повністю відновити у робочому режимі. Вийміть карту та виконайте 'sudo btrfs check --repair /dev/mmcblk0p2' на ПК з Linux."
+
+msgid "HELPER SCRIPT NOT FOUND"
+msgstr "ДОПОМІЖНИЙ СКРИПТ НЕ ЗНАЙДЕНО"
+
+msgid "FAILED TO PREPARE RECOVERY SCRIPT"
+msgstr "НЕ ВДАЛОСЯ ПІДГОТУВАТИ СКРИПТ ВІДНОВЛЕННЯ"
+
+msgid "SCAN SD1 GAMES?\nTHE CONSOLE WILL REBOOT TO COMPLETE THE SCAN."
+msgstr "ПЕРЕВІРИТИ ІГРИ SD1?\nКОНСОЛЬ ПЕРЕЗАВАНТАЖИТЬСЯ ДЛЯ ЗАВЕРШЕННЯ ПЕРЕВІРКИ."
+
+msgid "SCAN SD2?\nTHE CONSOLE WILL REBOOT TO COMPLETE THE SCAN."
+msgstr "ПЕРЕВІРИТИ SD2?\nКОНСОЛЬ ПЕРЕЗАВАНТАЖИТЬСЯ ДЛЯ ЗАВЕРШЕННЯ ПЕРЕВІРКИ."
+
+msgid "BENCHMARKING"
+msgstr "ТЕСТИ ПРОДУКТИВНОСТІ"
+
+msgid "BENCHMARK"
+msgstr "ТЕСТ"
+
+msgid "BENCHMARK FAILED"
+msgstr "ТЕСТ НЕ ВДАВСЯ"
+
+msgid "RUNNING, PLEASE WAIT"
+msgstr "ВИКОНУЄТЬСЯ, БУДЬ ЛАСКА, ЗАЧЕКАЙТЕ"
+
+msgid "LOG IS EMPTY."
+msgstr "ЖУРНАЛ ПОРОЖНІЙ."
+
+msgid "%d d"
+msgstr "%d д"
+
+msgid "%d mn"
+msgstr "%d хв"
+
+msgid "%d sec"
+msgstr "%d с"
+
+msgid "LAST 20 PLAYED GAMES"
+msgstr "ОСТАННІ 20 ІГОР"
+
+msgid "NO GAME PLAYED YET"
+msgstr "ЩЕ НЕМАЄ ЗІГРАНИХ ІГОР"
+
+#:
+msgid "datetime"
+msgstr "дата і час"
+
+#:
+msgid "DATE TIME SCREENSAVER SETTINGS"
+msgstr "НАЛАШТУВАННЯ ЗАСТАВКИ ДАТИ І ЧАСУ"
+
+#:
+msgid "DATE & TIME SCREENSAVER"
+msgstr "ЗАСТАВКА ДАТИ І ЧАСУ"
+
+#:
+msgid "CLOCK TYPE"
+msgstr "ТИП ГОДИННИКА"
+
+#:
+msgid "CLOCK STYLE"
+msgstr "СТИЛЬ ГОДИННИКА"
+
+#:
+msgid "CLOCK COLOR"
+msgstr "КОЛІР ГОДИННИКА"
+
+#:
+msgid "BACKGROUND MODE"
+msgstr "РЕЖИМ ФОНУ"
+
+#:
+msgid "BACKGROUND COLOR"
+msgstr "КОЛІР ФОНУ"
+
+#:
+msgid "BACKGROUND IMAGE"
+msgstr "ЗОБРАЖЕННЯ ФОНУ"
+
+#:
+msgid "SHOW DATE"
+msgstr "ПОКАЗАТИ ДАТУ"
+
+#:
+msgid "SHOW SECONDS"
+msgstr "ПОКАЗАТИ СЕКУНДИ"
+
+#:
+msgid "ENABLE VIBRATION FEEDBACK"
+msgstr "УВІМКНУТИ ВІБРОВІДГУК"
+
+#:
+msgid "VIBRATION INTENSITY"
+msgstr "СИЛА ВІБРАЦІЇ"
+
+#:
+msgid "TEMPERATURE"
+msgstr "ТЕМПЕРАТУРА"
+
+#:
+msgid "CLOCK FONT"
+msgstr "ШРИФТ ГОДИННИКА"
+
+#:
+msgid "VERBAL PLAY TIMER WARNING"
+msgstr "ГОЛОСОВЕ ПОПЕРЕДЖЕННЯ ТАЙМЕРА ГРИ"
+
+#:
+msgid "PLAY TIMER"
+msgstr "ТАЙМЕР ГРИ"
+
+#:
+msgid "TIME LEFT TODAY"
+msgstr "ЗАЛИШИЛОСЯ СЬОГОДНІ"
+
+#:
+msgid "MIN"
+msgstr "ХВ"
+
+#:
+msgid "DAILY PLAY TIME LIMIT REACHED"
+msgstr "ДЕННИЙ ЛІМІТ ІГРОВОГО ЧАСУ ВИЧЕРПАНО"
+
+#:
+msgid "COME BACK TOMORROW!"
+msgstr "ПОВЕРТАЙСЯ ЗАВТРА!"
+
+#:
+msgid "PLAY TIME LEFT TODAY: %i MIN"
+msgstr "ЗАЛИШОК ІГРОВОГО ЧАСУ СЬОГОДНІ: %i ХВ"
+
+#:
+msgid "PLAY TIME LEFT TODAY: < 1 MIN"
+msgstr "ЗАЛИШОК ІГРОВОГО ЧАСУ СЬОГОДНІ: < 1 ХВ"
+
+#:
+msgid "NIGHT FILTER"
+msgstr "НІЧНИЙ ФІЛЬТР"
+
+#:
+msgid "ENABLE FILTER"
+msgstr "УВІМКНУТИ ФІЛЬТР"
+
+#:
+msgid "START TIME"
+msgstr "ЧАС ПОЧАТКУ"
+
+#:
+msgid "END TIME"
+msgstr "ЧАС ЗАВЕРШЕННЯ"
+
+#:
+msgid "NIGHT FILTER ACTIVE"
+msgstr "НІЧНИЙ ФІЛЬТР АКТИВНИЙ"
+
+#:
+msgid "AQUARIUM SCREENSAVER SETTINGS"
+msgstr "НАЛАШТУВАННЯ ЗАСТАВКИ АКВАРІУМ"
+
+#:
+msgid "AQUARIUM SCREENSAVER"
+msgstr "ЗАСТАВКА АКВАРІУМ"
+
+#:
+msgid "FISH COUNT"
+msgstr "КІЛЬКІСТЬ РИБ"
+
+#:
+msgid "ALL RANDOM"
+msgstr "УСІ ВИПАДКОВІ"
+
+#:
+msgid "FISH"
+msgstr "РИБА"
+
+#:
+msgid "BUBBLE COLUMN"
+msgstr "СТОВП БУЛЬБАШОК"
+
+#:
+msgid "AUTO LIGHTS"
+msgstr "АВТОМАТИЧНЕ ОСВІТЛЕННЯ"
+
+#:
+msgid "FOREGROUND LIGHTS"
+msgstr "ОСВІТЛЕННЯ ПЕРЕДНЬОГО ПЛАНУ"
+
+#:
+msgid "BACKGROUND LIGHTS"
+msgstr "ОСВІТЛЕННЯ ТЛА"
+
+#:
+msgid "STARFISH ON GLASS"
+msgstr "МОРСЬКА ЗІРКА НА СКЛІ"
+
+#:
+msgid "aquarium"
+msgstr "акваріум"
+
+#:
+msgid "corridors"
+msgstr "коридори"
+
+#:
+msgid "CORRIDORS SCREENSAVER SETTINGS"
+msgstr "НАЛАШТУВАННЯ ЗАСТАВКИ КОРИДОРИ"
+
+#:
+msgid "CORRIDORS SCREENSAVER"
+msgstr "ЗАСТАВКА КОРИДОРИ"
+
+#:
+msgid "SPEED"
+msgstr "ШВИДКІСТЬ"
+
+#:
+msgid "AMBIENT"
+msgstr "ФОНОВЕ СВІТЛО"
+
+#:
+msgid "PANELS"
+msgstr "ПАНЕЛІ"
+
+#:
+msgid "FLICKER"
+msgstr "МЕРЕХТІННЯ"
+
+#:
+msgid "FOG"
+msgstr "ТУМАН"

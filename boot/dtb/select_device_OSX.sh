@@ -301,13 +301,13 @@ fi
 
 # Select boot images based on the selected model
 if [[ "$chosen" == *ProMax* || "$chosen" == *R45H* || "$chosen" == *R46H* ]]; then
-    boot_source="${ROOT_DIR}/dtb/1024"
+    boot_source="${ROOT_DIR}/dtb/images/1024"
 elif [[ "$chosen" == *R36S-Plus* ]]; then
-    boot_source="${ROOT_DIR}/dtb/720"
+    boot_source="${ROOT_DIR}/dtb/images/720"
 elif [[ "$chosen" == *R50S* || "$chosen" == *R50H* ]]; then
-    boot_source="${ROOT_DIR}/dtb/1280"
+    boot_source="${ROOT_DIR}/dtb/images/1280"
 else
-    boot_source="${ROOT_DIR}/dtb/640"
+    boot_source="${ROOT_DIR}/dtb/images/640"
 fi
 
 if [[ ! -d "$boot_source" ]]; then

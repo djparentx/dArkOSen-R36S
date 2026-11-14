@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#####################################################################
+#		 	Extracted from Wi-Fi Manager by djparent				#
+#####################################################################
+
 if [ "$(id -u)" -ne 0 ]; then
     exec sudo -- "$0" "$@"
 fi
@@ -202,27 +206,16 @@ OTG() {
     SERVICE_FILE="/etc/systemd/system/wifi-usb-old-scheme.service"
 
 	if [[ ! -f "/usr/local/bin/wifi-usb-old-scheme.sh" ]]; then
-        cat <<'EOF' > "/usr/local/bin/wifi-usb-old-scheme.sh"
+    cat <<'EOF' > "/usr/local/bin/wifi-usb-old-scheme.sh"
 #!/bin/bash
 echo "1" > /sys/module/usbcore/parameters/old_scheme_first || true
-if grep -q "^dwc2 " /proc/modules; then
-    modprobe -r dwc2 || true
-    sleep 0.5
-    modprobe dwc2 || true
-else
-    if [[ -e /sys/bus/platform/devices/ff300000.usb ]]; then
-        if [[ -e /sys/bus/platform/drivers/dwc2/unbind ]]; then
-            echo ff300000.usb > /sys/bus/platform/drivers/dwc2/unbind || true
-            sleep 0.5
-            echo ff300000.usb > /sys/bus/platform/drivers/dwc2/bind || true
-        fi
-    fi
-fi
 EOF
-	
+    chmod +x /usr/local/bin/wifi-usb-old-scheme.sh
+
+	if [[ ! -f "$SERVICE_FILE" ]]; then
         cat <<'EOF' > "$SERVICE_FILE"
 [Unit]
-Description=Enable old USB enumeration scheme for OTG compatibility and restart dwc2
+Description=Enable old USB enumeration scheme for OTG compatibility
 After=multi-user.target
 DefaultDependencies=no
 
@@ -235,7 +228,6 @@ RemainAfterExit=yes
 WantedBy=multi-user.target
 EOF
 
-		chmod +x /usr/local/bin/wifi-usb-old-scheme.sh
         chmod 644 "$SERVICE_FILE"
         systemctl daemon-reload
         systemctl enable wifi-usb-old-scheme.service >/dev/null 2>&1

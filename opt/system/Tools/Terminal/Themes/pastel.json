@@ -1,0 +1,12 @@
+{
+  "name": "Pastel Daydream",
+  "background": "#faf5ff",
+  "surface": "#ffffff",
+  "primary": "#9b5de5",
+  "secondary": "#f15bb5",
+  "accent": "#fee440",
+  "text": "#2f2a3b",
+  "mutedText": "#6b5f7a",
+  "border": "#e8dff5",
+  "fontFamily": "Nunito, system-ui, sans-serif"
+}

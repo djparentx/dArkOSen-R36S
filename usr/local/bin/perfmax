@@ -18,7 +18,7 @@ else
   usr_dmc_speed="528000000"
 fi
 
-if [[ ! -z "$isitrk3326" ]] && [[ $(tty) != *"pts"* ]]; then
+if [[ ! -z "$isitrk3326" ]] && [[ $(tty) != *"pts"* ]] && [ -e "/home/ark/.config/.NOVERBALBATTERYWARNING" ] && ! { grep -q '<int name="PlayTimer" value="[1-9]' /home/ark/.emulationstation/es_settings.cfg 2>/dev/null && grep -q '<string name="VerbalPlayTimerWarning" value="yes"' /home/ark/.emulationstation/es_settings.cfg 2>/dev/null; }; then
   rm /home/ark/.asoundrc
 fi
 

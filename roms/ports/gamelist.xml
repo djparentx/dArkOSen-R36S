@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<gameList>
+	<game>
+		<path>./Halo - Combat Evolved.sh</path>
+		<name>Halo: Combat Evolved</name>
+		<desc>Humanity is the midst of a long war against an alien alliance called the Covenant who have been wiping out colony after colony. You hero is Master Chief, who is given no name beyond his rank in the game itself. He is stationed on the Pillar of Autumn, a ship which, per protocol make a jump in a random direction to retreat to avoid revealing the location of Earth. They find themselves at the titular Halo, a planet-sized ring of mysterious origin and function with the Covenant on their heels. Master Chief must repel the Covenant assault and discover the secrets of Halo with the assistance of the female AI Cortana who lives in his suit and gives missions.</desc>
+		<image>./images/Halo - Combat Evolved-image.png</image>
+		<video>./videos/Halo - Combat Evolved-video.mp4</video>
+		<marquee>./images/Halo - Combat Evolved-marquee.png</marquee>
+		<thumbnail>./images/Halo - Combat Evolved-thumb.png</thumbnail>
+		<rating>0.9</rating>
+		<releasedate>20011115T000000</releasedate>
+		<developer>Bungie</developer>
+		<publisher>Microsoft</publisher>
+		<genre>Shooter</genre>
+		<players>1-16</players>
+		<playcount>2</playcount>
+		<lastplayed>20261011T161925</lastplayed>
+		<gametime>2553</gametime>
+	</game>
+	<game>
+		<path>./McpeLauncher.sh</path>
+		<name>Minecraft Pocket Edition</name>
+		<desc>Dive into an open world of 3D building, crafting and survival in the ultimate sandbox block builder. Gather resources, survive the night, and build an epic adventure one block at a time. Explore and craft your way through a completely open world where you can play with friends, build a block city, start a farm, mine deep into the ground, face mysterious enemies, or just experiment to the limits of your imagination with our building games!</desc>
+		<image>./images/McpeLauncher-image.png</image>
+		<video>./videos/McpeLauncher-video.mp4</video>
+		<marquee>./images/McpeLauncher-marquee.png</marquee>
+		<thumbnail>./images/McpeLauncher-thumb.png</thumbnail>
+		<rating>0.8</rating>
+		<releasedate>20110816T000000</releasedate>
+		<developer>Mojang</developer>
+		<publisher>Mojang</publisher>
+		<genre>Adventure</genre>
+		<playcount>2</playcount>
+		<lastplayed>20261011T203809</lastplayed>
+		<gametime>31</gametime>
+	</game>
+	<game>
+		<path>./Bully - Anniversary Edition.sh</path>
+		<name>Bully: Anniversary Edition</name>
+		<desc>Bully is a story of one Jimmy Hopkins, whose academic success hasn't been anything spectacular as he's been expelled from various schools. His parents have a grand idea of sending him to Bullworth Academy which -- despite its grand name -- houses lots of other kids like Jimmy. This is the place where future dictators, murderers, and mad scientists reside. With a help of a few friends, some wits and hard-as-a-rock fists, Jimmy has to survive through one year in Bullworth Academy.</desc>
+		<image>./images/Bully - Anniversary Edition-image.jpg</image>
+		<video>./videos/Bully - Anniversary Edition-video.mp4</video>
+		<marquee>./images/Bully - Anniversary Edition-marquee.png</marquee>
+		<thumbnail>./images/Bully - Anniversary Edition-thumb.jpg</thumbnail>
+		<rating>0.9</rating>
+		<releasedate>20081021T000000</releasedate>
+		<developer>Rockstar New England</developer>
+		<publisher>Rockstar Games</publisher>
+		<genre>Adventure / RealTime 3D</genre>
+		<playcount>51</playcount>
+		<lastplayed>20261027T233723</lastplayed>
+		<gametime>14010</gametime>
+		<lastsession>101</lastsession>
+	</game>
+	<game>
+		<path>./Super Mario Galaxy.sh</path>
+		<name>Super Mario Galaxy</name>
+		<desc>Save the galaxy from Bowser and his minions in the original planet-hopping adventure, now improved for the Nintendo Switch system!
+
+Bowser has attacked the Star Festival, abducted Princess Peach, and put the whole galaxy in danger! Join up with Rosalina and the Lumas, protectors of the cosmos, to restore the Comet Observatory and rescue the princess. Use power-ups like the Bee Mushroom to fly, the Boo Mushroom to float and move through certain types of barriers, and more on your journey to reclaim the Power Stars!
+
+This journey across the cosmos features enhanced resolution, improved UI, and additional content on the Nintendo Switch system. Use button, stick, and motion controls—adapted to the Joy-Con controllers from the original Wii versions—to jump, glide, swing, and more as you collect Power Stars and power-ups. Learn more about the Lumas from an additional Storybook chapter, and groove to all the game's music, including a few additional tracks, in soundtrack mode.</desc>
+		<image>./images/Super Mario Galaxy-image.jpg</image>
+		<video>./videos/Super Mario Galaxy-video.mp4</video>
+		<marquee>./images/Super Mario Galaxy-marquee.jpg</marquee>
+		<thumbnail>./images/Super Mario Galaxy-thumb.jpg</thumbnail>
+		<rating>0.95</rating>
+		<releasedate>20251002T000000</releasedate>
+		<developer>Nintendo</developer>
+		<publisher>Nintendo</publisher>
+		<genre>Platform</genre>
+		<players>1-2</players>
+		<playcount>4</playcount>
+		<lastplayed>20261107T224946</lastplayed>
+		<gametime>23259</gametime>
+		<lastsession>20463</lastsession>
+	</game>
+</gameList>

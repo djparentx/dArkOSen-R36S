@@ -1,0 +1,33 @@
+{
+  "version": 4,
+  "name": "smg.zip",
+  "items": [
+    "Super Mario Galaxy.sh",
+    "smg"
+  ],
+  "items_opt": [],
+  "attr": {
+    "title": "Super Mario Galaxy",
+    "porter": [
+      "Producdevity"
+    ],
+    "desc": "A native port of Super Mario Galaxy, built on Petari, SMGCommunity's decompilation of the game.",
+    "desc_md": null,
+    "inst": "Copy your own RVZ image of Super Mario Galaxy (USA, revision 0, RMGE01) to the smg/gamefiles folder, next to the Super Mario Galaxy launcher in your ports folder. The first launch prepares the game files on the device, which takes a few minutes and about 3.5 GB of free space.",
+    "inst_md": null,
+    "genres": [
+      "platformer"
+    ],
+    "image": null,
+    "rtr": false,
+    "exp": true,
+    "runtime": [],
+    "store": [],
+    "availability": "paid",
+    "reqs": [],
+    "arch": [
+      "aarch64"
+    ],
+    "min_glibc": "2.27"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Sunset Glow",
+  "background": "#fff4eb",
+  "surface": "#ffffff",
+  "primary": "#ff7a59",
+  "secondary": "#ffb703",
+  "accent": "#f15bb5",
+  "text": "#3d1f1f",
+  "mutedText": "#7a5c58",
+  "border": "#ffd6ba",
+  "fontFamily": "Poppins, system-ui, sans-serif"
+}

@@ -1,0 +1,33 @@
+#!/bin/bash
+
+#########################################################
+#			Screenshot Utility by djparent				#
+#########################################################
+
+# Default output with no arg is `/roms/screenshots/screenshot.png`
+# To change output folder per screenshot: `screenshot <location>/<name>.png`
+
+OUTPUT="${1:-/roms/screenshots/screenshot-$(date +%Y%m%d-%H%M%S).png}"
+RAW="/tmp/.screenshot-raw.png"
+
+mkdir -p /roms/screenshots
+
+sudo pkill -STOP retroarch
+
+trap 'sudo pkill -CONT retroarch 2>/dev/null' EXIT
+
+if ! sudo /usr/local/bin/kmsgrab "$RAW"; then
+    echo "Screenshot capture failed"
+    exit 1
+fi
+
+if [[ -f "/boot/rk3326-r50h-linux.dtb" ]] || [[ -f "/boot/rk3326-r50s-linux.dtb" ]]; then
+	convert "$RAW" -rotate 90 "$OUTPUT" || exit 1
+else
+	cp "$RAW" "$OUTPUT"
+fi
+
+sudo rm -f "$RAW"
+
+echo "Screenshot saved to $OUTPUT"
+

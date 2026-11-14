@@ -1,0 +1,89 @@
+Bully: Anniversary Edition - dArkOSen Port
+
+Credits
+- dArkOSen port by djparentx.
+- Based on bully-NX, the AArch64 Switch port by givethesourceplox.
+- Wrapper/loader base by fgsfds and Andy Nguyen.
+- Thanks to TheOfficialFloW and the PS Vita port contributors for the method
+  and prior groundwork.
+
+Introduction
+This port runs the Android 64-bit version of Bully: Anniversary Edition on
+RK3326 handhelds running dArkOSen (R36S and similar). It loads the original
+native library and game data from an official Android release.
+
+No original game assets are included with this port.
+You must use your own officially obtained Bully: Anniversary Edition APK
+v1.4.311 with arm64-v8a libraries.
+Patched, modded, cracked or nulled versions are not endorsed and do not work
+with this port.
+
+Installation
+1. Copy the port files into your ports folder (/roms/ports/ or /roms2/ports/):
+   - Bully - Anniversary Edition.sh
+   - bully/bully
+
+2. Copy your APK into the bully folder:
+   ports/bully/your-copy.apk
+   Any file name ending in .apk works.
+
+3. Start "Bully - Anniversary Edition" from the Ports menu.
+
+4. The installer opens on the first start:
+   - A installs, B exits.
+   - It checks for enough free space, then extracts the game library,
+     libc++_shared.so, the assets folder and the banner image.
+   - The APK is kept. Delete it afterwards if you want the space back.
+   - If the install is interrupted, it starts over on the next launch.
+
+Layout After Install
+ports/
+- Bully - Anniversary Edition.sh
+- bully/
+  - bully
+  - your-copy.apk
+  - libBully.so          (the APK's lib/arm64-v8a/libGame.so)
+  - libc++_shared.so
+  - banner.png
+  - config.txt           (created on first start)
+  - bully.log            (rewritten on every start)
+  - savegames/           (saves and game settings)
+  - assets/
+    - data_0.zip
+    - data_1.zip
+    - data_2.zip
+    - data_3.zip
+    - data_4.zip
+    - ...
+
+Controls
+- Standard gamepad layout, using the handheld's PortMaster controller mapping.
+- Select + Start exits the game at any time.
+
+Settings
+All settings are in ports/bully/config.txt. Every key is explained in the
+file itself. The game's own menu settings for resolution, effects and shadows
+are replaced by the config.txt values on the next start.
+- render_scale   0.50-1.00   render resolution (lower is faster)
+- clarity        0-2         the game's quality preset
+- shadows        0-3         shadow quality (expensive on this GPU)
+- language       0-6         game text language
+- crouch_toggle, swap_ab_buttons, swap_xy_buttons   control options
+- debug_log      0/1         detailed tracing, for bug reports only
+
+Notes
+- The game folder must contain assets/data_0.zip, or the startup data check
+  fails.
+- Saves and the game's settings are stored in ports/bully/savegames/.
+  Saves left in ports/bully/ by older builds are moved there on the next start.
+- While the game runs, the launcher sets zram to 768 MB with swappiness 100. Everything is put
+  back on exit.
+- If the game closes suddenly and bully.log ends with
+  "Bully was killed (137)", it ran out of memory. Lower clarity or shadows,
+  and reboot before playing.
+- Movies are not played. The game skips them.
+- Do not distribute the extracted APK contents with the port.
+
+Legal
+Use only assets and binaries from an officially obtained copy of the game.
+This port must be distributed without proprietary game files.

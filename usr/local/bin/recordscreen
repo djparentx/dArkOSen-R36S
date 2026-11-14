@@ -1,0 +1,33 @@
+#!/bin/bash
+
+if [[ ! "$1" =~ ^[1-9][0-9]*$ ]]; then
+    echo "Usage: recordscreen <seconds> [output.mp4]"
+    exit 1
+fi
+
+DURATION="$1"
+OUTPUT="${2:-/roms/screenshots/recording-$(date +%Y%m%d-%H%M%S).mp4}"
+
+mkdir -p /roms/screenshots
+
+VF=()
+MODE=$(head -n1 /sys/class/graphics/fb0/modes 2>/dev/null)
+RES="${MODE#*:}"
+RES="${RES%%p*}"
+FB_W="${RES%x*}"
+FB_H="${RES#*x}"
+if [[ "$FB_W" =~ ^[0-9]+$ && "$FB_H" =~ ^[0-9]+$ ]] && (( FB_H > FB_W )); then
+    VF=(-vf "transpose=clock")
+fi
+
+ffmpeg -hide_banner -y \
+    -f fbdev -framerate 15 -i /dev/fb0 \
+    -t "$DURATION" \
+    "${VF[@]}" \
+    -c:v libx264 -preset ultrafast -crf 23 \
+    -pix_fmt yuv420p -movflags +faststart \
+    "$OUTPUT"
+
+if [ $? -eq 0 ]; then
+    echo "Recording saved: $OUTPUT"
+fi

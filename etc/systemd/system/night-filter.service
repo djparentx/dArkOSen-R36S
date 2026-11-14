@@ -1,0 +1,8 @@
+[Unit]
+Description=Night filter colour temperature check
+After=gamma-persist.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/night_filter.sh
+LogLevelMax=notice

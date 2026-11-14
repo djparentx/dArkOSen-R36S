@@ -1,0 +1,40 @@
+{
+    "screen_width": 640,
+    "screen_height": 480,
+    "max_input_length": 2500,
+    "max_history": 100,
+    "history_file": "command_history.json",
+    "shell": "/bin/bash",
+    "theme_settings": {
+        "selected_theme": "Classic",
+        "show_header": true,
+        "show_shell_help_screen": true,
+        "show_editor_help_screen": true,
+        "show_keyboard": true,
+        "keyboard_click_sound": true,
+        "panel_alpha": 180,
+        "font_path": "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf",
+        "font_size": 18,
+        "background_image": "/opt/system/Tools/Terminal/Backgrounds/Background-1.png",
+        "background_enabled": false,
+        "background_alpha": 60,
+        "background_image_paths": []
+    },
+    "button_mapping": {
+        "A": 0,
+        "B": 1,
+        "X": 2,
+        "Y": 3,
+        "L1": 4,
+        "R1": 5,
+        "L2": 6,
+        "R2": 7,
+        "DPAD_UP": 8,
+        "DPAD_DOWN": 9,
+        "DPAD_LEFT": 10,
+        "DPAD_RIGHT": 11,
+        "START": 13,
+        "SELECT": 12,
+        "GUIDE": 16
+    }
+}

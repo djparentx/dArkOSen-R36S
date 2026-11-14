@@ -1,0 +1,10 @@
+[Unit]
+Description=Run night filter check every minute
+
+[Timer]
+OnBootSec=15s
+OnUnitActiveSec=60s
+AccuracySec=1s
+
+[Install]
+WantedBy=timers.target

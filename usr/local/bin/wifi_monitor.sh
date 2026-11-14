@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#####################################################################
+#		 	Extracted from Wi-Fi Manager by djparent				#
+#####################################################################
+
 if [ "$(id -u)" -ne 0 ]; then
     exec sudo -- "$0" "$@"
 fi
@@ -258,11 +262,11 @@ while true; do
 	elapsed=0
 	attempts=0
 	reconnected=0
-	gateway=$(ip route | awk '/default/ {print $3; exit}')
 	while [ $elapsed -lt $MONITOR_TIMEOUT ]; do
 		nmcli con down "$last_ssid" > /dev/null 2>&1 || true
 		sleep 1
 		result=$(nmcli con up "$last_ssid" 2>&1)
+		gateway=$(ip route | awk '/default/ {print $3; exit}')
 		if echo "$result" | grep -q "successfully"; then
 			sleep 3
 			new_ip=$(ip -4 addr show "$iface" 2>/dev/null | awk '/inet / {print $2; exit}')

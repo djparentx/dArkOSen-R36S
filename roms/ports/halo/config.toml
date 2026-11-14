@@ -1,0 +1,412 @@
+[display]
+screen_width = 0
+render_scale = 0.65
+interpolation = true
+fast_shaders = true
+fast_textures = true
+high_res_hud = false
+high_res_text = false
+
+# Lower the picture's resolution a step of 1/16 at a time while the GPU
+# falls behind, down to dynamic_resolution_min, and raise it again once
+# the GPU keeps up (the Knulli host); false keeps render_scale.
+dynamic_resolution = true
+
+# The lowest resolution dynamic_resolution goes to, 0.5 up to render_scale.
+dynamic_resolution_min = 0.5
+
+# How early objects switch to their simpler models, as a fraction of the
+# size the game switches at (1.0), times render_scale. Models are most of
+# the GPU's vertex work, which limits large scenes on this GPU.
+model_detail = 0.5
+
+# Wait for the display between frames; false draws as fast as possible.
+vsync = true
+
+# Smoothing of jagged edges, which the Xbox did not have: "off"; "fxaa"
+# or "smaa" smooth the 3D view once it is drawn (the HUD and menus stay
+# sharp); "ssaa2x" draws at twice the resolution each way (four times
+# the work); "msaa2x", "msaa4x" or "msaa8x" draw with that many samples
+# a pixel. Android has "fxaa" for "smaa", and no "ssaa2x".
+anti_aliasing = "off"
+
+# The size the objects' shadows are drawn at, in pixels each way: 128 as
+# on the Xbox, or 256, 512 or 1024 for smoother edges, as soft.
+shadow_resolution = 128
+
+# The menus: "pc" for the PC version's main menu (port/assets/menus,
+# and a menus folder here for your own), "xbox" for the Xbox's.
+menus = "pc"
+
+# In multiplayer, whose names are drawn above their heads: "all",
+# "allies", "enemies" or "none". An enemy's shows only within the
+# motion sensor's reach, in sight and not camouflaged; none show if the
+# gametype's motion tracker shows no players, only allies' if it shows
+# only friends.
+player_names = "all"
+
+# How large the players' names are drawn: 1.0 three quarters of the size of
+# the HUD's text, 0.25 to 4.
+player_name_scale = 1.0
+
+# How the scoreboard lists a team game's players: "teams" in a column for
+# each team (red on the left, blue on the right), "score" all in order of
+# score.
+scoreboard_team_layout = "teams"
+
+# Draw a panel behind the multiplayer scoreboard, for clearer text.
+scoreboard_background = true
+
+# The scoreboard panel's colour: "red, green, blue, alpha", each 0 to 255
+# (alpha 0 is see-through, 255 solid).
+scoreboard_background_color = "16, 16, 16, 150"
+
+# Show each frame at the display refresh it was drawn for, holding one that
+# is ready early, so that motion advances as the screen shows it (the
+# Knulli host, on an H700 handheld's own screen); false shows each frame
+# as soon as it is drawn.
+frame_pacing = true
+
+[update]
+auto = false
+
+[network]
+online = true
+
+# This machine's IPv4 address for system link, for a machine on several
+# networks; empty chooses one.
+address = ""
+
+# Comma-separated IPv4 addresses system link sends its announcements to
+# instead of the local network's broadcast address (for VPNs); empty for
+# the local network.
+broadcast = ""
+
+# Join the game of an invite link found on the clipboard when the game
+# comes to the front.
+join_from_clipboard = true
+
+# The UDP port internet play uses; 0 picks one. A fixed one can be
+# forwarded on the router, for networks whose NAT stops connections.
+tunnel_port = 0
+
+# Let internet play ask the router (UPnP) to forward its port, for
+# networks whose NAT stops connections: when a player joins this
+# machine's game, and when joining a game takes too long. False never
+# asks.
+allow_upnp = true
+
+# The server browser: public games are listed through the signalling
+# brokers, and Join Game > Server Browser shows them. False lists no
+# game of this machine's and shows none.
+public_lobby = true
+
+# Whether a new game of Create Game > Internet starts as PUBLIC (listed
+# in everyone's server browser: anyone can see and join it) or, false,
+# PRIVATE (only players with its invite link can join). Server Setup's
+# LISTING changes it for each game.
+host_public = true
+
+# Whether an online co-op game (Create Game > Internet, a SINGLEPLAYER
+# map) starts as PUBLIC or, false, PRIVATE: Server Setup's LISTING in
+# co-op, which writes its choice here.
+coop_public = false
+
+# Whether the players of an online co-op game hurt each other: "off",
+# "on", "shields_only" or "explosives_only" (Server Setup's FRIENDLY
+# FIRE in co-op, which writes its choice here). Their AI allies they
+# always can, as in the campaign.
+coop_friendly_fire = "on"
+
+# Whether the players of an online co-op game bump into each other;
+# false, they walk through each other (the AI's characters they still
+# bump into). Server Setup's PLAYER COLLISIONS in co-op writes its
+# choice here.
+coop_player_collisions = true
+
+# Online co-op's extra enemies: "none", "per_player" (each squad of
+# enemies grows by coop_enemies for each player past the first) or
+# "multiplier" (each is coop_enemies_multiplier times as large, for any
+# number of players). Server Setup's EXTRA ENEMIES in co-op writes its
+# choice here.
+coop_enemies_mode = "per_player"
+
+# Online co-op's extra enemies per player, a percentage: for each player
+# past the first, each squad of enemies a level places gets this much of
+# itself more (100: as many again; 25 to 200). Server Setup's PER PLAYER
+# in co-op writes its choice here.
+coop_enemies = 50
+
+# Online co-op's static multiplier of its enemies: each squad of enemies
+# a level places is this many times as large (2 to 32). Server Setup's
+# MULTIPLIER in co-op writes its choice here.
+coop_enemies_multiplier = 2
+
+# The file of the public MQTT brokers through which the machines of an
+# invite find each other (its messages are encrypted), beside this file
+# unless a full path: one host:port on each line, up to 4. Updates
+# replace brokers.txt: keep a list of your own under another name.
+brokers_file = "brokers.txt"
+
+# Public STUN servers that tell this machine its internet address;
+# comma-separated host:port.
+stun_servers = "stun.l.google.com:19302,stun.cloudflare.com:3478"
+
+[audio]
+
+# Play sound.
+enabled = true
+
+# The volume of everything, 0.0 to 1.0.
+volume = 1.0
+
+# The music's volume, 0.0 to 1.0 (of audio.volume).
+music_volume = 1.0
+
+# The volume of every other sound (effects and speech), 0.0 to 1.0 (of
+# audio.volume).
+effects_volume = 1.0
+
+# Reverberate the world's sounds as the place the player is in does (the
+# maps' sound environments, as the Xbox's I3DL2 reverb did); false keeps
+# them dry.
+reverb = true
+
+[controls]
+
+# The keyboard and mouse's controls, which Settings > Controls Setup
+# changes: up to two keys or buttons each, separated by a comma. Keys by
+# their names ("W", "Space", "Left Ctrl", "F1"), and "Mouse Left",
+# "Mouse Right", "Mouse Middle", "Mouse 4", "Mouse 5", "Wheel" (either
+# way), "Wheel Up" and "Wheel Down"; empty for none. Moving forward:
+move_forward = "W"
+
+# Moving backward.
+move_backward = "S"
+
+# Moving left.
+strafe_left = "A"
+
+# Moving right.
+strafe_right = "D"
+
+# Jumping (and skipping cutscenes).
+jump = "Space"
+
+# Crouching.
+crouch = "Left Ctrl, C"
+
+# Firing.
+fire = "Mouse Left"
+
+# Throwing a grenade.
+throw_grenade = "Mouse Right, G"
+
+# Melee attack.
+melee = "F, Mouse 4"
+
+# Reloading.
+reload = "R"
+
+# Zooming the scope.
+zoom = "Z, Mouse Middle"
+
+# Switching weapons.
+switch_weapon = "Wheel, 1"
+
+# Switching grenades.
+switch_grenade = "X"
+
+# The action: picking up (held: swapping weapons), entering and leaving
+# vehicles, pressing switches; never reloading (the controller's X does
+# when there is nothing to act on).
+action = "E"
+
+# The flashlight.
+flashlight = "Q"
+
+# Showing the scores (the controller's Back).
+scoreboard = "Tab"
+
+# The pause menu (the controller's Start).
+pause = "Escape"
+
+[game]
+
+# What the game's console shows on screen of what it logs: "important"
+# (bans, players dropped for cheating, what refuses a command, and the
+# asserts that stop the game), "all" (every line, the game's own
+# chatter too), or "none" (the asserts that stop the game only). What
+# a command prints shows whatever this is, and debug.txt has every line.
+console_log = "important"
+
+# The language the game asks the Xbox for: "ja", "de", "fr", "es" or "it";
+# empty for English. The game data decides what is translated.
+language = ""
+
+[debug]
+
+# Automated system link sessions for testing (port/linux/game/network_test.c):
+# "host:<map>" hosts a game on that map, "join" joins the first game found;
+# empty for none.
+network_test = ""
+
+# Seconds after hosting that an automated test game starts.
+network_test_start = 15.0
+
+# Every this many seconds an automated test host kills its last player; 0 never.
+network_test_kill = 0.0
+
+# The score an automated test host's game type plays to (a short game, to
+# test the next); 0 the game type's own.
+network_test_score = 0
+
+# Every this many seconds each automated test player hits the next with
+# their weapon, within its reach (the host brings far players near the
+# first a second before); 0 never.
+network_test_shoot = 0.0
+
+# This many seconds into an automated test game the host seats its last
+# player as a vehicle's driver (and out 15 seconds on); 0 never.
+network_test_vehicle = 0.0
+
+# This many seconds into an automated test game the host stands its last
+# player on a weapon, which a joining player then picks up; 0 never.
+network_test_pickup = 0.0
+
+# The weapon network_test_pickup stands the player on: the first whose tag
+# name has this in it ("sniper", say); empty any.
+network_test_pickup_weapon = ""
+
+# Listen on 127.0.0.1 (port telnet_console_port) for a script console that
+# runs what it is sent as the game's console does, with no password; false
+# none.
+telnet_console = false
+
+# The port of the script console (telnet_console); the Xbox's was 23, which
+# only the administrator can listen on.
+telnet_console_port = 2323
+
+# Milliseconds everything received is held back (a round trip between two
+# machines of twice it), to test the netcode as over the internet; 0 none.
+network_latency = 0.0
+
+# Percent of datagrams received that are dropped, for the same; 0 none.
+network_loss = 0.0
+
+# "bot:<seed>" plays controller 1 with a scripted pattern (automated
+# network tests); "look:<seed>" stands still, only turning and looking
+# up and down; empty for none.
+test_input = ""
+
+# Quit this many seconds after the window opens; 0 never.
+exit_after = 0.0
+
+# Run without a window, drawing nothing.
+null_renderer = false
+
+# Report OpenGL errors in the log.
+gl_debug = false
+
+# Start on this screen of the menus (port/assets/menus) instead of the main
+# menu, a player profile being edited; empty for the main menu.
+menu_open = ""
+
+# Log the renderer's draw counts once a second.
+gpu_stats = false
+
+# Log every draw of this frame; -1 none.
+gpu_trace_frame = -1
+
+# With gpu_trace_frame, also the vertex shader constants.
+gpu_trace_constants = false
+
+# Comma-separated ids of vertex shaders not to draw with.
+gpu_skip_vertex_shaders = ""
+
+# A folder to write the generated GLSL to; empty none.
+gpu_dump_shaders = ""
+
+# A GLSL expression every pixel shader shows instead of its result.
+gpu_debug_expression = ""
+
+# Pixel shaders show their first texture.
+gpu_debug_texture0 = false
+
+# Pixel shaders show their vertex colour.
+gpu_debug_flat = false
+
+# A folder to save frames to (with screenshot_every); empty none.
+screenshot_directory = ""
+
+# Save every this many frames to screenshot_directory; 0 none.
+screenshot_every = 0
+
+# A folder to write every texture to as it is uploaded; empty none.
+texture_dump_directory = ""
+
+# Log texture uploads.
+texture_log = false
+
+# Upload textures again every time they are used.
+texture_no_cache = false
+
+# Log where every game thread is this often, in seconds (read by the
+# app, port/android/host/host_debug.c); 0 never.
+sample_seconds = 0.0
+
+# Draw the objects' models sorted by shader, rather than object by object,
+# which spares the GPU driver most of its changes of program.
+sort_models = true
+
+# Log every frame that takes longer than this many milliseconds, with what
+# it did that a smooth frame does not (programs linked, textures decoded,
+# geometry uploaded) and where its time went; 0 never.
+hitch_log = 0.0
+
+# Decode textures and upload them on a thread of their own, drawing what
+# uses one only once it is in, rather than on the render thread when it is
+# first drawn with. Needs a host that gives the thread a context of its own.
+async_textures = true
+
+# Translate shaders on a thread of their own, drawing what uses one only
+# once it is in, rather than on the render thread when it is first drawn
+# with.
+async_shaders = true
+
+# Draw consecutive draws of the same skinned model part that differ only
+# in their constants (several marines' same part) as one instanced draw.
+instance_models = true
+
+# Draw without the alpha test when it cannot fail (the alpha tested is
+# an opaque texture's), which keeps Mali's hidden surface removal.
+alpha_test_elision = true
+
+# Draw consecutive quad draws of the same state (decals) as one.
+batch_quads = true
+
+# Point indexed draws' attributes at their base vertex, so that draws
+# from one vertex buffer share them.
+stable_streams = true
+
+# "textures", "program", "raster" (comma-separated): after 600 frames,
+# draws keep the state they find instead of setting their own, to measure
+# what setting it costs (the picture is wrong).
+freeze = ""
+
+# Draw one pixel of each draw: the GPU's time without the pixels.
+tiny_scissor = false
+
+# Added to every texture lookup's mip level, to measure what the
+# textures' bandwidth costs.
+lod_bias = 0.0
+
+# Log the draws each caller of the draw functions makes, every 300 frames:
+# 1 counts the draw functions' callers, 2 their callers' callers; 3 also
+# counts the draws that repeat another's geometry and state, and 4 skips
+# them (the picture is wrong).
+draw_callers = 0
+
+# Do not keep linked shader programs in the save folder's shaders
+# folder; every start compiles them again.
+no_program_cache = false

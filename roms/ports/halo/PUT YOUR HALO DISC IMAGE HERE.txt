@@ -1,0 +1,8 @@
+Put your disc image of Halo: Combat Evolved for the Xbox in this folder
+(an .iso file; any name), then start Halo from Ports.
+
+The first start copies the game's maps out of the disc image, which takes a
+few minutes, with its progress on the screen. After that the .iso can be
+deleted. The PC version's files do not work: the port needs the Xbox game.
+
+More: https://github.com/kirklandsig/halo-ce-anbernic-rg35xx

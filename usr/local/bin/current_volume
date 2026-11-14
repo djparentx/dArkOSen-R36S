@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if test ! -z "$(cat /home/ark/.asoundrc | grep bluealsa)"; then
+  pcm=$(bluealsactl list-pcms)
+  bt_volval=$(bluealsactl volume ${pcm} | awk 'NR==1' | cut -d " " -f3)
+  maxvolume=127
+  echo "BT $(( 200 * $bt_volval/$maxvolume - 100 * $bt_volval/$maxvolume ))%"
+  #echo "${bt_volvalpct}%"
+elif test ! -z "$(cat /home/ark/.asoundrc | grep "slave.pcm \"dmixer\"")"
+then
+  awk -F'[][]' '/Left:/ { print $2 }' <(amixer sget Playback)
+else
+  echo "N/A"
+fi

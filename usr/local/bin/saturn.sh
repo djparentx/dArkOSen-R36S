@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ $1 == *"standalone"* ]]; then
+if [[ $1 == *"yabasanshiro"* ]]; then
   directory=$(dirname "$2" | cut -d "/" -f2)
   if [[ ! -d "/$directory/saturn/yabasanshiro" ]]; then
     mkdir /$directory/saturn/yabasanshiro
@@ -14,20 +14,34 @@ if [[ $1 == *"standalone"* ]]; then
   fi
   echo "VAR=yaba" > /home/ark/.config/KILLIT
   sudo systemctl restart killer_daemon.service
-  if [[ $1 == "standalone-bios" ]]; then
-    if [[ ! -f "/$directory/bios/saturn_bios.bin" ]]; then
+###
+  if [[ $1 == *"pirry"* ]]; then
+    YABA_BIN="./yabasanshiro-pirry"
+
+    if [[ ! -d "/$directory/saturn/yabasanshiro-pirry" ]]; then
+      mkdir /$directory/saturn/yabasanshiro-pirry
+    fi
+  else
+    YABA_BIN="./yabasanshiro"
+    if [[ ! -d "/$directory/saturn/yabasanshiro" ]]; then
+      mkdir /$directory/saturn/yabasanshiro
+    fi
+  fi
+###
+  if [[ $1 == *"-bios"* ]]; then
+    if [[ ! -f "/$directory/bios/saturn_bios.bin" ]] && [[ $1 != *"pirry"* ]]; then
       printf "\033c" >> /dev/tty1
       printf "\033[1;33m" >> /dev/tty1
       printf "\n I don't detect a saturn_bios.bin bios file in the" >> /dev/tty1
       printf "\n /$directory/bios folder.  Either place one in that" >> /dev/tty1
-      printf "\n location or switch to the standalone-nobios emulator." >> /dev/tty1
+      printf "\n location or switch to the yabasanshiro-nobios emulator." >> /dev/tty1
       sleep 10
       printf "\033[0m" >> /dev/tty1
     else
-      ./yabasanshiro -r 3 -i "$2" -b /$directory/bios/saturn_bios.bin
+      LD_LIBRARY_PATH=$YABA_LIBS $YABA_BIN -r 3 -i "$2" -b /$directory/bios/saturn_bios.bin
     fi
   else
-    ./yabasanshiro -r 3 -i "$2"
+    LD_LIBRARY_PATH=$YABA_LIBS $YABA_BIN -r 3 -i "$2"
   fi
   sudo systemctl stop killer_daemon.service
   sudo systemctl restart ogage &
@@ -45,7 +59,7 @@ elif [[ $1 == "retrorun" ]]; then
 	  else
 		DEVICENAME="RG503"
 	  fi
-	elif [ -f "/boot/rk3326-r33s-linux.dtb" ] || [ -f "/boot/rk3326-r35s-linux.dtb" ] || [ -f "/boot/rk3326-r36s-linux.dtb" ] || [ -f "/boot/rk3326-r36h-linux.dtb" ] || [ -f "/boot/rk3326-r45h-linux.dtb" ] || [ -f "/boot/rk3326-rg351mp-linux.dtb" ] || [ -f "/boot/rk3326-g350-linux.dtb" ]; then
+	elif [ -f "/boot/rk3326-r33s-linux.dtb" ] || [ -f "/boot/rk3326-r35s-linux.dtb" ] || [ -f "/boot/rk3326-r36s-linux.dtb" ] || [ -f "/boot/rk3326-r36h-linux.dtb" ] || [ -f "/boot/rk3326-r45h-linux.dtb" ] || [ -f "/boot/rk3326-r46h-linux.dtb" ] ||  [ -f "/boot/rk3326-r50h-linux.dtb" ] || [ -f "/boot/rk3326-rg351mp-linux.dtb" ] || [ -f "/boot/rk3326-g350-linux.dtb" ]; then
 	  DEVICENAME="RG351MP"
 	elif [ -f "/boot/rk3326-gameforce-linux.dtb" ]; then
 	  DEVICENAME="RG351MP"
@@ -61,7 +75,7 @@ export DEVICE_NAME="${DEVICENAME}"
     printf "\033[1;33m" >> /dev/tty1
     printf "\n I don't detect a saturn_bios.bin bios file in the" >> /dev/tty1
     printf "\n /$directory/bios folder.  Either place one in that" >> /dev/tty1
-    printf "\n location or switch to the standalone-nobios emulator." >> /dev/tty1
+    printf "\n location or switch to the yabasanshiro-nobios emulator." >> /dev/tty1
     sleep 10
     printf "\033[0m" >> /dev/tty1
   fi
@@ -85,7 +99,7 @@ else
 	  else
 		DEVICENAME="RG503"
 	  fi
-	elif [ -f "/boot/rk3326-r33s-linux.dtb" ] || [ -f "/boot/rk3326-r35s-linux.dtb" ] || [ -f "/boot/rk3326-r36s-linux.dtb" ] || [ -f "/boot/rk3326-r36h-linux.dtb" ] || [ -f "/boot/rk3326-r45h-linux.dtb" ] || [ -f "/boot/rk3326-rg351mp-linux.dtb" ] || [ -f "/boot/rk3326-g350-linux.dtb" ]; then
+	elif [ -f "/boot/rk3326-r33s-linux.dtb" ] || [ -f "/boot/rk3326-r35s-linux.dtb" ] || [ -f "/boot/rk3326-r36s-linux.dtb" ] || [ -f "/boot/rk3326-r36h-linux.dtb" ] || [ -f "/boot/rk3326-r45h-linux.dtb" ] || [ -f "/boot/rk3326-r46h-linux.dtb" ] ||  [ -f "/boot/rk3326-r50h-linux.dtb" ] || [ -f "/boot/rk3326-rg351mp-linux.dtb" ] || [ -f "/boot/rk3326-g350-linux.dtb" ]; then
 	  DEVICENAME="RG351MP"
 	elif [ -f "/boot/rk3326-gameforce-linux.dtb" ]; then
 	  DEVICENAME="RG351MP"
@@ -101,7 +115,7 @@ else
     printf "\033[1;33m" >> /dev/tty1
     printf "\n I don't detect a saturn_bios.bin bios file in the" >> /dev/tty1
     printf "\n /$directory/bios folder.  Either place one in that" >> /dev/tty1
-    printf "\n location or switch to the standalone-nobios emulator." >> /dev/tty1
+    printf "\n location or switch to the yabasanshiro-nobios emulator." >> /dev/tty1
     sleep 10
     printf "\033[0m" >> /dev/tty1
   fi

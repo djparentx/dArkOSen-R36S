@@ -7,7 +7,7 @@ if  [[ $1 == "retroarch" ]]; then
 /usr/local/bin/"$1" -L /home/ark/.config/"$1"/cores/"$2"_libretro.so "$3"
 elif [[ $1 == "retroarch32" ]]; then
 /usr/local/bin/"$1" -L /home/ark/.config/"$1"/cores/"$2"_libretro.so "$3"
-elif [[ $1 == "standalone" ]]; then
+elif [[ $1 == "standalone-Flycast" ]]; then
 echo "VAR=flycast" > /home/ark/.config/KILLIT
 sudo systemctl restart killer_daemon.service
 rm -rf "/home/ark/.local/share/flycast"
@@ -58,6 +58,8 @@ elif [ -f "/boot/rk3326-gameforce-linux.dtb" ]; then
 DEVICENAME="RG351MP"
 elif [ -f "/boot/rk3326-odroidgo2-linux.dtb" ] || [ -f "/boot/rk3326-odroidgo2-linux-v11.dtb" ] || [ -f "/boot/rk3326-odroidgo3-linux.dtb" ]; then
 DEVICENAME="RGB10"
+elif [ -f "/boot/rk3326-r50h-linux.dtb" ] || [ -f "/boot/rk3326-r50s-linux.dtb" ]; then
+DEVICENAME="R50H"
 else
 DEVICENAME="RG351P"
 fi
@@ -116,6 +118,8 @@ elif [ -f "/boot/rk3326-gameforce-linux.dtb" ]; then
 DEVICENAME="RG351MP"
 elif [ -f "/boot/rk3326-odroidgo2-linux.dtb" ] || [ -f "/boot/rk3326-odroidgo2-linux-v11.dtb" ] || [ -f "/boot/rk3326-odroidgo3-linux.dtb" ]; then
 DEVICENAME="RGB10"
+elif [ -f "/boot/rk3326-r50h-linux.dtb" ] || [ -f "/boot/rk3326-r50s-linux.dtb" ]; then
+DEVICENAME="R50H"
 else
 DEVICENAME="RG351P"
 fi

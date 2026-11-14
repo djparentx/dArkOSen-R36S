@@ -1,0 +1,15 @@
+diff --git a/theme.xml b/theme.xml
+index 6af4492..d05a44d 100644
+--- a/theme.xml
++++ b/theme.xml
+@@ -10,8 +10,8 @@ License: creative commons CC-BY-NC-SA
+   <formatVersion>7</formatVersion>
+   <view name="screen">
+     <text name="clock">
+-      <pos>0.92 0.95</pos>
+-      <size>0.07 0.025</size>
++      <pos>0.815 0.95</pos>
++      <size>0.17 0.025</size>
+       <fontSize>0.025</fontSize>
+       <color>FFFFFFC0</color>
+       <horizontalAlignment>center</horizontalAlignment>

@@ -1,0 +1,12 @@
+# The public MQTT brokers of internet play: the machines of an invite find
+# each other through them, and the server browser's listings go through
+# them. The game uses every one at once (up to 4), so any one working is
+# enough. One host:port on each line; "#" starts a comment.
+# (The game reads this file beside config.toml: network.brokers_file. An
+# update replaces it; keep a list of your own under another name. The web
+# build reaches the last three over their secure WebSockets:
+# port/linux/src/p2p_signal.c.)
+opence.milenko.org:1883
+broker.emqx.io:1883
+broker.hivemq.com:1883
+test.mosquitto.org:1883

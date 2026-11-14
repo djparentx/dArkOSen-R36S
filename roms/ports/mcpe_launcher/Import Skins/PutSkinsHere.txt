@@ -1,0 +1,1 @@
+Put your skin .png files here, then use Choose new skin in the game.

@@ -1,0 +1,73 @@
+# O cartão de visita do core: é daqui que o RetroArch tira o nome na lista, a associação com o
+# banco No-Intro e o que ele diz ao usuário que o core sabe fazer.
+#
+# **Os campos de capacidade têm de casar com o que a ABI faz.** Um `savestate = "false"` num core
+# que serializa esconde o recurso na interface; um `hw_render = "true"` num core que não pede
+# contexto faz o RetroArch preparar uma placa à toa. Cada linha abaixo foi conferida no
+# `src/lib.rs`, e o comentário diz onde.
+#
+# A forma é a dos arquivos do `libretro-super` (conferida contra o `desmume_libretro.info`
+# instalado): três blocos, e a descrição por último.
+
+# Software Information
+display_name = "Zeebx"
+authors = "ZeebxTeam"
+# As mesmas do `valid_extensions` do `retro_get_system_info`.
+supported_extensions = "mod|zip|7z"
+corename = "Zeebx"
+# **`license`, no singular.** `licenses` não é lido por ninguém, e era o que estava aqui.
+license = "GPLv2+"
+permissions = ""
+# Acompanha a versão do crate. Ver o `version` do `Cargo.toml` da raiz.
+display_version = "0.3.0-nextos"
+categories = "Emulator"
+
+# Hardware Information
+manufacturer = "TecToy"
+systemname = "Zeebo"
+systemid = "zeebo"
+
+# Libretro Features
+# Banco No-Intro usado para nomear e para achar as capas. Ver `ferramentas/catalogo.py`.
+database = "Mobile - Zeebo"
+supports_no_game = "false"
+# `retro_serialize_size`, `retro_serialize` e `retro_unserialize` entregam o estado inteiro.
+savestate = "true"
+savestate_features = "serialized"
+# `retro_cheat_set` é um corpo vazio: o console não tem trapaça e o core não inventa uma.
+cheats = "false"
+# O core chama `SET_INPUT_DESCRIPTORS`: os botões aparecem nomeados no menu de controles.
+input_descriptors = "true"
+# `retro_get_memory_data` devolve nulo: os saves do BREW são arquivos, não uma região contínua.
+memory_descriptors = "false"
+# Os saves vão para a pasta que o `GET_SAVE_DIRECTORY` indica, e não para o lado do jogo.
+libretro_saves = "true"
+# O core registra Core Options V2 e fallback SET_VARIABLES. Ver `src/lib.rs`.
+core_options = "true"
+load_subsystem = "false"
+# O core pede contexto pelo `SET_HW_RENDER` e desenha no framebuffer do frontend. **Quando não
+# consegue, ele volta para o rasterizador de software** -- a linha abaixo é o que o desenho na
+# placa exige, não o que o core exige para rodar.
+hw_render = "true"
+# Mali-400/450 (NextOS, CoreELEC) só têm OpenGL ES 2.0: o core detecta o Utgard e pede GLES2.
+required_hw_api = "OpenGL Core >= 3.3 | OpenGL ES >= 3.2 | OpenGL ES >= 2.0"
+# Os dois vêm do `retro_get_system_info`: o jogo é aberto por caminho, e o `.zip` é do console,
+# não do frontend -- quem o abre é o BREW.
+needs_fullpath = "true"
+block_extract = "true"
+disk_control = "false"
+is_experimental = "false"
+
+# BIOS/Firmware
+# Nenhum: a BIOS do aparelho não é necessária, o motor implementa o BREW.
+firmware_count = 0
+
+# As linhas de "Core notes" da página de informação. **O formato não tem campo de endereço** --
+# conferido nos 582 `.info` de uma instalação do RetroArch: nenhum campo de URL, e os 34 que
+# trazem link o põem aqui, no padrão `(!) Homepage: ...`. O `|` separa uma linha da outra.
+#
+# O conteúdo é o mesmo do "Sobre" do desktop e dos ajustes do Android -- repositório e Discord --,
+# mais o que só o usuário do RetroArch precisa saber, porque no core não há tela para dizê-lo.
+notes = "(!) Repositório: https://github.com/ZeebxTeam/zeebx-emu|(!) Discord: https://discord.gg/D96HjsKTPa|(!) A Z-Wheel lista os jogos que estiverem na mesma pasta do que você abriu; sozinho, o menu do console abre vazio|(!) MIDI com banco de amostras: ponha um .sf2 em soundfonts/, na pasta de sistema do frontend; o core escreve o caminho exato no log ao abrir o jogo|(!) Sem contexto de OpenGL o core desenha no processador: nada deixa de funcionar, só fica mais lento"
+
+description = "O emulador definitivo de Zeebo! Movido a Qualcomm BREW 4.0.2, carrega o jogo em .mod, .zip ou .7z, desenha no processador ou na placa, e traz a Z-Wheel -- o menu do aparelho -- quando a pasta de jogos está montada."

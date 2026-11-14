@@ -1,0 +1,12 @@
+[Solarus] [110090] Error: In on_joypad_axis_moved: lib/bindings.lua:97: attempt to index a nil value
+stack traceback:
+	[C]: in function '__index'
+	lib/bindings.lua:97: in function <lib/bindings.lua:93>
+[Solarus] [110100] Error: In on_joypad_axis_moved: lib/bindings.lua:97: attempt to index a nil value
+stack traceback:
+	[C]: in function '__index'
+	lib/bindings.lua:97: in function <lib/bindings.lua:93>
+[Solarus] [110150] Error: In on_joypad_axis_moved: lib/bindings.lua:100: attempt to index a nil value
+stack traceback:
+	[C]: in function '__index'
+	lib/bindings.lua:100: in function <lib/bindings.lua:93>

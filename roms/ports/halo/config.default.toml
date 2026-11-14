@@ -1,0 +1,14 @@
+[display]
+screen_width = 0
+render_scale = 0.90
+interpolation = true
+fast_shaders = true
+fast_textures = true
+high_res_hud = false
+high_res_text = false
+
+[update]
+auto = false
+
+[network]
+online = true

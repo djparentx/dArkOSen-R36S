@@ -1,0 +1,158 @@
+LANG    MSGID                            RESULT
+br      corridors                        added
+br      CORRIDORS SCREENSAVER SETTINGS   added
+br      CORRIDORS SCREENSAVER            added
+br      SPEED                            added
+br      AMBIENT                          added
+br      PANELS                           added
+br      FLICKER                          added
+br      FOG                              added
+br      VOLUME                           added
+de      corridors                        added
+de      CORRIDORS SCREENSAVER SETTINGS   added
+de      CORRIDORS SCREENSAVER            added
+de      SPEED                            added
+de      AMBIENT                          added
+de      PANELS                           added
+de      FLICKER                          added
+de      FOG                              added
+de      VOLUME                           added
+el      corridors                        added
+el      CORRIDORS SCREENSAVER SETTINGS   added
+el      CORRIDORS SCREENSAVER            added
+el      SPEED                            added
+el      AMBIENT                          added
+el      PANELS                           added
+el      FLICKER                          added
+el      FOG                              added
+el      VOLUME                           added
+es      corridors                        added
+es      CORRIDORS SCREENSAVER SETTINGS   added
+es      CORRIDORS SCREENSAVER            added
+es      SPEED                            added
+es      AMBIENT                          added
+es      PANELS                           added
+es      FLICKER                          added
+es      FOG                              added
+es      VOLUME                           added
+fr      corridors                        added
+fr      CORRIDORS SCREENSAVER SETTINGS   added
+fr      CORRIDORS SCREENSAVER            added
+fr      SPEED                            added
+fr      AMBIENT                          added
+fr      PANELS                           added
+fr      FLICKER                          added
+fr      FOG                              added
+fr      VOLUME                           added
+it      corridors                        added
+it      CORRIDORS SCREENSAVER SETTINGS   added
+it      CORRIDORS SCREENSAVER            added
+it      SPEED                            added
+it      AMBIENT                          added
+it      PANELS                           added
+it      FLICKER                          added
+it      FOG                              added
+it      VOLUME                           added
+ja      corridors                        added
+ja      CORRIDORS SCREENSAVER SETTINGS   added
+ja      CORRIDORS SCREENSAVER            added
+ja      SPEED                            added
+ja      AMBIENT                          added
+ja      PANELS                           added
+ja      FLICKER                          added
+ja      FOG                              added
+ja      VOLUME                           added
+ko      corridors                        added
+ko      CORRIDORS SCREENSAVER SETTINGS   added
+ko      CORRIDORS SCREENSAVER            added
+ko      SPEED                            added
+ko      AMBIENT                          added
+ko      PANELS                           added
+ko      FLICKER                          added
+ko      FOG                              added
+ko      VOLUME                           added
+pl      corridors                        added
+pl      CORRIDORS SCREENSAVER SETTINGS   added
+pl      CORRIDORS SCREENSAVER            added
+pl      SPEED                            added
+pl      AMBIENT                          added
+pl      PANELS                           added
+pl      FLICKER                          added
+pl      FOG                              added
+pl      VOLUME                           added
+pt      corridors                        added
+pt      CORRIDORS SCREENSAVER SETTINGS   added
+pt      CORRIDORS SCREENSAVER            added
+pt      SPEED                            added
+pt      AMBIENT                          added
+pt      PANELS                           added
+pt      FLICKER                          added
+pt      FOG                              added
+pt      VOLUME                           added
+ru      corridors                        added
+ru      CORRIDORS SCREENSAVER SETTINGS   added
+ru      CORRIDORS SCREENSAVER            added
+ru      SPEED                            added
+ru      AMBIENT                          added
+ru      PANELS                           added
+ru      FLICKER                          added
+ru      FOG                              added
+ru      VOLUME                           exists, skipped
+sv      corridors                        added
+sv      CORRIDORS SCREENSAVER SETTINGS   added
+sv      CORRIDORS SCREENSAVER            added
+sv      SPEED                            added
+sv      AMBIENT                          added
+sv      PANELS                           added
+sv      FLICKER                          added
+sv      FOG                              added
+sv      VOLUME                           added
+ua      corridors                        added
+ua      CORRIDORS SCREENSAVER SETTINGS   added
+ua      CORRIDORS SCREENSAVER            added
+ua      SPEED                            added
+ua      AMBIENT                          added
+ua      PANELS                           added
+ua      FLICKER                          added
+ua      FOG                              added
+ua      VOLUME                           exists, skipped
+uk      corridors                        added
+uk      CORRIDORS SCREENSAVER SETTINGS   added
+uk      CORRIDORS SCREENSAVER            added
+uk      SPEED                            added
+uk      AMBIENT                          added
+uk      PANELS                           added
+uk      FLICKER                          added
+uk      FOG                              added
+uk      VOLUME                           exists, skipped
+vi      corridors                        added
+vi      CORRIDORS SCREENSAVER SETTINGS   added
+vi      CORRIDORS SCREENSAVER            added
+vi      SPEED                            added
+vi      AMBIENT                          added
+vi      PANELS                           added
+vi      FLICKER                          added
+vi      FOG                              added
+vi      VOLUME                           added
+zh-CN   corridors                        added
+zh-CN   CORRIDORS SCREENSAVER SETTINGS   added
+zh-CN   CORRIDORS SCREENSAVER            added
+zh-CN   SPEED                            added
+zh-CN   AMBIENT                          added
+zh-CN   PANELS                           added
+zh-CN   FLICKER                          added
+zh-CN   FOG                              added
+zh-CN   VOLUME                           exists, skipped
+zh-TW   corridors                        added
+zh-TW   CORRIDORS SCREENSAVER SETTINGS   added
+zh-TW   CORRIDORS SCREENSAVER            added
+zh-TW   SPEED                            added
+zh-TW   AMBIENT                          added
+zh-TW   PANELS                           added
+zh-TW   FLICKER                          added
+zh-TW   FOG                              added
+zh-TW   VOLUME                           exists, skipped
+
+Added          148
+Skipped        5
+No .po file    0

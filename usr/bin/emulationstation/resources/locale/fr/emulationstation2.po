@@ -1950,3 +1950,330 @@ msgstr "JOURNAL EFFACÉ."
 
 msgid "ENABLE FAST SYNC"
 msgstr "ACTIVER LA SYNCHRONISATION RAPIDE"
+
+msgid "SWITCH A/B BUTTONS GLOBALLY"
+msgstr "INVERSER BOUTONS A/B GLOBALEMENT"
+
+msgid "STORAGE SETTINGS"
+msgstr "PARAMÈTRES DE STOCKAGE"
+
+msgid "ENABLE SD2"
+msgstr "ACTIVER SD2"
+
+msgid "REASSIGN SYSTEMS TO SD1"
+msgstr "RÉASSIGNER LES SYSTÈMES À SD1"
+
+msgid "SCAN AND REPAIR"
+msgstr "ANALYSER ET RÉPARER"
+
+msgid "BOOT"
+msgstr "DÉMARRAGE"
+
+msgid "ROOTFS"
+msgstr "ROOTFS"
+
+msgid "SD1 GAMES"
+msgstr "JEUX SD1"
+
+msgid "SD2"
+msgstr "SD2"
+
+msgid "MANUAL SELECTION"
+msgstr "SÉLECTION MANUELLE"
+
+msgid "AUTOMATED SCAN"
+msgstr "ANALYSE AUTOMATISÉE"
+
+msgid "UNDO ALL CHANGES"
+msgstr "ANNULER TOUTES LES MODIFICATIONS"
+
+msgid "SCAN /roms/ FOR CHANGES?"
+msgstr "ANALYSER /roms/ POUR LES MODIFICATIONS ?"
+
+msgid "REVERT ALL SYSTEMS TO SD2?"
+msgstr "RÉTABLIR TOUS LES SYSTÈMES SUR SD2 ?"
+
+msgid "PLEASE WAIT..."
+msgstr "VEUILLEZ PATIENTER..."
+
+msgid "SYSTEMS"
+msgstr "SYSTÈMES"
+
+msgid "NOTHING WAS MODIFIED."
+msgstr "RIEN N'A ÉTÉ MODIFIÉ."
+
+msgid "RESTORING ALL SYSTEMS TO /roms2/."
+msgstr "RESTAURATION DE TOUS LES SYSTÈMES VERS /roms2/."
+
+msgid "MOVED TO SD1:"
+msgstr "DÉPLACÉ VERS SD1 :"
+
+msgid "REVERTED TO SD2:"
+msgstr "RÉTABLI VERS SD2 :"
+
+msgid "Scan failed. Repairs were not successful."
+msgstr "L'analyse a échoué. Les réparations n'ont pas abouti."
+
+msgid "Scan failed. Repairs were successful."
+msgstr "L'analyse a échoué. Les réparations ont réussi."
+
+msgid "Scan passed. No repairs were needed."
+msgstr "Analyse réussie. Aucune réparation nécessaire."
+
+msgid "Wi-fi has been turned off to ensure the disk is not busy."
+msgstr "Le Wi-Fi a été désactivé pour s'assurer que le disque n'est pas occupé."
+
+msgid "Could not unmount /boot"
+msgstr "Impossible de démonter /boot"
+
+msgid "Dirty bit cleared"
+msgstr "Bit de modification effacé"
+
+msgid "Boot sector mismatch noted"
+msgstr "Incohérence du secteur de démarrage détectée"
+
+msgid "Bad file entries fixed"
+msgstr "Entrées de fichiers corrompues corrigées"
+
+msgid "Uncorrectable errors found on system partition"
+msgstr "Erreurs non corrigeables trouvées sur la partition système"
+
+msgid "Partition 2 (system) could not be fully repaired while running. Eject the card and run 'sudo btrfs check --repair /dev/mmcblk0p2' from a Linux PC."
+msgstr "La partition 2 (système) n'a pas pu être entièrement réparée en fonctionnement. Éjectez la carte et exécutez 'sudo btrfs check --repair /dev/mmcblk0p2' depuis un PC Linux."
+
+msgid "HELPER SCRIPT NOT FOUND"
+msgstr "SCRIPT AUXILIAIRE INTROUVABLE"
+
+msgid "FAILED TO PREPARE RECOVERY SCRIPT"
+msgstr "ÉCHEC DE LA PRÉPARATION DU SCRIPT DE RÉCUPÉRATION"
+
+msgid "SCAN SD1 GAMES?\nTHE CONSOLE WILL REBOOT TO COMPLETE THE SCAN."
+msgstr "ANALYSER LES JEUX SD1 ?\nLA CONSOLE VA REDÉMARRER POUR TERMINER L'ANALYSE."
+
+msgid "SCAN SD2?\nTHE CONSOLE WILL REBOOT TO COMPLETE THE SCAN."
+msgstr "ANALYSER SD2 ?\nLA CONSOLE VA REDÉMARRER POUR TERMINER L'ANALYSE."
+
+msgid "BENCHMARKING"
+msgstr "BENCHMARKS"
+
+msgid "BENCHMARK"
+msgstr "BENCHMARK"
+
+msgid "BENCHMARK FAILED"
+msgstr "ÉCHEC DU BENCHMARK"
+
+msgid "RUNNING, PLEASE WAIT"
+msgstr "EN COURS, VEUILLEZ PATIENTER"
+
+msgid "LOG IS EMPTY."
+msgstr "LE JOURNAL EST VIDE."
+
+msgid "%d d"
+msgstr "%d j"
+
+msgid "%d h"
+msgstr "%d h"
+
+msgid "%d mn"
+msgstr "%d mn"
+
+msgid "%d sec"
+msgstr "%d s"
+
+msgid "LAST 20 PLAYED GAMES"
+msgstr "LES 20 DERNIERS JEUX JOUES"
+
+msgid "NO GAME PLAYED YET"
+msgstr "AUCUN JEU JOUE POUR L'INSTANT"
+
+#:
+msgid "datetime"
+msgstr "date et heure"
+
+#:
+msgid "DATE TIME SCREENSAVER SETTINGS"
+msgstr "PARAMÈTRES DE L'ÉCRAN DE VEILLE DATE ET HEURE"
+
+#:
+msgid "DATE & TIME SCREENSAVER"
+msgstr "ÉCRAN DE VEILLE DATE ET HEURE"
+
+#:
+msgid "CLOCK TYPE"
+msgstr "TYPE D'HORLOGE"
+
+#:
+msgid "CLOCK STYLE"
+msgstr "STYLE D'HORLOGE"
+
+#:
+msgid "CLOCK COLOR"
+msgstr "COULEUR DE L'HORLOGE"
+
+#:
+msgid "BACKGROUND MODE"
+msgstr "MODE D'ARRIÈRE-PLAN"
+
+#:
+msgid "BACKGROUND COLOR"
+msgstr "COULEUR D'ARRIÈRE-PLAN"
+
+#:
+msgid "BACKGROUND IMAGE"
+msgstr "IMAGE D'ARRIÈRE-PLAN"
+
+#:
+msgid "SHOW DATE"
+msgstr "AFFICHER LA DATE"
+
+#:
+msgid "SHOW SECONDS"
+msgstr "AFFICHER LES SECONDES"
+
+#:
+msgid "ENABLE VIBRATION FEEDBACK"
+msgstr "ACTIVER LE RETOUR DE VIBRATION"
+
+#:
+msgid "VIBRATION INTENSITY"
+msgstr "INTENSITÉ DE VIBRATION"
+
+#:
+msgid "TEMPERATURE"
+msgstr "TEMPÉRATURE"
+
+#:
+msgid "CLOCK FONT"
+msgstr "POLICE DE L'HORLOGE"
+
+#:
+msgid "VERBAL PLAY TIMER WARNING"
+msgstr "AVERTISSEMENT VOCAL DU MINUTEUR DE JEU"
+
+#:
+msgid "PLAY TIMER"
+msgstr "MINUTEUR DE JEU"
+
+#:
+msgid "TIME LEFT TODAY"
+msgstr "TEMPS RESTANT AUJOURD'HUI"
+
+#:
+msgid "MIN"
+msgstr "MIN"
+
+#:
+msgid "DAILY PLAY TIME LIMIT REACHED"
+msgstr "LIMITE QUOTIDIENNE DE TEMPS DE JEU ATTEINTE"
+
+#:
+msgid "COME BACK TOMORROW!"
+msgstr "REVIENS DEMAIN !"
+
+#:
+msgid "PLAY TIME LEFT TODAY: %i MIN"
+msgstr "TEMPS DE JEU RESTANT AUJOURD'HUI : %i MIN"
+
+#:
+msgid "PLAY TIME LEFT TODAY: < 1 MIN"
+msgstr "TEMPS DE JEU RESTANT AUJOURD'HUI : < 1 MIN"
+
+#:
+msgid "NIGHT FILTER"
+msgstr "FILTRE DE NUIT"
+
+#:
+msgid "ENABLE FILTER"
+msgstr "ACTIVER LE FILTRE"
+
+#:
+msgid "START TIME"
+msgstr "HEURE DE DÉBUT"
+
+#:
+msgid "END TIME"
+msgstr "HEURE DE FIN"
+
+#:
+msgid "NIGHT FILTER ACTIVE"
+msgstr "FILTRE DE NUIT ACTIF"
+
+#:
+msgid "AQUARIUM SCREENSAVER SETTINGS"
+msgstr "PARAMÈTRES DE L'ÉCRAN DE VEILLE AQUARIUM"
+
+#:
+msgid "AQUARIUM SCREENSAVER"
+msgstr "ÉCRAN DE VEILLE AQUARIUM"
+
+#:
+msgid "FISH COUNT"
+msgstr "NOMBRE DE POISSONS"
+
+#:
+msgid "ALL RANDOM"
+msgstr "TOUS ALÉATOIRES"
+
+#:
+msgid "FISH"
+msgstr "POISSON"
+
+#:
+msgid "BUBBLE COLUMN"
+msgstr "COLONNE DE BULLES"
+
+#:
+msgid "AUTO LIGHTS"
+msgstr "ÉCLAIRAGE AUTOMATIQUE"
+
+#:
+msgid "FOREGROUND LIGHTS"
+msgstr "ÉCLAIRAGE AVANT-PLAN"
+
+#:
+msgid "BACKGROUND LIGHTS"
+msgstr "ÉCLAIRAGE ARRIÈRE-PLAN"
+
+#:
+msgid "STARFISH ON GLASS"
+msgstr "ÉTOILE DE MER SUR LA VITRE"
+
+#:
+msgid "aquarium"
+msgstr "aquarium"
+
+#:
+msgid "corridors"
+msgstr "couloirs"
+
+#:
+msgid "CORRIDORS SCREENSAVER SETTINGS"
+msgstr "PARAMÈTRES DE L'ÉCRAN DE VEILLE COULOIRS"
+
+#:
+msgid "CORRIDORS SCREENSAVER"
+msgstr "ÉCRAN DE VEILLE COULOIRS"
+
+#:
+msgid "SPEED"
+msgstr "VITESSE"
+
+#:
+msgid "AMBIENT"
+msgstr "LUMIÈRE AMBIANTE"
+
+#:
+msgid "PANELS"
+msgstr "PANNEAUX"
+
+#:
+msgid "FLICKER"
+msgstr "SCINTILLEMENT"
+
+#:
+msgid "FOG"
+msgstr "BROUILLARD"
+
+#:
+msgid "VOLUME"
+msgstr "VOLUME"

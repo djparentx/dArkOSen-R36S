@@ -2094,3 +2094,330 @@ msgstr "로그가 지워졌습니다."
 
 msgid "ENABLE FAST SYNC"
 msgstr "빠른 동기화 활성화"
+
+msgid "SWITCH A/B BUTTONS GLOBALLY"
+msgstr "A/B 버튼 전체 교체"
+
+msgid "STORAGE SETTINGS"
+msgstr "저장소 설정"
+
+msgid "ENABLE SD2"
+msgstr "SD2 활성화"
+
+msgid "REASSIGN SYSTEMS TO SD1"
+msgstr "시스템을 SD1에 재할당"
+
+msgid "SCAN AND REPAIR"
+msgstr "검사 및 복구"
+
+msgid "BOOT"
+msgstr "부트"
+
+msgid "ROOTFS"
+msgstr "루트FS"
+
+msgid "SD1 GAMES"
+msgstr "SD1 게임"
+
+msgid "SD2"
+msgstr "SD2"
+
+msgid "MANUAL SELECTION"
+msgstr "수동 선택"
+
+msgid "AUTOMATED SCAN"
+msgstr "자동 검사"
+
+msgid "UNDO ALL CHANGES"
+msgstr "모든 변경 사항 취소"
+
+msgid "SCAN /roms/ FOR CHANGES?"
+msgstr "/roms/ 변경 사항 검사?"
+
+msgid "REVERT ALL SYSTEMS TO SD2?"
+msgstr "모든 시스템을 SD2로 되돌리시겠습니까?"
+
+msgid "PLEASE WAIT..."
+msgstr "잠시만 기다려 주세요..."
+
+msgid "SYSTEMS"
+msgstr "시스템"
+
+msgid "NOTHING WAS MODIFIED."
+msgstr "변경된 내용이 없습니다."
+
+msgid "RESTORING ALL SYSTEMS TO /roms2/."
+msgstr "모든 시스템을 /roms2/로 복원 중입니다."
+
+msgid "MOVED TO SD1:"
+msgstr "SD1로 이동됨:"
+
+msgid "REVERTED TO SD2:"
+msgstr "SD2로 되돌림:"
+
+msgid "Scan failed. Repairs were not successful."
+msgstr "검사 실패. 복구가 성공하지 못했습니다."
+
+msgid "Scan failed. Repairs were successful."
+msgstr "검사 실패. 복구는 성공했습니다."
+
+msgid "Scan passed. No repairs were needed."
+msgstr "검사 완료. 복구가 필요하지 않았습니다."
+
+msgid "Wi-fi has been turned off to ensure the disk is not busy."
+msgstr "디스크가 사용 중이지 않도록 Wi-Fi가 꺼졌습니다."
+
+msgid "Could not unmount /boot"
+msgstr "/boot를 마운트 해제할 수 없습니다"
+
+msgid "Dirty bit cleared"
+msgstr "다티 비트 초기화됨"
+
+msgid "Boot sector mismatch noted"
+msgstr "부트 섹터 불일치 감지됨"
+
+msgid "Bad file entries fixed"
+msgstr "잘못된 파일 항목 수정됨"
+
+msgid "Uncorrectable errors found on system partition"
+msgstr "시스템 파티션에서 수정 불가능한 오류 발견됨"
+
+msgid "Partition 2 (system) could not be fully repaired while running. Eject the card and run 'sudo btrfs check --repair /dev/mmcblk0p2' from a Linux PC."
+msgstr "파티션 2(시스템)를 실행 중에 완전히 복구할 수 없었습니다. 카드를 꺼내고 Linux PC에서 'sudo btrfs check --repair /dev/mmcblk0p2'를 실행하세요."
+
+msgid "HELPER SCRIPT NOT FOUND"
+msgstr "헬퍼 스크립트를 찾을 수 없습니다"
+
+msgid "FAILED TO PREPARE RECOVERY SCRIPT"
+msgstr "복구 스크립트 준비 실패"
+
+msgid "SCAN SD1 GAMES?\nTHE CONSOLE WILL REBOOT TO COMPLETE THE SCAN."
+msgstr "SD1 게임을 검사하시겠습니까?\n검사를 완료하기 위해 콘솔이 재부팅됩니다."
+
+msgid "SCAN SD2?\nTHE CONSOLE WILL REBOOT TO COMPLETE THE SCAN."
+msgstr "SD2를 검사하시겠습니까?\n검사를 완료하기 위해 콘솔이 재부팅됩니다."
+
+msgid "BENCHMARKING"
+msgstr "벤치마크"
+
+msgid "BENCHMARK"
+msgstr "벤치마크"
+
+msgid "BENCHMARK FAILED"
+msgstr "벤치마크 실패"
+
+msgid "RUNNING, PLEASE WAIT"
+msgstr "실행 중, 기다려주십시오"
+
+msgid "LOG IS EMPTY."
+msgstr "로그가 비어 있습니다."
+
+msgid "%d d"
+msgstr "%d일"
+
+msgid "%d h"
+msgstr "%d시간"
+
+msgid "%d mn"
+msgstr "%d분"
+
+msgid "%d sec"
+msgstr "%d초"
+
+msgid "LAST 20 PLAYED GAMES"
+msgstr "최근 플레이한 게임 20개"
+
+msgid "NO GAME PLAYED YET"
+msgstr "아직 플레이한 게임이 없습니다"
+
+#:
+msgid "datetime"
+msgstr "날짜 및 시간"
+
+#:
+msgid "DATE TIME SCREENSAVER SETTINGS"
+msgstr "날짜 및 시간 화면보호기 설정"
+
+#:
+msgid "DATE & TIME SCREENSAVER"
+msgstr "날짜 및 시간 화면보호기"
+
+#:
+msgid "CLOCK TYPE"
+msgstr "시계 유형"
+
+#:
+msgid "CLOCK STYLE"
+msgstr "시계 스타일"
+
+#:
+msgid "CLOCK COLOR"
+msgstr "시계 색상"
+
+#:
+msgid "BACKGROUND MODE"
+msgstr "배경 모드"
+
+#:
+msgid "BACKGROUND COLOR"
+msgstr "배경 색상"
+
+#:
+msgid "BACKGROUND IMAGE"
+msgstr "배경 이미지"
+
+#:
+msgid "SHOW DATE"
+msgstr "날짜 표시"
+
+#:
+msgid "SHOW SECONDS"
+msgstr "초 표시"
+
+#:
+msgid "ENABLE VIBRATION FEEDBACK"
+msgstr "진동 피드백 사용"
+
+#:
+msgid "VIBRATION INTENSITY"
+msgstr "진동 강도"
+
+#:
+msgid "TEMPERATURE"
+msgstr "온도"
+
+#:
+msgid "CLOCK FONT"
+msgstr "시계 글꼴"
+
+#:
+msgid "VERBAL PLAY TIMER WARNING"
+msgstr "플레이 타이머 음성 경고"
+
+#:
+msgid "PLAY TIMER"
+msgstr "플레이 타이머"
+
+#:
+msgid "TIME LEFT TODAY"
+msgstr "오늘 남은 시간"
+
+#:
+msgid "MIN"
+msgstr "분"
+
+#:
+msgid "DAILY PLAY TIME LIMIT REACHED"
+msgstr "일일 플레이 시간 한도에 도달했습니다"
+
+#:
+msgid "COME BACK TOMORROW!"
+msgstr "내일 다시 만나요!"
+
+#:
+msgid "PLAY TIME LEFT TODAY: %i MIN"
+msgstr "오늘 남은 플레이 시간: %i 분"
+
+#:
+msgid "PLAY TIME LEFT TODAY: < 1 MIN"
+msgstr "오늘 남은 플레이 시간: 1 분 미만"
+
+#:
+msgid "NIGHT FILTER"
+msgstr "야간 필터"
+
+#:
+msgid "ENABLE FILTER"
+msgstr "필터 사용"
+
+#:
+msgid "START TIME"
+msgstr "시작 시간"
+
+#:
+msgid "END TIME"
+msgstr "종료 시간"
+
+#:
+msgid "NIGHT FILTER ACTIVE"
+msgstr "야간 필터 활성화됨"
+
+#:
+msgid "AQUARIUM SCREENSAVER SETTINGS"
+msgstr "수족관 화면보호기 설정"
+
+#:
+msgid "AQUARIUM SCREENSAVER"
+msgstr "수족관 화면보호기"
+
+#:
+msgid "FISH COUNT"
+msgstr "물고기 수"
+
+#:
+msgid "ALL RANDOM"
+msgstr "모두 무작위"
+
+#:
+msgid "FISH"
+msgstr "물고기"
+
+#:
+msgid "BUBBLE COLUMN"
+msgstr "거품 기둥"
+
+#:
+msgid "AUTO LIGHTS"
+msgstr "자동 조명"
+
+#:
+msgid "FOREGROUND LIGHTS"
+msgstr "전경 조명"
+
+#:
+msgid "BACKGROUND LIGHTS"
+msgstr "배경 조명"
+
+#:
+msgid "STARFISH ON GLASS"
+msgstr "유리 위 불가사리"
+
+#:
+msgid "aquarium"
+msgstr "수족관"
+
+#:
+msgid "corridors"
+msgstr "복도"
+
+#:
+msgid "CORRIDORS SCREENSAVER SETTINGS"
+msgstr "복도 화면보호기 설정"
+
+#:
+msgid "CORRIDORS SCREENSAVER"
+msgstr "복도 화면보호기"
+
+#:
+msgid "SPEED"
+msgstr "속도"
+
+#:
+msgid "AMBIENT"
+msgstr "주변광"
+
+#:
+msgid "PANELS"
+msgstr "조명 패널"
+
+#:
+msgid "FLICKER"
+msgstr "깜빡임"
+
+#:
+msgid "FOG"
+msgstr "안개"
+
+#:
+msgid "VOLUME"
+msgstr "음량"

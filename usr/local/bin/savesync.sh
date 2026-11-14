@@ -905,7 +905,7 @@ sync_standalone()
     if (( src_m > dst_m )); then
         log "Syncing (console->PC): $src"
 
-        rsync -a --update \
+        rsync -a --update --no-owner --no-group \
             --include='*/' \
             "${rsync_opts[@]}" \
             "$src/" "$dst/" >> "$LOG_FILE" 2>&1
@@ -915,7 +915,7 @@ sync_standalone()
     elif (( dst_m > src_m )); then
         log "Syncing (PC->console): $src"
 
-        rsync -a --update \
+        rsync -a --update --no-owner --no-group \
             "${rsync_opts[@]}" \
             "$dst/" "$src/" >> "$LOG_FILE" 2>&1
 
@@ -958,7 +958,7 @@ game_end_standalone_sync()
 
     log "Game-end standalone sync (console->PC): $src"
 
-    if rsync -a --update \
+    if rsync -a --update --no-owner --no-group \
         "${rsync_opts[@]}" \
         "$src/" "$dst/" >> "$LOG_FILE" 2>&1; then
 
@@ -1245,9 +1245,6 @@ if [ -n "$GAME_END_SYSTEM" ] && [ -f "$FASTSYNC_FILE" ] && [ -f "$MTIME_CACHE_FI
     done < "$MTIME_CACHE_FILE"
 fi
 
-# --- Determine console's current active save mode ---
-CONTENT_MODE=$( { grep '^savefiles_in_content_dir' "$RA_CFG" || true; } | grep -o 'true\|false')
-
 # --- Sync every system listed in es_systems.cfg ---
 while IFS='|' read -r SYSTEM LOCATION RA64_ENABLED RA32_ENABLED; do
 
@@ -1259,7 +1256,7 @@ while IFS='|' read -r SYSTEM LOCATION RA64_ENABLED RA32_ENABLED; do
     [[ -v "SYSTEM_CACHE[$SYSTEM]" ]] || continue
 		
     # Resolve console source / PC target.
-    if [ "$CONTENT_MODE" = "true" ]; then
+    if [ "$USECONTENTFOLDER" = "true" ]; then
 
         [ -n "$LOCATION" ] || continue
         SRC_DIR="$LOCATION/$SYSTEM/$SYSTEM"

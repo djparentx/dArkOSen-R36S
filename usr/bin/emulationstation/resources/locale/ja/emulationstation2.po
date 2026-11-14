@@ -1839,3 +1839,330 @@ msgstr "ログを消去しました。"
 
 msgid "ENABLE FAST SYNC"
 msgstr "高速同期を有効にする"
+
+msgid "SWITCH A/B BUTTONS GLOBALLY"
+msgstr "A/Bボタンをグローバルに入れ替え"
+
+msgid "STORAGE SETTINGS"
+msgstr "ストレージ設定"
+
+msgid "ENABLE SD2"
+msgstr "SD2を有効にする"
+
+msgid "REASSIGN SYSTEMS TO SD1"
+msgstr "システムをSD1に再割り当て"
+
+msgid "SCAN AND REPAIR"
+msgstr "スキャンと修復"
+
+msgid "BOOT"
+msgstr "ブート"
+
+msgid "ROOTFS"
+msgstr "ルートFS"
+
+msgid "SD1 GAMES"
+msgstr "SD1ゲーム"
+
+msgid "SD2"
+msgstr "SD2"
+
+msgid "MANUAL SELECTION"
+msgstr "手動選択"
+
+msgid "AUTOMATED SCAN"
+msgstr "自動スキャン"
+
+msgid "UNDO ALL CHANGES"
+msgstr "すべての変更を元に戻す"
+
+msgid "SCAN /roms/ FOR CHANGES?"
+msgstr "/roms/ の変更をスキャンしますか?"
+
+msgid "REVERT ALL SYSTEMS TO SD2?"
+msgstr "すべてのシステムをSD2に戻しますか?"
+
+msgid "PLEASE WAIT..."
+msgstr "しばらくお待ちください..."
+
+msgid "SYSTEMS"
+msgstr "システム"
+
+msgid "NOTHING WAS MODIFIED."
+msgstr "何も変更されませんでした。"
+
+msgid "RESTORING ALL SYSTEMS TO /roms2/."
+msgstr "すべてのシステムを /roms2/ に復元しています。"
+
+msgid "MOVED TO SD1:"
+msgstr "SD1に移動済み:"
+
+msgid "REVERTED TO SD2:"
+msgstr "SD2に戻しました:"
+
+msgid "Scan failed. Repairs were not successful."
+msgstr "スキャン失敗。修復は成功しませんでした。"
+
+msgid "Scan failed. Repairs were successful."
+msgstr "スキャン失敗。修復は成功しました。"
+
+msgid "Scan passed. No repairs were needed."
+msgstr "スキャン完了。修復は必要ありませんでした。"
+
+msgid "Wi-fi has been turned off to ensure the disk is not busy."
+msgstr "ディスクがビジー状態でないことを確認するためWi-Fiをオフにしました。"
+
+msgid "Could not unmount /boot"
+msgstr "/boot をアンマウントできませんでした"
+
+msgid "Dirty bit cleared"
+msgstr "ダーティビットをクリアしました"
+
+msgid "Boot sector mismatch noted"
+msgstr "ブートセクタの不一致を検出しました"
+
+msgid "Bad file entries fixed"
+msgstr "不正なファイルエントリを修正しました"
+
+msgid "Uncorrectable errors found on system partition"
+msgstr "システムパーティションに修正不可能なエラーが見つかりました"
+
+msgid "Partition 2 (system) could not be fully repaired while running. Eject the card and run 'sudo btrfs check --repair /dev/mmcblk0p2' from a Linux PC."
+msgstr "パーティション2（システム）は実行中に完全に修復できませんでした。カードを取り出し、LinuxPCで 'sudo btrfs check --repair /dev/mmcblk0p2' を実行してください。"
+
+msgid "HELPER SCRIPT NOT FOUND"
+msgstr "ヘルパースクリプトが見つかりません"
+
+msgid "FAILED TO PREPARE RECOVERY SCRIPT"
+msgstr "リカバリスクリプトの準備に失敗しました"
+
+msgid "SCAN SD1 GAMES?\nTHE CONSOLE WILL REBOOT TO COMPLETE THE SCAN."
+msgstr "SD1ゲームをスキャンしますか?\nスキャンを完了するためにコンソールが再起動します。"
+
+msgid "SCAN SD2?\nTHE CONSOLE WILL REBOOT TO COMPLETE THE SCAN."
+msgstr "SD2をスキャンしますか?\nスキャンを完了するためにコンソールが再起動します。"
+
+msgid "BENCHMARKING"
+msgstr "ベンチマーク"
+
+msgid "BENCHMARK"
+msgstr "ベンチマーク"
+
+msgid "BENCHMARK FAILED"
+msgstr "ベンチマークに失敗しました"
+
+msgid "RUNNING, PLEASE WAIT"
+msgstr "実行中、しばらくお待ちください"
+
+msgid "LOG IS EMPTY."
+msgstr "ログは空です。"
+
+msgid "%d d"
+msgstr "%d日"
+
+msgid "%d h"
+msgstr "%d時間"
+
+msgid "%d mn"
+msgstr "%d分"
+
+msgid "%d sec"
+msgstr "%d秒"
+
+msgid "LAST 20 PLAYED GAMES"
+msgstr "最近プレイした20本"
+
+msgid "NO GAME PLAYED YET"
+msgstr "まだプレイしたゲームがありません"
+
+#:
+msgid "datetime"
+msgstr "日付と時刻"
+
+#:
+msgid "DATE TIME SCREENSAVER SETTINGS"
+msgstr "日付と時刻スクリーンセーバーの設定"
+
+#:
+msgid "DATE & TIME SCREENSAVER"
+msgstr "日付と時刻スクリーンセーバー"
+
+#:
+msgid "CLOCK TYPE"
+msgstr "時計の種類"
+
+#:
+msgid "CLOCK STYLE"
+msgstr "時計のスタイル"
+
+#:
+msgid "CLOCK COLOR"
+msgstr "時計の色"
+
+#:
+msgid "BACKGROUND MODE"
+msgstr "背景モード"
+
+#:
+msgid "BACKGROUND COLOR"
+msgstr "背景色"
+
+#:
+msgid "BACKGROUND IMAGE"
+msgstr "背景画像"
+
+#:
+msgid "SHOW DATE"
+msgstr "日付を表示"
+
+#:
+msgid "SHOW SECONDS"
+msgstr "秒を表示"
+
+#:
+msgid "ENABLE VIBRATION FEEDBACK"
+msgstr "振動フィードバックを有効にする"
+
+#:
+msgid "VIBRATION INTENSITY"
+msgstr "振動の強さ"
+
+#:
+msgid "TEMPERATURE"
+msgstr "温度"
+
+#:
+msgid "CLOCK FONT"
+msgstr "時計のフォント"
+
+#:
+msgid "VERBAL PLAY TIMER WARNING"
+msgstr "プレイタイマー音声警告"
+
+#:
+msgid "PLAY TIMER"
+msgstr "プレイタイマー"
+
+#:
+msgid "TIME LEFT TODAY"
+msgstr "今日の残り時間"
+
+#:
+msgid "MIN"
+msgstr "分"
+
+#:
+msgid "DAILY PLAY TIME LIMIT REACHED"
+msgstr "1日のプレイ時間の上限に達しました"
+
+#:
+msgid "COME BACK TOMORROW!"
+msgstr "また明日遊んでね！"
+
+#:
+msgid "PLAY TIME LEFT TODAY: %i MIN"
+msgstr "今日の残りプレイ時間: %i 分"
+
+#:
+msgid "PLAY TIME LEFT TODAY: < 1 MIN"
+msgstr "今日の残りプレイ時間: 1 分未満"
+
+#:
+msgid "NIGHT FILTER"
+msgstr "ナイトフィルター"
+
+#:
+msgid "ENABLE FILTER"
+msgstr "フィルターを有効にする"
+
+#:
+msgid "START TIME"
+msgstr "開始時刻"
+
+#:
+msgid "END TIME"
+msgstr "終了時刻"
+
+#:
+msgid "NIGHT FILTER ACTIVE"
+msgstr "ナイトフィルター有効"
+
+#:
+msgid "AQUARIUM SCREENSAVER SETTINGS"
+msgstr "アクアリウムスクリーンセーバーの設定"
+
+#:
+msgid "AQUARIUM SCREENSAVER"
+msgstr "アクアリウムスクリーンセーバー"
+
+#:
+msgid "FISH COUNT"
+msgstr "魚の数"
+
+#:
+msgid "ALL RANDOM"
+msgstr "すべてランダム"
+
+#:
+msgid "FISH"
+msgstr "魚"
+
+#:
+msgid "BUBBLE COLUMN"
+msgstr "泡の柱"
+
+#:
+msgid "AUTO LIGHTS"
+msgstr "自動ライト"
+
+#:
+msgid "FOREGROUND LIGHTS"
+msgstr "前景ライト"
+
+#:
+msgid "BACKGROUND LIGHTS"
+msgstr "背景ライト"
+
+#:
+msgid "STARFISH ON GLASS"
+msgstr "ガラスにヒトデ"
+
+#:
+msgid "aquarium"
+msgstr "アクアリウム"
+
+#:
+msgid "corridors"
+msgstr "廊下"
+
+#:
+msgid "CORRIDORS SCREENSAVER SETTINGS"
+msgstr "廊下スクリーンセーバーの設定"
+
+#:
+msgid "CORRIDORS SCREENSAVER"
+msgstr "廊下スクリーンセーバー"
+
+#:
+msgid "SPEED"
+msgstr "速度"
+
+#:
+msgid "AMBIENT"
+msgstr "環境光"
+
+#:
+msgid "PANELS"
+msgstr "照明パネル"
+
+#:
+msgid "FLICKER"
+msgstr "ちらつき"
+
+#:
+msgid "FOG"
+msgstr "霧"
+
+#:
+msgid "VOLUME"
+msgstr "音量"

@@ -19,7 +19,9 @@ if [[ $1 == *"advanceddrastic"* ]]; then
 
 	cd /opt/advanceddrastic
 
-	export LD_LIBRARY_PATH=./libs:$LD_LIBRARY_PATH
+	export LD_LIBRARY_PATH=/opt/advanceddrastic/libs:$LD_LIBRARY_PATH
+	unset LD_PRELOAD
+	export LD_PRELOAD=/opt/advanceddrastic/libs/libadvdrastic.so
 
 	./drastic "$2" > /opt/advanceddrastic/drastic.log 2>&1
 

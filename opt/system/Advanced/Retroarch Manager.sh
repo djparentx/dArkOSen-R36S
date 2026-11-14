@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # =======================================
-# Retroarch Manager v1.0
+# Retroarch Manager v1.2
 # by djparent
 # =======================================
 
@@ -43,22 +43,35 @@ export TERM=linux
 GPTOKEYB_PID=""
 CURR_TTY="/dev/tty1"
 TMP_KEYS="/tmp/keys.gptk.$$"
-HOME="/home/ark/.config"
 ES_SYSTEMS="/etc/emulationstation/es_systems.cfg"
+CRD_FILE="/home/ark/.config/savesync.crd"
+SYNC_SCRIPT="/usr/local/bin/savesync.sh"
+FLAG_FILE="/home/ark/.savesync"
+GAMEEND_HOOK="/home/ark/.emulationstation/scripts/game-end/savesync.sh"
+SERVICE_FILE="/etc/systemd/system/savesync.service"
+RA64="/home/ark/.config/retroarch"
+RA32="/home/ark/.config/retroarch32"
+RA64_CFG="$RA64/retroarch.cfg"
+RA32_CFG="$RA32/retroarch.cfg"
+LOG_FILE="/home/ark/.config/savesync.log"
 
-T_BACKTITLE="Retroarch Manager v1.0"
+
+T_BACKTITLE="Retroarch Manager v1.2"
 T_STARTING="Starting $T_BACKTITLE please wait..."
 T_MAIN_TITLE="Main Menu"
+T_LOG_TITLE="Log Menu"
+T_SAVE_LOCATION="Save Location"
 T_LOCATION="Current location:"
 T_STATUS="Choose new location for game saves:"
 T_WAIT="Please wait..."
 T_EXIT="Exit"
-T_SAVE_LOC="content folders"
-T_FOLDER_LOC="saves folder"
+T_MIGRATE="Migrate from ArkOS"
+T_CONTENT_FOLDER="content folders"
+T_SAVE_FOLDER="saves folder"
 T_SAVE="Retroarch Folder (/retroarch/saves)"
 T_FOLDER="Game Content Folders (/roms/gb)"
 T_COPY="Copying files..."
-
+T_SURE="Are you sure?"
 
 # =======================================================
 # Start gamepad input
@@ -122,9 +135,6 @@ Exit_Menu() {
 Saves_Folder() {
 	dialog --backtitle "$T_BACKTITLE" --infobox "\n    $T_WAIT" 5 40 2>&1 > "$CURR_TTY"
 
-    local RA64="$HOME/retroarch"
-    local RA32="$HOME/retroarch32"
-	
 	sed -i \
 	  -e 's|^[[:space:]]*savefiles_in_content_dir[[:space:]]*=.*|savefiles_in_content_dir = "false"|' \
 	  -e 's|^[[:space:]]*savestates_in_content_dir[[:space:]]*=.*|savestates_in_content_dir = "false"|' \
@@ -132,7 +142,7 @@ Saves_Folder() {
 	  -e 's|^[[:space:]]*sort_savefiles_by_content_enable[[:space:]]*=.*|sort_savefiles_by_content_enable = "true"|' \
 	  -e 's|^[[:space:]]*sort_savestates_by_content_enable[[:space:]]*=.*|sort_savestates_by_content_enable = "true"|' \
 	  -e 's|^[[:space:]]*sort_screenshots_by_content_enable[[:space:]]*=.*|sort_screenshots_by_content_enable = "true"|' \
-	  /home/ark/.config/retroarch/retroarch.cfg
+	  "$RA64_CFG"
 
     mkdir -p "$RA64/saves" "$RA64/states"
     mkdir -p "$RA32/saves" "$RA32/states"
@@ -241,9 +251,9 @@ Content_Folders() {
 	  -e 's|^[[:space:]]*sort_savefiles_by_content_enable[[:space:]]*=.*|sort_savefiles_by_content_enable = "true"|' \
 	  -e 's|^[[:space:]]*sort_savestates_by_content_enable[[:space:]]*=.*|sort_savestates_by_content_enable = "true"|' \
 	  -e 's|^[[:space:]]*sort_screenshots_by_content_enable[[:space:]]*=.*|sort_screenshots_by_content_enable = "true"|' \
-	  /home/ark/.config/retroarch/retroarch.cfg
+	  "$RA64_CFG"
 
-    for RA_DIR in "$HOME/retroarch" "$HOME/retroarch32"; do
+    for RA_DIR in "$RA64" "$RA32"; do
         for TYPE in saves states; do
 
             [ -d "$RA_DIR/$TYPE" ] || continue
@@ -288,6 +298,54 @@ Content_Folders() {
 }
 
 # =======================================================
+# Migrate Saves
+# =======================================================
+Migrate_Saves() {
+    local checks=(
+        'sort_savefiles_by_content_enable = "false"'
+        'sort_savestates_by_content_enable = "false"'
+        'sort_screenshots_by_content_enable = "false"'
+        'savefiles_in_content_dir = "true"'
+        'savestates_in_content_dir = "true"'
+        'screenshots_in_content_dir = "true"'
+    )
+
+    for check in "${checks[@]}"; do
+        grep -qF "$check" "$RA64_CFG" || { dialog --msgbox "$T_NO_MIGRATE" 6 30; return 1; }
+    done
+
+    dialog --yesno "$T_SURE" 6 30 || return 0
+
+    while IFS= read -r -d '' block; do
+        local name path subdir
+        name=$(grep -oP '(?<=<name>).*?(?=</name>)' <<< "$block" | head -1)
+        path=$(grep -oP '(?<=<path>).*?(?=</path>)' <<< "$block" | head -1)
+        path="${path/#\~/$HOME}"
+        [ -z "$name" ] && continue
+        [ -d "$path" ] || continue
+
+        subdir="$path/$name"
+        mkdir -p "$subdir"
+
+        find "$path" -maxdepth 1 -type f \( \
+            -name "*.srm" -o -name "*.state" -o -name "*.state[0-9]*" \
+            -o -name "*.state.auto" -o -name "*.png" -o -name "*.rtc" \
+            -o -name "*.bsv" \) -print0 | \
+        while IFS= read -r -d '' f; do
+            mv -n "$f" "$subdir/"
+        done
+    done < <(awk 'BEGIN{RS="<system>";ORS=""} NR>1{n=index($0,"</system>"); print substr($0,1,n+9) "\x00"}' "$ES_SYSTEMS")
+
+    sed -i \
+        -e 's/sort_savefiles_by_content_enable = "false"/sort_savefiles_by_content_enable = "true"/' \
+        -e 's/sort_savestates_by_content_enable = "false"/sort_savestates_by_content_enable = "true"/' \
+        -e 's/sort_screenshots_by_content_enable = "false"/sort_screenshots_by_content_enable = "true"/' \
+        "$RA64_CFG" "$RA32_CFG"
+
+    dialog --msgbox "$T_MIGRATION_COMPLETE" 6 30
+}
+
+# =======================================================
 # Main Menu dialog
 # =======================================================
 Main_Menu() {
@@ -299,15 +357,15 @@ Main_Menu() {
 
 		local state
 		local location
-		location=$(grep '^savefiles_in_content_dir' /home/ark/.config/retroarch/retroarch.cfg | grep -o 'true\|false')
+		location=$(grep '^savefiles_in_content_dir' "$RA64_CFG" | grep -o 'true\|false')
 		if [[ "$location" == "true" ]]; then
-			location="$T_SAVE_LOC"
+			location="$T_CONTENT_FOLDER"
 			save="$T_SAVE"
-			state="content folders"
+			state="1"
 		else
-			location="$T_FOLDER_LOC"
+			location="$T_SAVE_FOLDER"
 			save="$T_FOLDER"
-			state="saves folder"
+			state="0"
 		fi
 		
 		local CHOICE
@@ -317,20 +375,23 @@ Main_Menu() {
 			--no-collapse \
 			--cancel-label "$T_EXIT" \
 			--backtitle "$T_BACKTITLE" \
-			--title "$T_MAIN_TITLE" \
+			--title "$T_SAVE_LOCATION" \
 			--menu "$T_LOCATION \Z2$location\Zn\n$T_STATUS" \
 			14 45 6 \
 			"1" "$save" \
+			"2" "$T_MIGRATE" \
             2>&1 > "$CURR_TTY")
 			
 			[[ $? -ne 0 ]] && Exit_Menu
 
 			case "$CHOICE" in
-				1) if [[ "$state" == "content folders" ]]; then
+				1) dialog --yesno "$T_SURE" 6 30 || return 0
+					if [[ "$state" == "1" ]]; then
 						Saves_Folder
 					else
 						Content_Folders
 					fi ;;
+				2) Migrate_Saves ;;
 			esac
 	done
 }

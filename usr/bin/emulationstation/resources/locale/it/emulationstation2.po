@@ -3191,3 +3191,330 @@ msgstr "REGISTRO CANCELLATO."
 
 msgid "ENABLE FAST SYNC"
 msgstr "ABILITA SINCRONIZZAZIONE RAPIDA"
+
+msgid "SWITCH A/B BUTTONS GLOBALLY"
+msgstr "SCAMBIA PULSANTI A/B GLOBALMENTE"
+
+msgid "STORAGE SETTINGS"
+msgstr "IMPOSTAZIONI ARCHIVIAZIONE"
+
+msgid "ENABLE SD2"
+msgstr "ABILITA SD2"
+
+msgid "REASSIGN SYSTEMS TO SD1"
+msgstr "RIASSEGNA SISTEMI A SD1"
+
+msgid "SCAN AND REPAIR"
+msgstr "SCANSIONA E RIPARA"
+
+msgid "BOOT"
+msgstr "AVVIO"
+
+msgid "ROOTFS"
+msgstr "ROOTFS"
+
+msgid "SD1 GAMES"
+msgstr "GIOCHI SD1"
+
+msgid "SD2"
+msgstr "SD2"
+
+msgid "MANUAL SELECTION"
+msgstr "SELEZIONE MANUALE"
+
+msgid "AUTOMATED SCAN"
+msgstr "SCANSIONE AUTOMATICA"
+
+msgid "UNDO ALL CHANGES"
+msgstr "ANNULLA TUTTE LE MODIFICHE"
+
+msgid "SCAN /roms/ FOR CHANGES?"
+msgstr "SCANSIONARE /roms/ PER MODIFICHE?"
+
+msgid "REVERT ALL SYSTEMS TO SD2?"
+msgstr "RIPRISTINARE TUTTI I SISTEMI SU SD2?"
+
+msgid "PLEASE WAIT..."
+msgstr "ATTENDERE PREGO..."
+
+msgid "SYSTEMS"
+msgstr "SISTEMI"
+
+msgid "NOTHING WAS MODIFIED."
+msgstr "NESSUNA MODIFICA EFFETTUATA."
+
+msgid "RESTORING ALL SYSTEMS TO /roms2/."
+msgstr "RIPRISTINO DI TUTTI I SISTEMI SU /roms2/."
+
+msgid "MOVED TO SD1:"
+msgstr "SPOSTATO SU SD1:"
+
+msgid "REVERTED TO SD2:"
+msgstr "RIPRISTINATO SU SD2:"
+
+msgid "Scan failed. Repairs were not successful."
+msgstr "Scansione fallita. Le riparazioni non hanno avuto successo."
+
+msgid "Scan failed. Repairs were successful."
+msgstr "Scansione fallita. Le riparazioni sono riuscite."
+
+msgid "Scan passed. No repairs were needed."
+msgstr "Scansione completata. Nessuna riparazione necessaria."
+
+msgid "Wi-fi has been turned off to ensure the disk is not busy."
+msgstr "Il Wi-Fi è stato disattivato per garantire che il disco non sia occupato."
+
+msgid "Could not unmount /boot"
+msgstr "Impossibile smontare /boot"
+
+msgid "Dirty bit cleared"
+msgstr "Dirty bit azzerato"
+
+msgid "Boot sector mismatch noted"
+msgstr "Rilevata discrepanza nel settore di avvio"
+
+msgid "Bad file entries fixed"
+msgstr "Voci di file danneggiate corrette"
+
+msgid "Uncorrectable errors found on system partition"
+msgstr "Errori non correggibili trovati sulla partizione di sistema"
+
+msgid "Partition 2 (system) could not be fully repaired while running. Eject the card and run 'sudo btrfs check --repair /dev/mmcblk0p2' from a Linux PC."
+msgstr "La partizione 2 (sistema) non ha potuto essere riparata completamente durante l'esecuzione. Espellere la scheda ed eseguire 'sudo btrfs check --repair /dev/mmcblk0p2' da un PC Linux."
+
+msgid "HELPER SCRIPT NOT FOUND"
+msgstr "SCRIPT DI SUPPORTO NON TROVATO"
+
+msgid "FAILED TO PREPARE RECOVERY SCRIPT"
+msgstr "IMPOSSIBILE PREPARARE LO SCRIPT DI RECUPERO"
+
+msgid "SCAN SD1 GAMES?\nTHE CONSOLE WILL REBOOT TO COMPLETE THE SCAN."
+msgstr "SCANSIONARE I GIOCHI SD1?\nLA CONSOLE SI RIAVVIERÀ PER COMPLETARE LA SCANSIONE."
+
+msgid "SCAN SD2?\nTHE CONSOLE WILL REBOOT TO COMPLETE THE SCAN."
+msgstr "SCANSIONARE SD2?\nLA CONSOLE SI RIAVVIERÀ PER COMPLETARE LA SCANSIONE."
+
+msgid "BENCHMARKING"
+msgstr "TEST PRESTAZIONI"
+
+msgid "BENCHMARK"
+msgstr "BENCHMARK"
+
+msgid "BENCHMARK FAILED"
+msgstr "BENCHMARK NON RIUSCITO"
+
+msgid "RUNNING, PLEASE WAIT"
+msgstr "IN ESECUZIONE, ATTENDERE PREGO"
+
+msgid "LOG IS EMPTY."
+msgstr "IL REGISTRO È VUOTO."
+
+msgid "%d d"
+msgstr "%d g"
+
+msgid "%d h"
+msgstr "%d h"
+
+msgid "%d mn"
+msgstr "%d min"
+
+msgid "%d sec"
+msgstr "%d s"
+
+msgid "LAST 20 PLAYED GAMES"
+msgstr "GLI ULTIMI 20 GIOCHI GIOCATI"
+
+msgid "NO GAME PLAYED YET"
+msgstr "NESSUN GIOCO GIOCATO FINORA"
+
+#:
+msgid "datetime"
+msgstr "data e ora"
+
+#:
+msgid "DATE TIME SCREENSAVER SETTINGS"
+msgstr "IMPOSTAZIONI SALVASCHERMO DATA E ORA"
+
+#:
+msgid "DATE & TIME SCREENSAVER"
+msgstr "SALVASCHERMO DATA E ORA"
+
+#:
+msgid "CLOCK TYPE"
+msgstr "TIPO DI OROLOGIO"
+
+#:
+msgid "CLOCK STYLE"
+msgstr "STILE OROLOGIO"
+
+#:
+msgid "CLOCK COLOR"
+msgstr "COLORE OROLOGIO"
+
+#:
+msgid "BACKGROUND MODE"
+msgstr "MODALITÀ SFONDO"
+
+#:
+msgid "BACKGROUND COLOR"
+msgstr "COLORE SFONDO"
+
+#:
+msgid "BACKGROUND IMAGE"
+msgstr "IMMAGINE SFONDO"
+
+#:
+msgid "SHOW DATE"
+msgstr "MOSTRA DATA"
+
+#:
+msgid "SHOW SECONDS"
+msgstr "MOSTRA SECONDI"
+
+#:
+msgid "ENABLE VIBRATION FEEDBACK"
+msgstr "ATTIVA FEEDBACK VIBRAZIONE"
+
+#:
+msgid "VIBRATION INTENSITY"
+msgstr "INTENSITÀ VIBRAZIONE"
+
+#:
+msgid "TEMPERATURE"
+msgstr "TEMPERATURA"
+
+#:
+msgid "CLOCK FONT"
+msgstr "CARATTERE OROLOGIO"
+
+#:
+msgid "VERBAL PLAY TIMER WARNING"
+msgstr "AVVISO VOCALE TIMER DI GIOCO"
+
+#:
+msgid "PLAY TIMER"
+msgstr "TIMER DI GIOCO"
+
+#:
+msgid "TIME LEFT TODAY"
+msgstr "TEMPO RIMANENTE OGGI"
+
+#:
+msgid "MIN"
+msgstr "MIN"
+
+#:
+msgid "DAILY PLAY TIME LIMIT REACHED"
+msgstr "LIMITE GIORNALIERO DI GIOCO RAGGIUNTO"
+
+#:
+msgid "COME BACK TOMORROW!"
+msgstr "TORNA DOMANI!"
+
+#:
+msgid "PLAY TIME LEFT TODAY: %i MIN"
+msgstr "TEMPO DI GIOCO RIMANENTE OGGI: %i MIN"
+
+#:
+msgid "PLAY TIME LEFT TODAY: < 1 MIN"
+msgstr "TEMPO DI GIOCO RIMANENTE OGGI: < 1 MIN"
+
+#:
+msgid "NIGHT FILTER"
+msgstr "FILTRO NOTTURNO"
+
+#:
+msgid "ENABLE FILTER"
+msgstr "ATTIVA FILTRO"
+
+#:
+msgid "START TIME"
+msgstr "ORA DI INIZIO"
+
+#:
+msgid "END TIME"
+msgstr "ORA DI FINE"
+
+#:
+msgid "NIGHT FILTER ACTIVE"
+msgstr "FILTRO NOTTURNO ATTIVO"
+
+#:
+msgid "AQUARIUM SCREENSAVER SETTINGS"
+msgstr "IMPOSTAZIONI SALVASCHERMO ACQUARIO"
+
+#:
+msgid "AQUARIUM SCREENSAVER"
+msgstr "SALVASCHERMO ACQUARIO"
+
+#:
+msgid "FISH COUNT"
+msgstr "NUMERO DI PESCI"
+
+#:
+msgid "ALL RANDOM"
+msgstr "TUTTI CASUALI"
+
+#:
+msgid "FISH"
+msgstr "PESCE"
+
+#:
+msgid "BUBBLE COLUMN"
+msgstr "COLONNA DI BOLLE"
+
+#:
+msgid "AUTO LIGHTS"
+msgstr "LUCI AUTOMATICHE"
+
+#:
+msgid "FOREGROUND LIGHTS"
+msgstr "LUCI IN PRIMO PIANO"
+
+#:
+msgid "BACKGROUND LIGHTS"
+msgstr "LUCI DI SFONDO"
+
+#:
+msgid "STARFISH ON GLASS"
+msgstr "STELLA MARINA SUL VETRO"
+
+#:
+msgid "aquarium"
+msgstr "acquario"
+
+#:
+msgid "corridors"
+msgstr "corridoi"
+
+#:
+msgid "CORRIDORS SCREENSAVER SETTINGS"
+msgstr "IMPOSTAZIONI SALVASCHERMO CORRIDOI"
+
+#:
+msgid "CORRIDORS SCREENSAVER"
+msgstr "SALVASCHERMO CORRIDOI"
+
+#:
+msgid "SPEED"
+msgstr "VELOCITÀ"
+
+#:
+msgid "AMBIENT"
+msgstr "LUCE AMBIENTE"
+
+#:
+msgid "PANELS"
+msgstr "PANNELLI"
+
+#:
+msgid "FLICKER"
+msgstr "SFARFALLIO"
+
+#:
+msgid "FOG"
+msgstr "NEBBIA"
+
+#:
+msgid "VOLUME"
+msgstr "VOLUME"

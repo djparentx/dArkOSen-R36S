@@ -1,0 +1,12 @@
+{
+  "name": "Forest Retreat",
+  "background": "#f1f7f0",
+  "surface": "#ffffff",
+  "primary": "#2d6a4f",
+  "secondary": "#40916c",
+  "accent": "#95d5b2",
+  "text": "#1b4332",
+  "mutedText": "#52796f",
+  "border": "#cfe3d7",
+  "fontFamily": "Source Sans Pro, system-ui, sans-serif"
+}

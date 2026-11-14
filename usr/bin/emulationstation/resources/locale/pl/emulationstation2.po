@@ -3284,3 +3284,330 @@ msgstr "DZIENNIK WYCZYSZCZONY."
 
 msgid "ENABLE FAST SYNC"
 msgstr "WŁĄCZ SZYBKĄ SYNCHRONIZACJĘ"
+
+msgid "SWITCH A/B BUTTONS GLOBALLY"
+msgstr "ZAMIEŃ PRZYCISKI A/B GLOBALNIE"
+
+msgid "STORAGE SETTINGS"
+msgstr "USTAWIENIA PAMIĘCI"
+
+msgid "ENABLE SD2"
+msgstr "WŁĄCZ SD2"
+
+msgid "REASSIGN SYSTEMS TO SD1"
+msgstr "PRZYPISZ SYSTEMY DO SD1"
+
+msgid "SCAN AND REPAIR"
+msgstr "SKANUJ I NAPRAW"
+
+msgid "BOOT"
+msgstr "ROZRUCH"
+
+msgid "ROOTFS"
+msgstr "ROOTFS"
+
+msgid "SD1 GAMES"
+msgstr "GRY SD1"
+
+msgid "SD2"
+msgstr "SD2"
+
+msgid "MANUAL SELECTION"
+msgstr "WYBÓR RĘCZNY"
+
+msgid "AUTOMATED SCAN"
+msgstr "AUTOMATYCZNE SKANOWANIE"
+
+msgid "UNDO ALL CHANGES"
+msgstr "COFNIJ WSZYSTKIE ZMIANY"
+
+msgid "SCAN /roms/ FOR CHANGES?"
+msgstr "SKANOWAĆ /roms/ W POSZUKIWANIU ZMIAN?"
+
+msgid "REVERT ALL SYSTEMS TO SD2?"
+msgstr "PRZYWRÓCIĆ WSZYSTKIE SYSTEMY DO SD2?"
+
+msgid "PLEASE WAIT..."
+msgstr "PROSZĘ CZEKAĆ..."
+
+msgid "SYSTEMS"
+msgstr "SYSTEMY"
+
+msgid "NOTHING WAS MODIFIED."
+msgstr "NIC NIE ZOSTAŁO ZMIENIONE."
+
+msgid "RESTORING ALL SYSTEMS TO /roms2/."
+msgstr "PRZYWRACANIE WSZYSTKICH SYSTEMÓW DO /roms2/."
+
+msgid "MOVED TO SD1:"
+msgstr "PRZENIESIONO DO SD1:"
+
+msgid "REVERTED TO SD2:"
+msgstr "PRZYWRÓCONO DO SD2:"
+
+msgid "Scan failed. Repairs were not successful."
+msgstr "Skanowanie nie powiodło się. Naprawy były nieudane."
+
+msgid "Scan failed. Repairs were successful."
+msgstr "Skanowanie nie powiodło się. Naprawy zakończyły się sukcesem."
+
+msgid "Scan passed. No repairs were needed."
+msgstr "Skanowanie zakończone pomyślnie. Żadne naprawy nie były potrzebne."
+
+msgid "Wi-fi has been turned off to ensure the disk is not busy."
+msgstr "Wi-Fi zostało wyłączone, aby upewnić się, że dysk nie jest zajęty."
+
+msgid "Could not unmount /boot"
+msgstr "Nie można odmontować /boot"
+
+msgid "Dirty bit cleared"
+msgstr "Dirty bit wyczyszczony"
+
+msgid "Boot sector mismatch noted"
+msgstr "Wykryto niezgodność sektora rozruchowego"
+
+msgid "Bad file entries fixed"
+msgstr "Naprawiono uszkodzone wpisy plików"
+
+msgid "Uncorrectable errors found on system partition"
+msgstr "Znaleziono błędy niemożliwe do naprawienia na partycji systemowej"
+
+msgid "Partition 2 (system) could not be fully repaired while running. Eject the card and run 'sudo btrfs check --repair /dev/mmcblk0p2' from a Linux PC."
+msgstr "Partycja 2 (systemowa) nie mogła zostać w pełni naprawiona podczas działania. Wysuń kartę i uruchom 'sudo btrfs check --repair /dev/mmcblk0p2' z komputera z systemem Linux."
+
+msgid "HELPER SCRIPT NOT FOUND"
+msgstr "NIE ZNALEZIONO SKRYPTU POMOCNICZEGO"
+
+msgid "FAILED TO PREPARE RECOVERY SCRIPT"
+msgstr "NIE UDAŁO SIĘ PRZYGOTOWAĆ SKRYPTU ODZYSKIWANIA"
+
+msgid "SCAN SD1 GAMES?\nTHE CONSOLE WILL REBOOT TO COMPLETE THE SCAN."
+msgstr "SKANOWAĆ GRY SD1?\nKONSOLA URUCHOMI SIĘ PONOWNIE, ABY ZAKOŃCZYĆ SKANOWANIE."
+
+msgid "SCAN SD2?\nTHE CONSOLE WILL REBOOT TO COMPLETE THE SCAN."
+msgstr "SKANOWAĆ SD2?\nKONSOLA URUCHOMI SIĘ PONOWNIE, ABY ZAKOŃCZYĆ SKANOWANIE."
+
+msgid "BENCHMARKING"
+msgstr "TESTY WYDAJNOŚCI"
+
+msgid "BENCHMARK"
+msgstr "BENCHMARK"
+
+msgid "BENCHMARK FAILED"
+msgstr "BENCHMARK NIE POWIÓDŁ SIĘ"
+
+msgid "RUNNING, PLEASE WAIT"
+msgstr "TRWA, PROSZĘ CZEKAĆ"
+
+msgid "LOG IS EMPTY."
+msgstr "DZIENNIK JEST PUSTY."
+
+msgid "%d d"
+msgstr "%d d"
+
+msgid "%d h"
+msgstr "%d godz."
+
+msgid "%d mn"
+msgstr "%d min"
+
+msgid "%d sec"
+msgstr "%d s"
+
+msgid "LAST 20 PLAYED GAMES"
+msgstr "OSTATNIE 20 GIER"
+
+msgid "NO GAME PLAYED YET"
+msgstr "NIE ZAGRANO JESZCZE W ZADNA GRE"
+
+#:
+msgid "datetime"
+msgstr "data i godzina"
+
+#:
+msgid "DATE TIME SCREENSAVER SETTINGS"
+msgstr "USTAWIENIA WYGASZACZA DATY I GODZINY"
+
+#:
+msgid "DATE & TIME SCREENSAVER"
+msgstr "WYGASZACZ DATY I GODZINY"
+
+#:
+msgid "CLOCK TYPE"
+msgstr "TYP ZEGARA"
+
+#:
+msgid "CLOCK STYLE"
+msgstr "STYL ZEGARA"
+
+#:
+msgid "CLOCK COLOR"
+msgstr "KOLOR ZEGARA"
+
+#:
+msgid "BACKGROUND MODE"
+msgstr "TRYB TŁA"
+
+#:
+msgid "BACKGROUND COLOR"
+msgstr "KOLOR TŁA"
+
+#:
+msgid "BACKGROUND IMAGE"
+msgstr "OBRAZ TŁA"
+
+#:
+msgid "SHOW DATE"
+msgstr "POKAŻ DATĘ"
+
+#:
+msgid "SHOW SECONDS"
+msgstr "POKAŻ SEKUNDY"
+
+#:
+msgid "ENABLE VIBRATION FEEDBACK"
+msgstr "WŁĄCZ WIBRACJE"
+
+#:
+msgid "VIBRATION INTENSITY"
+msgstr "INTENSYWNOŚĆ WIBRACJI"
+
+#:
+msgid "TEMPERATURE"
+msgstr "TEMPERATURA"
+
+#:
+msgid "CLOCK FONT"
+msgstr "CZCIONKA ZEGARA"
+
+#:
+msgid "VERBAL PLAY TIMER WARNING"
+msgstr "GŁOSOWE OSTRZEŻENIE MINUTNIKA GRY"
+
+#:
+msgid "PLAY TIMER"
+msgstr "MINUTNIK GRY"
+
+#:
+msgid "TIME LEFT TODAY"
+msgstr "POZOSTAŁY CZAS DZIŚ"
+
+#:
+msgid "MIN"
+msgstr "MIN"
+
+#:
+msgid "DAILY PLAY TIME LIMIT REACHED"
+msgstr "OSIĄGNIĘTO DZIENNY LIMIT CZASU GRY"
+
+#:
+msgid "COME BACK TOMORROW!"
+msgstr "WRÓĆ JUTRO!"
+
+#:
+msgid "PLAY TIME LEFT TODAY: %i MIN"
+msgstr "POZOSTAŁY CZAS GRY DZIŚ: %i MIN"
+
+#:
+msgid "PLAY TIME LEFT TODAY: < 1 MIN"
+msgstr "POZOSTAŁY CZAS GRY DZIŚ: < 1 MIN"
+
+#:
+msgid "NIGHT FILTER"
+msgstr "FILTR NOCNY"
+
+#:
+msgid "ENABLE FILTER"
+msgstr "WŁĄCZ FILTR"
+
+#:
+msgid "START TIME"
+msgstr "GODZINA ROZPOCZĘCIA"
+
+#:
+msgid "END TIME"
+msgstr "GODZINA ZAKOŃCZENIA"
+
+#:
+msgid "NIGHT FILTER ACTIVE"
+msgstr "FILTR NOCNY AKTYWNY"
+
+#:
+msgid "AQUARIUM SCREENSAVER SETTINGS"
+msgstr "USTAWIENIA WYGASZACZA AKWARIUM"
+
+#:
+msgid "AQUARIUM SCREENSAVER"
+msgstr "WYGASZACZ AKWARIUM"
+
+#:
+msgid "FISH COUNT"
+msgstr "LICZBA RYB"
+
+#:
+msgid "ALL RANDOM"
+msgstr "WSZYSTKIE LOSOWE"
+
+#:
+msgid "FISH"
+msgstr "RYBA"
+
+#:
+msgid "BUBBLE COLUMN"
+msgstr "KOLUMNA BĄBELKÓW"
+
+#:
+msgid "AUTO LIGHTS"
+msgstr "AUTOMATYCZNE OŚWIETLENIE"
+
+#:
+msgid "FOREGROUND LIGHTS"
+msgstr "OŚWIETLENIE PIERWSZEGO PLANU"
+
+#:
+msgid "BACKGROUND LIGHTS"
+msgstr "OŚWIETLENIE TŁA"
+
+#:
+msgid "STARFISH ON GLASS"
+msgstr "ROZGWIAZDA NA SZYBIE"
+
+#:
+msgid "aquarium"
+msgstr "akwarium"
+
+#:
+msgid "corridors"
+msgstr "korytarze"
+
+#:
+msgid "CORRIDORS SCREENSAVER SETTINGS"
+msgstr "USTAWIENIA WYGASZACZA KORYTARZE"
+
+#:
+msgid "CORRIDORS SCREENSAVER"
+msgstr "WYGASZACZ KORYTARZE"
+
+#:
+msgid "SPEED"
+msgstr "PRĘDKOŚĆ"
+
+#:
+msgid "AMBIENT"
+msgstr "ŚWIATŁO OTOCZENIA"
+
+#:
+msgid "PANELS"
+msgstr "PANELE"
+
+#:
+msgid "FLICKER"
+msgstr "MIGOTANIE"
+
+#:
+msgid "FOG"
+msgstr "MGŁA"
+
+#:
+msgid "VOLUME"
+msgstr "GŁOŚNOŚĆ"

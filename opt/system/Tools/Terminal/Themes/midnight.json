@@ -1,0 +1,12 @@
+{
+  "name": "Midnight Noir",
+  "background": "#0b0f19",
+  "surface": "#151b28",
+  "primary": "#4361ee",
+  "secondary": "#4cc9f0",
+  "accent": "#b5179e",
+  "text": "#f1f5ff",
+  "mutedText": "#9aa4bf",
+  "border": "#1f2937",
+  "fontFamily": "Roboto, system-ui, sans-serif"
+}

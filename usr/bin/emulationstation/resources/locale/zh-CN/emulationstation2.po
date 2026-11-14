@@ -3997,3 +3997,323 @@ msgstr "日志已清除。"
 
 msgid "ENABLE FAST SYNC"
 msgstr "启用快速同步"
+
+msgid "SWITCH A/B BUTTONS GLOBALLY"
+msgstr "全局交换A/B按键"
+
+msgid "STORAGE SETTINGS"
+msgstr "存储设置"
+
+msgid "ENABLE SD2"
+msgstr "启用SD2"
+
+msgid "REASSIGN SYSTEMS TO SD1"
+msgstr "将系统重新分配到SD1"
+
+msgid "SCAN AND REPAIR"
+msgstr "扫描并修复"
+
+msgid "BOOT"
+msgstr "启动分区"
+
+msgid "ROOTFS"
+msgstr "根文件系统"
+
+msgid "SD1 GAMES"
+msgstr "SD1游戏"
+
+msgid "SD2"
+msgstr "SD2"
+
+msgid "MANUAL SELECTION"
+msgstr "手动选择"
+
+msgid "AUTOMATED SCAN"
+msgstr "自动扫描"
+
+msgid "UNDO ALL CHANGES"
+msgstr "撤销所有更改"
+
+msgid "SCAN /roms/ FOR CHANGES?"
+msgstr "扫描/roms/以查找更改？"
+
+msgid "REVERT ALL SYSTEMS TO SD2?"
+msgstr "将所有系统还原到SD2？"
+
+msgid "PLEASE WAIT..."
+msgstr "请稍候..."
+
+msgid "SYSTEMS"
+msgstr "系统"
+
+msgid "NOTHING WAS MODIFIED."
+msgstr "没有任何修改。"
+
+msgid "RESTORING ALL SYSTEMS TO /roms2/."
+msgstr "正在将所有系统还原到/roms2/。"
+
+msgid "MOVED TO SD1:"
+msgstr "已移至SD1："
+
+msgid "REVERTED TO SD2:"
+msgstr "已还原至SD2："
+
+msgid "Scan failed. Repairs were not successful."
+msgstr "扫描失败。修复未成功。"
+
+msgid "Scan failed. Repairs were successful."
+msgstr "扫描失败。修复已成功。"
+
+msgid "Scan passed. No repairs were needed."
+msgstr "扫描通过。无需修复。"
+
+msgid "Wi-fi has been turned off to ensure the disk is not busy."
+msgstr "已关闭Wi-Fi以确保磁盘未被占用。"
+
+msgid "Could not unmount /boot"
+msgstr "无法卸载/boot"
+
+msgid "Dirty bit cleared"
+msgstr "脏位已清除"
+
+msgid "Boot sector mismatch noted"
+msgstr "检测到引导扇区不一致"
+
+msgid "Bad file entries fixed"
+msgstr "已修复损坏的文件条目"
+
+msgid "Uncorrectable errors found on system partition"
+msgstr "在系统分区上发现无法纠正的错误"
+
+msgid "Partition 2 (system) could not be fully repaired while running. Eject the card and run 'sudo btrfs check --repair /dev/mmcblk0p2' from a Linux PC."
+msgstr "分区2（系统）在运行时无法完全修复。请取出存储卡，并在Linux PC上运行 'sudo btrfs check --repair /dev/mmcblk0p2'。"
+
+msgid "HELPER SCRIPT NOT FOUND"
+msgstr "未找到辅助脚本"
+
+msgid "FAILED TO PREPARE RECOVERY SCRIPT"
+msgstr "准备恢复脚本失败"
+
+msgid "SCAN SD1 GAMES?\nTHE CONSOLE WILL REBOOT TO COMPLETE THE SCAN."
+msgstr "扫描SD1游戏？\n主机将重新启动以完成扫描。"
+
+msgid "SCAN SD2?\nTHE CONSOLE WILL REBOOT TO COMPLETE THE SCAN."
+msgstr "扫描SD2？\n主机将重新启动以完成扫描。"
+
+msgid "BENCHMARKING"
+msgstr "性能测试"
+
+msgid "BENCHMARK"
+msgstr "基准测试"
+
+msgid "BENCHMARK FAILED"
+msgstr "基准测试失败"
+
+msgid "RUNNING, PLEASE WAIT"
+msgstr "运行中，请稍候"
+
+msgid "LOG IS EMPTY."
+msgstr "日志为空。"
+
+msgid "%d d"
+msgstr "%d 天"
+
+msgid "%d mn"
+msgstr "%d 分钟"
+
+msgid "%d sec"
+msgstr "%d 秒"
+
+msgid "LAST 20 PLAYED GAMES"
+msgstr "最近玩过的20个游戏"
+
+msgid "NO GAME PLAYED YET"
+msgstr "尚未玩过任何游戏"
+
+#:
+msgid "datetime"
+msgstr "日期时间"
+
+#:
+msgid "DATE TIME SCREENSAVER SETTINGS"
+msgstr "日期时间屏幕保护程序设定"
+
+#:
+msgid "DATE & TIME SCREENSAVER"
+msgstr "日期时间屏幕保护程序"
+
+#:
+msgid "CLOCK TYPE"
+msgstr "时钟类型"
+
+#:
+msgid "CLOCK STYLE"
+msgstr "时钟样式"
+
+#:
+msgid "CLOCK COLOR"
+msgstr "时钟颜色"
+
+#:
+msgid "BACKGROUND MODE"
+msgstr "背景模式"
+
+#:
+msgid "BACKGROUND COLOR"
+msgstr "背景颜色"
+
+#:
+msgid "BACKGROUND IMAGE"
+msgstr "背景图片"
+
+#:
+msgid "SHOW DATE"
+msgstr "显示日期"
+
+#:
+msgid "SHOW SECONDS"
+msgstr "显示秒"
+
+#:
+msgid "ENABLE VIBRATION FEEDBACK"
+msgstr "启用振动反馈"
+
+#:
+msgid "VIBRATION INTENSITY"
+msgstr "振动强度"
+
+#:
+msgid "TEMPERATURE"
+msgstr "温度"
+
+#:
+msgid "CLOCK FONT"
+msgstr "时钟字体"
+
+#:
+msgid "VERBAL PLAY TIMER WARNING"
+msgstr "游戏计时器语音提醒"
+
+#:
+msgid "PLAY TIMER"
+msgstr "游戏计时器"
+
+#:
+msgid "TIME LEFT TODAY"
+msgstr "今日剩余时间"
+
+#:
+msgid "MIN"
+msgstr "分钟"
+
+#:
+msgid "DAILY PLAY TIME LIMIT REACHED"
+msgstr "已达到每日游戏时间上限"
+
+#:
+msgid "COME BACK TOMORROW!"
+msgstr "明天再来吧！"
+
+#:
+msgid "PLAY TIME LEFT TODAY: %i MIN"
+msgstr "今日剩余游戏时间：%i 分钟"
+
+#:
+msgid "PLAY TIME LEFT TODAY: < 1 MIN"
+msgstr "今日剩余游戏时间：不足 1 分钟"
+
+#:
+msgid "NIGHT FILTER"
+msgstr "夜间滤镜"
+
+#:
+msgid "ENABLE FILTER"
+msgstr "启用滤镜"
+
+#:
+msgid "START TIME"
+msgstr "开始时间"
+
+#:
+msgid "END TIME"
+msgstr "结束时间"
+
+#:
+msgid "NIGHT FILTER ACTIVE"
+msgstr "夜间滤镜已启用"
+
+#:
+msgid "AQUARIUM SCREENSAVER SETTINGS"
+msgstr "水族箱屏幕保护程序设定"
+
+#:
+msgid "AQUARIUM SCREENSAVER"
+msgstr "水族箱屏幕保护程序"
+
+#:
+msgid "FISH COUNT"
+msgstr "鱼的数量"
+
+#:
+msgid "ALL RANDOM"
+msgstr "全部随机"
+
+#:
+msgid "FISH"
+msgstr "鱼"
+
+#:
+msgid "BUBBLE COLUMN"
+msgstr "气泡柱"
+
+#:
+msgid "AUTO LIGHTS"
+msgstr "自动灯光"
+
+#:
+msgid "FOREGROUND LIGHTS"
+msgstr "前景灯光"
+
+#:
+msgid "BACKGROUND LIGHTS"
+msgstr "背景灯光"
+
+#:
+msgid "STARFISH ON GLASS"
+msgstr "玻璃上的海星"
+
+#:
+msgid "aquarium"
+msgstr "水族箱"
+
+#:
+msgid "corridors"
+msgstr "走廊"
+
+#:
+msgid "CORRIDORS SCREENSAVER SETTINGS"
+msgstr "走廊屏幕保护程序设定"
+
+#:
+msgid "CORRIDORS SCREENSAVER"
+msgstr "走廊屏幕保护程序"
+
+#:
+msgid "SPEED"
+msgstr "速度"
+
+#:
+msgid "AMBIENT"
+msgstr "环境光"
+
+#:
+msgid "PANELS"
+msgstr "灯板"
+
+#:
+msgid "FLICKER"
+msgstr "闪烁"
+
+#:
+msgid "FOG"
+msgstr "雾"

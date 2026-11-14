@@ -3747,3 +3747,330 @@ msgstr "LOGGEN RENSAD."
 
 msgid "ENABLE FAST SYNC"
 msgstr "AKTIVERA SNABB SYNKRONISERING"
+
+msgid "SWITCH A/B BUTTONS GLOBALLY"
+msgstr "BYTA A/B-KNAPPAR GLOBALT"
+
+msgid "STORAGE SETTINGS"
+msgstr "LAGRINGSINSTÄLLNINGAR"
+
+msgid "ENABLE SD2"
+msgstr "AKTIVERA SD2"
+
+msgid "REASSIGN SYSTEMS TO SD1"
+msgstr "TILLDELA SYSTEM TILL SD1"
+
+msgid "SCAN AND REPAIR"
+msgstr "SKANNA OCH REPARERA"
+
+msgid "BOOT"
+msgstr "UPPSTART"
+
+msgid "ROOTFS"
+msgstr "ROOTFS"
+
+msgid "SD1 GAMES"
+msgstr "SD1-SPEL"
+
+msgid "SD2"
+msgstr "SD2"
+
+msgid "MANUAL SELECTION"
+msgstr "MANUELLT VAL"
+
+msgid "AUTOMATED SCAN"
+msgstr "AUTOMATISK SKANNING"
+
+msgid "UNDO ALL CHANGES"
+msgstr "ÅNGRA ALLA ÄNDRINGAR"
+
+msgid "SCAN /roms/ FOR CHANGES?"
+msgstr "SKANNA /roms/ EFTER ÄNDRINGAR?"
+
+msgid "REVERT ALL SYSTEMS TO SD2?"
+msgstr "ÅTERSTÄLLA ALLA SYSTEM TILL SD2?"
+
+msgid "PLEASE WAIT..."
+msgstr "VÄNTA..."
+
+msgid "SYSTEMS"
+msgstr "SYSTEM"
+
+msgid "NOTHING WAS MODIFIED."
+msgstr "INGET ÄNDRADES."
+
+msgid "RESTORING ALL SYSTEMS TO /roms2/."
+msgstr "ÅTERSTÄLLER ALLA SYSTEM TILL /roms2/."
+
+msgid "MOVED TO SD1:"
+msgstr "FLYTTAD TILL SD1:"
+
+msgid "REVERTED TO SD2:"
+msgstr "ÅTERSTÄLLD TILL SD2:"
+
+msgid "Scan failed. Repairs were not successful."
+msgstr "Skanning misslyckades. Reparationer var inte framgångsrika."
+
+msgid "Scan failed. Repairs were successful."
+msgstr "Skanning misslyckades. Reparationer lyckades."
+
+msgid "Scan passed. No repairs were needed."
+msgstr "Skanning klar. Inga reparationer behövdes."
+
+msgid "Wi-fi has been turned off to ensure the disk is not busy."
+msgstr "Wi-Fi har stängts av för att säkerställa att disken inte är upptagen."
+
+msgid "Could not unmount /boot"
+msgstr "Kunde inte avmontera /boot"
+
+msgid "Dirty bit cleared"
+msgstr "Dirty-bit rensad"
+
+msgid "Boot sector mismatch noted"
+msgstr "Avvikelse i uppstartssektor noterad"
+
+msgid "Bad file entries fixed"
+msgstr "Felaktiga filposter åtgärdade"
+
+msgid "Uncorrectable errors found on system partition"
+msgstr "Okorrigerbara fel hittades på systempartitionen"
+
+msgid "Partition 2 (system) could not be fully repaired while running. Eject the card and run 'sudo btrfs check --repair /dev/mmcblk0p2' from a Linux PC."
+msgstr "Partition 2 (system) kunde inte repareras helt under körning. Ta ut kortet och kör 'sudo btrfs check --repair /dev/mmcblk0p2' från en Linux-dator."
+
+msgid "HELPER SCRIPT NOT FOUND"
+msgstr "HJÄLPSKRIPT HITTADES INTE"
+
+msgid "FAILED TO PREPARE RECOVERY SCRIPT"
+msgstr "MISSLYCKADES MED ATT FÖRBEREDA ÅTERSTÄLLNINGSSKRIPT"
+
+msgid "SCAN SD1 GAMES?\nTHE CONSOLE WILL REBOOT TO COMPLETE THE SCAN."
+msgstr "SKANNA SD1-SPEL?\nKONSOLEN STARTAR OM FÖR ATT SLUTFÖRA SKANNINGEN."
+
+msgid "SCAN SD2?\nTHE CONSOLE WILL REBOOT TO COMPLETE THE SCAN."
+msgstr "SKANNA SD2?\nKONSOLEN STARTAR OM FÖR ATT SLUTFÖRA SKANNINGEN."
+
+msgid "BENCHMARKING"
+msgstr "PRESTANDATESTER"
+
+msgid "BENCHMARK"
+msgstr "BENCHMARK"
+
+msgid "BENCHMARK FAILED"
+msgstr "BENCHMARK MISSLYCKADES"
+
+msgid "RUNNING, PLEASE WAIT"
+msgstr "KÖRS, VÄNTA"
+
+msgid "LOG IS EMPTY."
+msgstr "LOGGEN ÄR TOM."
+
+msgid "%d d"
+msgstr "%d d"
+
+msgid "%d h"
+msgstr "%d tim"
+
+msgid "%d mn"
+msgstr "%d min"
+
+msgid "%d sec"
+msgstr "%d s"
+
+msgid "LAST 20 PLAYED GAMES"
+msgstr "DE 20 SENAST SPELADE SPELEN"
+
+msgid "NO GAME PLAYED YET"
+msgstr "INGET SPEL SPELAT ANNU"
+
+#:
+msgid "datetime"
+msgstr "datum och tid"
+
+#:
+msgid "DATE TIME SCREENSAVER SETTINGS"
+msgstr "INSTÄLLNINGAR FÖR DATUM- OCH TIDSSKÄRMSLÄCKARE"
+
+#:
+msgid "DATE & TIME SCREENSAVER"
+msgstr "DATUM- OCH TIDSSKÄRMSLÄCKARE"
+
+#:
+msgid "CLOCK TYPE"
+msgstr "KLOCKTYP"
+
+#:
+msgid "CLOCK STYLE"
+msgstr "KLOCKSTIL"
+
+#:
+msgid "CLOCK COLOR"
+msgstr "KLOCKFÄRG"
+
+#:
+msgid "BACKGROUND MODE"
+msgstr "BAKGRUNDSLÄGE"
+
+#:
+msgid "BACKGROUND COLOR"
+msgstr "BAKGRUNDSFÄRG"
+
+#:
+msgid "BACKGROUND IMAGE"
+msgstr "BAKGRUNDSBILD"
+
+#:
+msgid "SHOW DATE"
+msgstr "VISA DATUM"
+
+#:
+msgid "SHOW SECONDS"
+msgstr "VISA SEKUNDER"
+
+#:
+msgid "ENABLE VIBRATION FEEDBACK"
+msgstr "AKTIVERA VIBRATIONSRESPONS"
+
+#:
+msgid "VIBRATION INTENSITY"
+msgstr "VIBRATIONSSTYRKA"
+
+#:
+msgid "TEMPERATURE"
+msgstr "TEMPERATUR"
+
+#:
+msgid "CLOCK FONT"
+msgstr "KLOCKTYPSNITT"
+
+#:
+msgid "VERBAL PLAY TIMER WARNING"
+msgstr "RÖSTVARNING FÖR SPELTIMER"
+
+#:
+msgid "PLAY TIMER"
+msgstr "SPELTIMER"
+
+#:
+msgid "TIME LEFT TODAY"
+msgstr "TID KVAR IDAG"
+
+#:
+msgid "MIN"
+msgstr "MIN"
+
+#:
+msgid "DAILY PLAY TIME LIMIT REACHED"
+msgstr "DAGLIG SPELTIDSGRÄNS NÅDD"
+
+#:
+msgid "COME BACK TOMORROW!"
+msgstr "KOM TILLBAKA IMORGON!"
+
+#:
+msgid "PLAY TIME LEFT TODAY: %i MIN"
+msgstr "SPELTID KVAR IDAG: %i MIN"
+
+#:
+msgid "PLAY TIME LEFT TODAY: < 1 MIN"
+msgstr "SPELTID KVAR IDAG: < 1 MIN"
+
+#:
+msgid "NIGHT FILTER"
+msgstr "NATTFILTER"
+
+#:
+msgid "ENABLE FILTER"
+msgstr "AKTIVERA FILTER"
+
+#:
+msgid "START TIME"
+msgstr "STARTTID"
+
+#:
+msgid "END TIME"
+msgstr "SLUTTID"
+
+#:
+msgid "NIGHT FILTER ACTIVE"
+msgstr "NATTFILTER AKTIVT"
+
+#:
+msgid "AQUARIUM SCREENSAVER SETTINGS"
+msgstr "INSTÄLLNINGAR FÖR AKVARIESKÄRMSLÄCKARE"
+
+#:
+msgid "AQUARIUM SCREENSAVER"
+msgstr "AKVARIESKÄRMSLÄCKARE"
+
+#:
+msgid "FISH COUNT"
+msgstr "ANTAL FISKAR"
+
+#:
+msgid "ALL RANDOM"
+msgstr "ALLA SLUMPMÄSSIGA"
+
+#:
+msgid "FISH"
+msgstr "FISK"
+
+#:
+msgid "BUBBLE COLUMN"
+msgstr "BUBBELPELARE"
+
+#:
+msgid "AUTO LIGHTS"
+msgstr "AUTOMATISK BELYSNING"
+
+#:
+msgid "FOREGROUND LIGHTS"
+msgstr "FÖRGRUNDSBELYSNING"
+
+#:
+msgid "BACKGROUND LIGHTS"
+msgstr "BAKGRUNDSBELYSNING"
+
+#:
+msgid "STARFISH ON GLASS"
+msgstr "SJÖSTJÄRNA PÅ GLASET"
+
+#:
+msgid "aquarium"
+msgstr "akvarium"
+
+#:
+msgid "corridors"
+msgstr "korridorer"
+
+#:
+msgid "CORRIDORS SCREENSAVER SETTINGS"
+msgstr "INSTÄLLNINGAR FÖR KORRIDORSKÄRMSLÄCKARE"
+
+#:
+msgid "CORRIDORS SCREENSAVER"
+msgstr "KORRIDORSKÄRMSLÄCKARE"
+
+#:
+msgid "SPEED"
+msgstr "HASTIGHET"
+
+#:
+msgid "AMBIENT"
+msgstr "OMGIVNINGSLJUS"
+
+#:
+msgid "PANELS"
+msgstr "PANELER"
+
+#:
+msgid "FLICKER"
+msgstr "FLIMMER"
+
+#:
+msgid "FOG"
+msgstr "DIMMA"
+
+#:
+msgid "VOLUME"
+msgstr "VOLYM"

@@ -1,0 +1,18 @@
+Super Mario Galaxy port
+Copyright (c) 2026 Producdevity. All rights reserved.
+
+This software is not open source. You may install and run copies of it that you
+received from the author, with game files you legally own. You may not
+redistribute, sublicense or sell it, or distribute modified versions, without
+the author's written permission.
+
+Third-party components bundled with this software are licensed under their own
+terms, provided in the licenses folder. Nothing in this license limits the
+rights those licenses grant.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHOR BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

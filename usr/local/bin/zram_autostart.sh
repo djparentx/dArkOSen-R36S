@@ -1,9 +1,11 @@
 #!/bin/bash
-ZRAM=512
 
 if [ -f /etc/zram.conf ]; then
     source /etc/zram.conf
 fi
+
+[ -z "$ALGORITHM" ] && ALGORITHM=lzo
+[ -z "$SIZE" ] && SIZE=536870912
 
 modprobe zram num_devices=1 2>/dev/null
 
@@ -19,10 +21,9 @@ if [ ! -b /dev/zram0 ]; then
     exit 1
 fi
 
-echo "lzo" > /sys/block/zram0/comp_algorithm 2>/dev/null
+echo "$ALGORITHM" > /sys/block/zram0/comp_algorithm 2>/dev/null
 
-bytes=$((ZRAM * 1024 * 1024))
-echo "$bytes" > /sys/block/zram0/disksize
+echo "$SIZE" > /sys/block/zram0/disksize
 mkswap /dev/zram0 >/dev/null 2>&1
 swapon -p 5 /dev/zram0
 exit 0

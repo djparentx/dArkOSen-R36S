@@ -1,0 +1,12 @@
+{
+  "name": "Ocean Breeze",
+  "background": "#e6f7ff",
+  "surface": "#ffffff",
+  "primary": "#0077b6",
+  "secondary": "#00b4d8",
+  "accent": "#90e0ef",
+  "text": "#023047",
+  "mutedText": "#5c6b73",
+  "border": "#cfe8f3",
+  "fontFamily": "Inter, system-ui, sans-serif"
+}

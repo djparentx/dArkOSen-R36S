@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<gameList>
+	<game>
+		<path>./Halo - Combat Evolved.sh</path>
+		<name>Halo: Combat Evolved</name>
+		<desc>Humanity is the midst of a long war against an alien alliance called the Covenant who have been wiping out colony after colony. You hero is Master Chief, who is given no name beyond his rank in the game itself. He is stationed on the Pillar of Autumn, a ship which, per protocol make a jump in a random direction to retreat to avoid revealing the location of Earth. They find themselves at the titular Halo, a planet-sized ring of mysterious origin and function with the Covenant on their heels. Master Chief must repel the Covenant assault and discover the secrets of Halo with the assistance of the female AI Cortana who lives in his suit and gives missions.</desc>
+		<image>./images/Halo - Combat Evolved-image.png</image>
+		<video>./videos/Halo - Combat Evolved-video.mp4</video>
+		<marquee>./images/Halo - Combat Evolved-marquee.png</marquee>
+		<thumbnail>./images/Halo - Combat Evolved-thumb.png</thumbnail>
+		<rating>0.9</rating>
+		<releasedate>20011115T000000</releasedate>
+		<developer>Bungie</developer>
+		<publisher>Microsoft</publisher>
+		<genre>Shooter</genre>
+		<players>1-16</players>
+		<playcount>2</playcount>
+		<lastplayed>20261011T161925</lastplayed>
+		<gametime>2553</gametime>
+	</game>
+	<game>
+		<path>./McpeLauncher.sh</path>
+		<name>Minecraft Pocket Edition</name>
+		<desc>Dive into an open world of 3D building, crafting and survival in the ultimate sandbox block builder. Gather resources, survive the night, and build an epic adventure one block at a time. Explore and craft your way through a completely open world where you can play with friends, build a block city, start a farm, mine deep into the ground, face mysterious enemies, or just experiment to the limits of your imagination with our building games!</desc>
+		<image>./images/McpeLauncher-image.png</image>
+		<video>./videos/McpeLauncher-video.mp4</video>
+		<marquee>./images/McpeLauncher-marquee.png</marquee>
+		<thumbnail>./images/McpeLauncher-thumb.png</thumbnail>\
+		<rating>0.8</rating>
+		<releasedate>20110816T000000</releasedate>
+		<developer>Mojang</developer>
+		<publisher>Mojang</publisher>
+		<genre>Adventure</genre>
+		<playcount>2</playcount>
+		<lastplayed>20261011T203809</lastplayed>
+		<gametime>31</gametime>
+	</game>
+</gameList>
